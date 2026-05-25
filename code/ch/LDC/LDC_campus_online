@@ -143,6 +143,33 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
 
+        /* --- 線上說明會附圖片的卡片樣式 --- */
+        .ldc-online-event-card {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .ldc-online-event-img-box {
+            flex: 0 0 40%; /* 圖片佔比約 40% */
+            max-width: 350px;
+        }
+        
+        .ldc-online-event-img-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            display: block;
+        }
+
+        .ldc-online-event-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         /* 職缺卡片容器 - 電腦版橫向排列 */
         .ldc-intern-req-box { 
             display: grid;
@@ -316,8 +343,18 @@
             .ldc-intern-timeline-line { display: none; }
             .ldc-intern-timeline-circle { width: 80px; height: 80px; font-size: 18px; margin-bottom: 10px; }
 
-            .ldc-event-item { flex-direction: row; justify-content: space-between; }
-            .ldc-reg-btn-event { font-size: 12px; padding: 8px 12px; }
+            .ldc-event-item { flex-direction: column; align-items: flex-start; gap: 15px; } /* 微調手機版讓按鈕好點擊 */
+            .ldc-reg-btn-event { width: 100%; font-size: 14px; padding: 10px; }
+            
+            .ldc-online-event-card {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .ldc-online-event-img-box {
+                flex: none;
+                width: 100%;
+                max-width: 100%;
+            }
 
             .ldc-dropdown-content { bottom: auto; top: 110%; }
         }
@@ -328,7 +365,7 @@
 <section class="ldc-intern-section">
     <header class="ldc-intern-header">
         <span class="ldc-intern-eyebrow">2026 LDC Campus Recruitment</span>
-        <h1 class="ldc-intern-title">2026 專案服務中心審計專員 校園招募計畫</h1>
+        <h1 class="ldc-intern-title">2026 專案服務中心 校園招募計畫</h1>
     </header>
 
     <div class="ldc-intern-container">
@@ -372,59 +409,27 @@
 
         <div class="ldc-events-section">
             <div class="ldc-events-container">
-                <h3 class="ldc-section-title">校園說明會時程</h3>
+                <h3 class="ldc-section-title">線上招募說明會</h3>
                 <div class="ldc-events-box">
-                    <ul class="ldc-event-list" style="list-style: none; padding: 0; margin: 0;">
-                        <li class="ldc-event-item" data-date="2026-03-27">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">國立高雄科技大學 (NKUST)</span>
-                                <span class="ldc-event-date">2026/03/27 (五) 11:00-12:00</span>
-                            </div>
-                            <a href="https://forms.office.com/e/mQT43T9ZtL" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-03-30">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">國立屏東大學 (NPTU)</span>
-                                <span class="ldc-event-date">2026/03/30 (一) 16:00-17:00</span>
-                            </div>
-                            <a href="https://forms.office.com/e/ipZSkSgg2t" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-04-08">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">國立臺中科技大學 (NUTC)</span>
-                                <span class="ldc-event-date">2026/04/08 (三) 16:00-17:00</span>
-                            </div>
-                            <a href="https://forms.office.com/e/fqfVdXjj6X" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-04-15">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">朝陽科技大學 (CYUT)</span>
-                                <span class="ldc-event-date">2026/04/15 (三) 14:00-15:00</span>
-                            </div>
-                            <a href="https://forms.office.com/e/enjEsKH7vT" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-04-16">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">致理科技大學 (CLUT)</span>
-                                <span class="ldc-event-date">2026/04/16 (四) 12:30-13:30</span>
-                            </div>
-                            <a href="https://forms.office.com/e/5pkTFXRe8c" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-04-17">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">銘傳大學 (MCU)</span>
-                                <span class="ldc-event-date">2026/04/17 (五) 12:30-13:30</span>
-                            </div>
-                            <a href="https://forms.office.com/e/aMJuAiLdEB" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                        <li class="ldc-event-item" data-date="2026-04-29">
-                            <div class="ldc-event-info">
-                                <span class="ldc-event-school">中國文化大學 (PCCU)</span>
-                                <span class="ldc-event-date">2026/04/29 (三) 14:30-15:30</span>
-                            </div>
-                            <a href="https://forms.office.com/e/4pms5gg5cD" class="ldc-reg-btn ldc-reg-btn-event">立即報名</a>
-                        </li>
-                    </ul>
+                    <div class="ldc-event-item ldc-online-event-card" data-date="2026-06-09" style="padding: 10px 0; border-bottom: none;">
+                        <div class="ldc-online-event-img-box">
+                            <!-- 請在此處替換為您實際的活動宣傳圖網址 -->
+                            <img src="https://placehold.co/600x400/f1f4eb/86BC25?text=Online+Session+Banner" alt="2026 LDC 專案服務中心 線上說明會">
+                        </div>
+                        <div class="ldc-event-info ldc-online-event-details">
+                            <span class="ldc-event-school">2026 LDC 專案服務中心 線上說明會</span>
+                            <span class="ldc-event-date" style="display: block; margin-bottom: 6px; margin-top: 12px;">
+                                <strong>📅 活動日期：</strong>2026/06/09 (二) 18:00 - 19:00
+                            </span>
+ <span class="ldc-event-date" style="display: block; margin-bottom: 6px; margin-top: 12px;">
+                                <strong>🕕 活動時間：晚上 18:00 - 19:00
+                            </span>
+                            <span class="ldc-event-date" style="display: block; margin-bottom: 20px;">
+                                <strong>📍 活動地點：</strong>Microsoft Teams
+                            </span>
+                            <a href="https://events.teams.microsoft.com/event/0a17c74a-b6dd-4afd-86e8-c222c7461386@36da45f1-dd2c-4d1f-af13-5abe46b99921">立即報名參與</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
