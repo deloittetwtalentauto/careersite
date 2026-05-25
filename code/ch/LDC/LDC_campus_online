@@ -151,8 +151,8 @@
         }
         
         .ldc-online-event-img-box {
-            flex: 0 0 40%; /* 圖片佔比約 40% */
-            max-width: 350px;
+            flex: 0 0 50%; /* 將圖片佔比提高到 50% */
+            max-width: 480px; /* 放寬最大寬度限制，讓圖片變大 */
         }
         
         .ldc-online-event-img-box img {
@@ -414,20 +414,21 @@
                     <div class="ldc-event-item ldc-online-event-card" data-date="2026-06-09" style="padding: 10px 0; border-bottom: none;">
                         <div class="ldc-online-event-img-box">
                             <!-- 請在此處替換為您實際的活動宣傳圖網址 -->
-                            <img src="https://placehold.co/600x400/f1f4eb/86BC25?text=Online+Session+Banner" alt="2026 LDC 專案服務中心 線上說明會">
+                            <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/LDC/LDC%20%E7%B7%9A%E4%B8%8A%E8%AA%AA%E6%98%8E%E6%9C%83.png" alt="2026 LDC 專案服務中心 線上說明會">
                         </div>
                         <div class="ldc-event-info ldc-online-event-details">
                             <span class="ldc-event-school">2026 LDC 專案服務中心 線上說明會</span>
                             <span class="ldc-event-date" style="display: block; margin-bottom: 6px; margin-top: 12px;">
-                                <strong>📅 活動日期：</strong>2026/06/09 (二) 18:00 - 19:00
+                                <strong>📅 活動日期：</strong>2026/06/09 (二)
                             </span>
- <span class="ldc-event-date" style="display: block; margin-bottom: 6px; margin-top: 12px;">
-                                <strong>🕕 活動時間：晚上 18:00 - 19:00
+                            <span class="ldc-event-date" style="display: block; margin-bottom: 6px;">
+                                <strong>⏰ 活動時間：</strong>18:00 - 19:00
                             </span>
                             <span class="ldc-event-date" style="display: block; margin-bottom: 20px;">
                                 <strong>📍 活動地點：</strong>Microsoft Teams
                             </span>
-                            <a href="https://events.teams.microsoft.com/event/0a17c74a-b6dd-4afd-86e8-c222c7461386@36da45f1-dd2c-4d1f-af13-5abe46b99921">立即報名參與</a>
+                            <!-- 加入 class="ldc-reg-btn ldc-reg-btn-event" 讓按鈕樣式恢復 -->
+                            <a href="https://events.teams.microsoft.com/event/0a17c74a-b6dd-4afd-86e8-c222c7461386@36da45f1-dd2c-4d1f-af13-5abe46b99921" class="ldc-reg-btn ldc-reg-btn-event">立即報名參與</a>
                         </div>
                     </div>
                 </div>
