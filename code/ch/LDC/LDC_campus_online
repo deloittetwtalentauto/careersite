@@ -356,7 +356,15 @@
                 max-width: 100%;
             }
 
-            .ldc-dropdown-content { bottom: auto; top: 110%; }
+                        .ldc-dropdown-content { 
+                /* 改為 relative，向下展開推開內容，避免絕對定位的覆蓋問題 */
+                position: relative; 
+                bottom: auto; 
+                top: auto; 
+                margin-top: 12px; /* 增加與上方按鈕的呼吸空間 */
+                border: 2px solid #86BC25; /* 加上企業色邊框，讓視覺焦點更清晰 */
+                box-shadow: none; /* 移除陰影讓手機版更扁平好閱讀 */
+            }
         }
     </style>
 </head>
