@@ -80,8 +80,40 @@ body {
   color:#333;
 }
 
-/* 關於區塊（白底） */
-.about {background:var(--white);}
+/* 關於區塊（白底改為精緻漸層與品牌雙色微光） */
+.about {
+  background: linear-gradient(135deg, var(--white) 0%, #f6faf2 100%);
+  position: relative;
+  overflow: hidden;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(134, 188, 37, 0.1) 0%, rgba(255, 255, 255, 0) 70%); /* 品牌綠微光 */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.about::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(13, 131, 144, 0.05) 0%, rgba(255, 255, 255, 0) 70%); /* 輔色藍綠色微光 */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+.about .container {
+  position: relative;
+  z-index: 2; /* 確保文字在光暈上方，不影響選取 */
+}
 
 /* 申請條件區（可與 about 同色，或改為非常淡的灰） */
 .requirements {
@@ -166,8 +198,38 @@ body {
 .btn-outline:hover {background:var(--black);color:var(--white);}
 .btn-outline:active {transform:translateY(1px);}
 
-/* 小備註 */
-.note {margin-top:14px;color:#444;font-size:13px;}
+/* 小備註區塊（圓角外框與左側品牌條） */
+.note-box {
+  margin-top: 24px;
+  padding: 18px 20px;
+  background-color: #fbfdf9; /* 極淡綠色底，舒適溫和 */
+  border: 1px solid #e2ebd5;
+  border-left: 4px solid var(--brand); /* 左側高質感品牌綠色標籤 */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.02);
+}
+.note-box-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px 0;
+}
+.note-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+}
+.note-list li {
+  margin-bottom: 6px;
+}
+.note-list li:last-child {
+  margin-bottom: 0;
+}
+.note-list li strong {
+  color: var(--accent-3); /* 使用深綠色強調 */
+}
 
 /* 鍵盤可及性：聚焦樣式 */
 a:focus-visible,
@@ -281,21 +343,17 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <h2 class="section-title">About 2026 D-League Internship Program</h2>
 
     <p class="lead">
-Deloitte一直以「People First」為核心策略，致力於打造世界級的學習與發展平台，並提供多元化、個人化的職涯發展道路。
-<br>加入 D-League 培訓計畫，我們不僅提供專業訓練，更致力於打造一個支持成長、重視多元想法的環境，透過本次的計畫可以
-D-League Program 歡迎來自會計與財務、企業管理、資訊工程、資訊管理、環境科學、社會科學等相關領域的同學加入，一起挑戰真實課題、參與實戰專案，並將創意化為實際影響力。
-<br>
-      <br>
-
+      Deloitte 一直以「People First」為核心策略，致力於打造世界級的學習與發展平台，並提供多元化、個人化的職涯發展道路。我們不僅提供專業訓練，更致力於打造一個支持成長、重視多元想法的環境。
+      <br><br>
+      我們歡迎來自會計與財務、企業管理、資訊工程、資訊管理、環境科學、社會科學等領域的同學加入 D-League Internship Program！透過本次計畫，你將在資深專業顧問的帶領下參與實戰專案，將理論結合實務，協助解決客戶真實面臨的難題。讓我們一起在挑戰中培養紮實的專業技能，將你的創意化為實際的影響力！
     </p>
 
     <h3>透過此計畫成為 Deloitte 發揮影響力的夥伴，你將獲得：</h3>
     <ul class="highlights">
-      <li><span>專案實戰經驗：</span>由專業顧問團隊帶領，直接參與團隊合作，解決客戶與市場的真實挑戰。</li>
-      <li><span>專業課程訓練：</span>結合理論與實務，培養專業技能與領導力。</li>
-      <li><span>職涯方向探索：</span>透過導師制度與團隊交流，並有機會在未來轉正或轉調加入我們。</li>
-      <li><span>Mentorship：</span></li>
-      <li><span>多元活動交流：</span></li>
+      <li><span>專案實戰經驗：</span>由資深專業顧問團隊帶領，親身參與第一線真實專案，協助解決客戶與市場的真實挑戰</li>
+      <li><span>專業課程訓練：</span>結合理論與實務，為實習生量身打造專屬培訓課程，全方位培養專業技能與領導力</li>
+      <li><span>多元活動交流：</span>透過多元交流活動，與同仁相互交流學習，拓展跨領域人脈網並體驗多元包容的企業文化</li>
+      <li><span>職涯方向探索：</span>探索職涯發展路徑，表現優秀者有機會獲得轉正或轉調機會</li>
     </ul>
   </div>
 </section>
@@ -303,7 +361,7 @@ D-League Program 歡迎來自會計與財務、企業管理、資訊工程、資
 <!-- ===== Application Requirements ===== -->
 <section class="dleague requirements" id="application-requirements">
   <div class="container">
-    <span class="eyebrow">Qualifications</span>
+    <span class="eyebrow">2026 D-League Internship Program</span>
     <h2 class="section-title">Application Requirements</h2>
 
     <div class="meta">
@@ -313,10 +371,14 @@ D-League Program 歡迎來自會計與財務、企業管理、資訊工程、資
       <div style="color: var(--brand);"><strong>(會依照實際情況滾動式調整，建議您盡早投遞)</strong></div>
     </div>
 
-    <p class="note">
-      💡小提醒：
-      <br>完成履歷投遞後，將會收到TestGorilla線上測驗的通知，並煩請於7日內盡速完成，若未完成將不會進入後續審查
-    </p>
+    <!-- 小提醒區塊（圓角外框與列點設計） -->
+    <div class="note-box">
+      <div class="note-box-title">💡 小提醒：</div>
+      <ul class="note-list">
+        <li>完成履歷投遞後，將會收到 TestGorilla 線上測驗的通知，並煩請於 7 日內盡速完成，若未完成將不會進入後續審查</li>
+        <li>為確保您能完整參與專案並獲得扎實的實習體驗，<strong>每週上班天數達3天(24小時)以上者</strong>尤佳（可配合學校課表彈性調整）</li>
+      </ul>
+    </div>
 
     <!-- ===== Timeline (Circles Style) ===== -->
     <div class="timeline-circles" aria-label="Important Dates">
@@ -345,8 +407,8 @@ D-League Program 歡迎來自會計與財務、企業管理、資訊工程、資
 <!-- ===== Apply Now ===== -->
 <section class="dleague apply" id="apply-now">
   <div class="container">
-    <span class="eyebrow">Apply Now</span>
-    <h2 class="section-title">Professional Stream</h2>
+    <span class="eyebrow">2026 D-League Internship Program</span>
+    <h2 class="section-title">Apply Now</h2>
 <p class=lead>完成履歷投遞後，將會收到TestGorilla線上測驗的通知，並煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
 另外為避免重複測驗，建議投遞以最符合您的興趣的專業領域為主</p>
     <div class="job-list">
