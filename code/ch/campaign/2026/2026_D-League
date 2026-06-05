@@ -46,7 +46,7 @@ body {
   display: block;
   font-size: 13px;
   font-weight: 800;
-  color: var(--accent-3); /* 使用深綠色增加層次感 */
+  color: #75787B; /* 使用深綠色增加層次感 */
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 6px;
@@ -130,12 +130,16 @@ body {
 @media (min-width:720px){
   .job-list {grid-template-columns:1fr 1fr;}
 }
+
+/* 卡片容器：設為 flex 佈局使內容可以垂直伸展 */
 .job-card {
   background:var(--card);
   border:1px solid var(--border);
   border-radius:var(--radius);
   padding:18px;
   box-shadow:var(--shadow);
+  display: flex;
+  flex-direction: column;
 }
 .job-header {
   display:flex;
@@ -169,8 +173,30 @@ body {
 }
 .job-info li {margin:6px 0;}
 
+.job-desc {
+  margin: 12px 0 16px;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* 按鈕容器：設為 flex 佈局使內容可以垂直伸展 */
+.job-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: auto;      /* 置底關鍵 */
+  justify-content: center; /* 手機板預設置中 */
+}
+
+@media (min-width: 768px) {
+  .job-actions {
+    justify-content: flex-start; /* 電腦版改為靠左對齊 */
+  }
+}
+
 /* 按鈕 */
-.job-actions {display:flex;gap:10px;flex-wrap:wrap;}
 .btn-primary,
 .btn-outline {
   display:inline-block;
@@ -184,10 +210,16 @@ body {
 }
 .btn-primary {
   background:var(--brand);
-  color:var(--white);
+  color:var(--white)!important;
   border:2px solid var(--brand);
 }
-.btn-primary:hover {filter:brightness(.95);}
+
+/* 懸停(Hover)時變為精緻的黑底白字 */
+.btn-primary:hover {
+  background:var(--black);
+  color:var(--white);
+  border-color:var(--black);
+}
 .btn-primary:active {transform:translateY(1px);}
 
 .btn-outline {
@@ -195,7 +227,7 @@ body {
   color:var(--black);
   background:transparent;
 }
-.btn-outline:hover {background:var(--black);color:var(--white);}
+.btn-outline:hover {background:var(--black)!important;color:var(--white)!important;}
 .btn-outline:active {transform:translateY(1px);}
 
 /* 小備註區塊（圓角外框與左側品牌條） */
@@ -343,9 +375,9 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <h2 class="section-title">About 2026 D-League Internship Program</h2>
 
     <p class="lead">
-      Deloitte 一直以「People First」為核心策略，致力於打造世界級的學習與發展平台，並提供多元化、個人化的職涯發展道路。我們不僅提供專業訓練，更致力於打造一個支持成長、重視多元想法的環境。
+      D-League Internship Program為Deloitte 顧問業務服務 (Consulting Businesses)的實習計畫，在資深專業顧問的帶領下參與實戰專案，利用理論結合實務的方式，協助解決客戶真實面臨的難題。我們提供專業的實務訓練，也重視您的多元想法與創新思維。本次計畫涵蓋精算與保險、ERP 系統導入、財務轉型、資訊及網路安全、程式開發等專業領域，讓同學能深入探索感興趣的發展方向。
       <br><br>
-      我們歡迎來自會計與財務、企業管理、資訊工程、資訊管理、環境科學、社會科學等領域的同學加入 D-League Internship Program！透過本次計畫，你將在資深專業顧問的帶領下參與實戰專案，將理論結合實務，協助解決客戶真實面臨的難題。讓我們一起在挑戰中培養紮實的專業技能，將你的創意化為實際的影響力！
+      我們歡迎來自會計與財務、企業管理、資訊工程、資訊管理、環境科學、社會科學等領域的同學，與我們一起在挑戰中培養紮實的專業技能，探索個人職涯發展道路，將你的創意化為實際的影響力！
     </p>
 
     <h3>透過此計畫成為 Deloitte 發揮影響力的夥伴，你將獲得：</h3>
@@ -407,97 +439,74 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
 <!-- ===== Apply Now ===== -->
 <section class="dleague apply" id="apply-now">
   <div class="container">
-    <span class="eyebrow">2026 D-League Internship Program</span>
-    <h2 class="section-title">Apply Now</h2>
-<p class=lead>完成履歷投遞後，將會收到TestGorilla線上測驗的通知，並煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
-另外為避免重複測驗，建議投遞以最符合您的興趣的專業領域為主</p>
+    <span class="eyebrow">Apply Now</span>
+    <h2 class="section-title">Professional Stream</h2>
+    <p class="lead">完成履歷投遞後，將會收到TestGorilla線上測驗的通知，並煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
+    另外為避免重複測驗，建議投遞以最符合您的興趣的專業領域為主</p>
     <div class="job-list">
-      <!-- 職缺卡片 1：審計與確信 -->
+      <!-- 職缺卡片 1：精算與保險諮詢 -->
       <article class="job-card">
         <header class="job-header">
           <h3 class="job-title">ACTUARIAL & INSURANCE STREAM</h3>
         </header>
         <p>台北</p>
-        <ul class="job-info">
-          <li>1. 協助執行證實性查核程序（如：翻找憑證及核對憑證）</li>
-          <li>2. 協助執行分析性覆核程序之數據</li>
-          <li>3. 財務報表數字核對</li>
-          <li>4. 整理函證及回函</li>
-          <li>5. 其他主管交辦事項</li>
-        </ul>
+        <p class="job-desc">
+Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決金融業實務挑戰，並深入精算模型建置、商品定價與風險管理等核心領域。在這裡，您將有機會接觸 IFRS 17 等業界標準，將數理統計專業應用於真實商業情境，轉化為具體的策略洞察，為職涯扎實累積專業實力。
+        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 2：稅務服務 -->
+      <!-- 職缺卡片 2：技術開發諮詢 -->
       <article class="job-card">
         <header class="job-header">
           <h3 class="job-title">TECHNICAL STREAM <br>(SAP / AI & DATA / Full Stack)</h3>
         </header>
-        <p>台北、台中</p>
-        <ul class="job-info">
-          <li>1. 協助企業所得稅及營業稅等各項稅務申報作業</li>
-          <li>2. 協助準備移轉訂價報告及相關分析文件</li>
-          <li>3. 國內外稅務法規、函釋之資料蒐集與專案研究</li>
-          <li>4. 稅務報表及數據資料建檔整理</li>
-          <li>5. 其他主管交辦事項</li>
-        </ul>
+        <p>台北</p>
+         <p class="job-desc">
+聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 3：風險諮詢 -->
+      <!-- 職缺卡片 3：數位轉型諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">DIGITAL TRANSFORMATION STREAM<br> (SAP / HR / DIGITAL)</h3>
+          <h3 class="job-title">DIGITAL TRANSFORMATION STREAM<br> (Martech / SAP / HR Transformation)</h3>
         </header>
         <p>台北</p>
-        <ul class="job-info">
-          <li>1. 協助企業內部控制與風險管理專案執行</li>
-          <li>2. 協助資訊安全、資料隱私保護政策之研究與合規評估</li>
-          <li>3. 協助 ESG 永續發展報告書資料彙整與溫室氣體盤查</li>
-          <li>4. 專案會議紀錄與中英文簡報排版製作</li>
-          <li>5. 其他主管交辦事項</li>
-        </ul>
+                 <p class="job-desc">
+提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。        
+</p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 4：管理顧問 -->
+      <!-- 職缺卡片 4：網路安全諮詢 -->
       <article class="job-card">
         <header class="job-header">
           <h3 class="job-title">CYBER STREAM</h3>
         </header>
         <p>台北</p>
-        <ul class="job-info">
-          <li>1. 協助國內外產業趨勢、市場動態與競爭者分析</li>
-          <li>2. 參與企業數位轉型、人力資源或供應鏈管理專案研究</li>
-          <li>3. 協助整理專案訪談紀錄、數據清理與視覺化圖表製作</li>
-          <li>4. 協助製作高階主管專案提案簡報 (PowerPoint)</li>
-          <li>5. 其他主管交辦事項</li>
-        </ul>
+        <p class="job-desc">
+Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。
+</p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 5：財務顧問 -->
+      <!-- 職缺卡片 5：財務轉型諮詢 -->
       <article class="job-card">
         <header class="job-header">
           <h3 class="job-title">FINANCE TRANSFORMATION STREAM</h3>
         </header>
         <p>台北</p>
-        <ul class="job-info">
-          <li>1. 協助企業併購 (M&A) 相關產業及標的公司資料蒐集</li>
-          <li>2. 協助財務盡職調查 (Due Diligence) 數據整理與分析</li>
-          <li>3. 協助建立基礎財務模型與企業評價參數蒐集</li>
-          <li>4. 投資備忘錄 (IM) 等專案相關文件及數據排版整理</li>
-          <li>5. 其他主管交辦事項</li>
-        </ul>
-        <div class="job-actions">
+        <p class="job-desc">
+運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。        <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener">Learn more</a>
         </div>
       </article>
