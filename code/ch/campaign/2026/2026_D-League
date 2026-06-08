@@ -222,6 +222,17 @@ body {
 }
 .btn-primary:active {transform:translateY(1px);}
 
+/* 已截止/已結束按鈕樣式 */
+.btn-disabled {
+  background-color: #d1d5db !important; /* 灰色背景 */
+  border-color: #d1d5db !important;
+  color: #9ca3af !important; /* 灰字 */
+  cursor: not-allowed !important; /* 禁用游標 */
+  pointer-events: none; /* 禁用所有點擊與滑鼠事件 */
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 .btn-outline {
   border:2px solid var(--black);
   color:var(--black);
@@ -398,8 +409,8 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
 
     <div class="meta">
       <div><strong>招募對象：</strong>大三以上同學</div>
-      <div><strong>實習期間：</strong>4-6個月(從2026年7/9月至2026/12/31)</div>
-      <div><strong>履歷投遞截止：</strong>即日起至2025/06/20（六）23:59（台灣時間）</div>
+      <div><strong>實習期間：</strong>4-5個月(從2026年8、9月至2026/12/31)</div>
+      <div><strong>履歷投遞截止：</strong>即日起至2026/06/30（二）23:59（台灣時間）</div>
       <div style="color: var(--brand);"><strong>(會依照實際情況滾動式調整，建議您盡早投遞)</strong></div>
     </div>
 
@@ -416,11 +427,11 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <div class="timeline-circles" aria-label="Important Dates">
       <div class="steps">
         <div class="step">
-          <div class="circle"><span>6/20前</span></div>
+          <div class="circle"><span>6/30前</span></div>
           <p class="label">線上履歷投遞</p>
         </div>
         <div class="step">
-          <div class="circle"><span>6/27前</span></div>
+          <div class="circle"><span>7/7前</span></div>
           <p class="label">完成線上測驗</p>
         </div>
         <div class="step">
@@ -428,7 +439,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
           <p class="label">安排面談</p>
         </div>
         <div class="step">
-          <div class="circle"><span>7月/9月</span></div>
+          <div class="circle"><span>8月/9月</span></div>
           <p class="label">報到入職</p>
         </div>
       </div>
@@ -447,72 +458,102 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <!-- 職缺卡片 1：精算與保險諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">ACTUARIAL & INSURANCE STREAM</h3>
+          <h3 class="job-title">Actuarial & Insurance Stream</h3>
         </header>
-        <p>台北</p>
+        <p>地點：台北</p>
         <p class="job-desc">
-Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決金融業實務挑戰，並深入精算模型建置、商品定價與風險管理等核心領域。在這裡，您將有機會接觸 IFRS 17 等業界標準，將數理統計專業應用於真實商業情境，轉化為具體的策略洞察，為職涯扎實累積專業實力。
+          加入 Deloitte 精算與保險（AIS）實習計畫，與顧問團隊合作解決金融業實務挑戰。我們將依您的興趣分配專案，帶您運用數據分析，深入精算建模、商品定價與風險管理等領域。您將接觸 IFRS 17 等業界標準，把數理統計應用於真實商業情境，轉化為具體洞察，扎實累積專業實力。
         </p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
 
       <!-- 職缺卡片 2：技術開發諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">TECHNICAL STREAM <br>(SAP / AI & DATA / Full Stack)</h3>
+          <h3 class="job-title">Technical Stream <br>(SAP / AI & Data / Full Stack)</h3>
         </header>
-        <p>台北</p>
-         <p class="job-desc">
-聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。        </p>
+        <p>地點：台北</p>
+        <p class="job-desc">
+          聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。
+        </p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
 
       <!-- 職缺卡片 3：數位轉型諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">DIGITAL TRANSFORMATION STREAM<br> (Martech / SAP / HR Transformation)</h3>
+          <h3 class="job-title">Digital Transformation Stream<br> (Martech / SAP / HR Transformation)</h3>
         </header>
-        <p>台北</p>
-                 <p class="job-desc">
-提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。        
-</p>
+        <p>地點：台北</p>
+        <p class="job-desc">
+          提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。
+        </p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
 
       <!-- 職缺卡片 4：網路安全諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">CYBER STREAM</h3>
+          <h3 class="job-title">Cyber Stream</h3>
         </header>
-        <p>台北</p>
+        <p>地點：台北</p>
         <p class="job-desc">
-Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。
-</p>
+          Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。
+        </p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
 
       <!-- 職缺卡片 5：財務轉型諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">FINANCE TRANSFORMATION STREAM</h3>
+          <h3 class="job-title">Finance Transformation Stream</h3>
         </header>
-        <p>台北</p>
+        <p>地點：台北</p>
         <p class="job-desc">
-運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。        <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener">Learn more</a>
+          運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。
+        </p>
+        <div class="job-actions">
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // 取得今天的日期 (排除時分秒，只比較年月日)
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // 尋找所有設有截止日的按鈕
+    const actionButtons = document.querySelectorAll("[data-end-date]");
+
+    actionButtons.forEach(button => {
+      const endDateStr = button.getAttribute("data-end-date"); // 格式: "YYYY-MM-DD"
+      if (endDateStr) {
+        const endDate = new Date(endDateStr);
+        endDate.setHours(0, 0, 0, 0);
+
+        // 如果今天大於或等於截止日期 (2026-07-07)
+        if (today >= endDate) {
+          button.textContent = "已截止";
+          button.href = "javascript:void(0);"; // 移除超連結點擊行為
+          button.removeAttribute("target");    // 移除另開分頁
+          button.classList.add("btn-disabled"); // 套用灰底禁用樣式
+        }
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
