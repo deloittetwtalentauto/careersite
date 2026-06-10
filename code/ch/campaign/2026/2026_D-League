@@ -386,7 +386,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <h2 class="section-title">About 2026 D-League Internship Program</h2>
 
     <p class="lead">
-      D-League Internship Program為Deloitte 顧問業務服務 (Consulting Businesses)的實習計畫，在資深專業顧問的帶領下參與實戰專案，利用理論結合實務的方式，協助解決客戶真實面臨的難題。我們提供專業的實務訓練，也重視您的多元想法與創新思維。本次計畫涵蓋精算與保險、ERP 系統導入、財務轉型、資訊及網路安全、程式開發等專業領域，讓同學能深入探索感興趣的發展方向。
+      D-League Internship Program為Deloitte 顧問業務服務 (Consulting Businesses)的實習計畫，在資深專業顧問的帶領下參與實戰專案，利用理論結合實務的方式，協助解決客戶真實面臨的難題。我們提供專業的實務訓練，也重視你的多元想法與創新思維。本次計畫涵蓋精算與保險、ERP 系統導入、財務轉型、資訊及網路安全、程式開發等專業領域，讓同學能深入探索感興趣的發展方向。
       <br><br>
       我們歡迎來自會計與財務、企業管理、資訊工程、資訊管理、環境科學、社會科學等領域的同學，與我們一起在挑戰中培養紮實的專業技能，探索個人職涯發展道路，將你的創意化為實際的影響力！
     </p>
@@ -396,7 +396,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <li><span>專案實戰經驗：</span>由資深專業顧問團隊帶領，親身參與第一線真實專案，協助解決客戶與市場的真實挑戰</li>
       <li><span>專業課程訓練：</span>結合理論與實務，為實習生量身打造專屬培訓課程，全方位培養專業技能與領導力</li>
       <li><span>多元活動交流：</span>透過多元交流活動，與同仁相互交流學習，拓展跨領域人脈網並體驗多元包容的企業文化</li>
-      <li><span>職涯方向探索：</span>探索職涯發展路徑，表現優秀者有機會獲得轉正或轉調機會</li>
+      <li><span>職涯方向探索：</span>探索職涯發展路徑，表現優秀者有機會獲得轉調機會</li>
     </ul>
   </div>
 </section>
@@ -418,8 +418,8 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <div class="note-box">
       <div class="note-box-title">💡 小提醒：</div>
       <ul class="note-list">
-        <li>完成履歷投遞後，將會收到 TestGorilla 線上測驗的通知，並煩請於 7 日內盡速完成，若未完成將不會進入後續審查</li>
-        <li>為確保您能完整參與專案並獲得扎實的實習體驗，<strong>每週上班天數達3天(24小時)以上者</strong>尤佳（可配合學校課表彈性調整）</li>
+        <li>完成履歷投遞後，將會收到 TestGorilla 線上測驗的通知，煩請於 7 日內盡速完成，若未完成將不會進入後續審查</li>
+        <li>為確保您能完整參與專案並獲得扎實的實習體驗，<strong>需每週上班天數達3天(24小時)以上</strong>（可配合學校課表彈性調整）</li>
       </ul>
     </div>
 
@@ -428,7 +428,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <div class="steps">
         <div class="step">
           <div class="circle"><span>6/30前</span></div>
-          <p class="label">線上履歷投遞</p>
+          <p class="label">線上投遞履歷</p>
         </div>
         <div class="step">
           <div class="circle"><span>7/7前</span></div>
@@ -452,7 +452,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
   <div class="container">
     <span class="eyebrow">Apply Now</span>
     <h2 class="section-title">Professional Stream</h2>
-    <p class="lead">完成履歷投遞後，將會收到TestGorilla線上測驗的通知，並煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
+    <p class="lead">完成履歷投遞後，將會收到TestGorilla線上測驗的通知，煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
     另外為避免重複測驗，建議投遞以最符合您的興趣的專業領域為主</p>
     <div class="job-list">
       <!-- 職缺卡片 1：精算與保險諮詢 -->
@@ -462,8 +462,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </header>
         <p>地點：台北</p>
         <p class="job-desc">
-          加入 Deloitte 精算與保險（AIS）實習計畫，與顧問團隊合作解決金融業實務挑戰。我們將依您的興趣分配專案，帶您運用數據分析，深入精算建模、商品定價與風險管理等領域。您將接觸 IFRS 17 等業界標準，把數理統計應用於真實商業情境，轉化為具體洞察，扎實累積專業實力。
-        </p>
+Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決金融業實務挑戰，並深入精算模型建置、商品定價與風險管理等核心領域。在這裡，你將有機會接觸 IFRS 17 等業界標準，將數理統計專業應用於真實商業情境，轉化為具體的策略洞察，為職涯扎實累積專業實力。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -476,7 +475,8 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </header>
         <p>地點：台北</p>
         <p class="job-desc">
-          聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。
+聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。
+
         </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
@@ -490,7 +490,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </header>
         <p>地點：台北</p>
         <p class="job-desc">
-          提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。
+提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。
         </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
@@ -504,8 +504,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </header>
         <p>地點：台北</p>
         <p class="job-desc">
-          Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。
-        </p>
+Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -518,8 +517,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </header>
         <p>地點：台北</p>
         <p class="job-desc">
-          運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。
-        </p>
+運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
