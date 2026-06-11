@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <!-- 確保網頁在手機與平板上能完美縮放，不產生跑版 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDC 內部精選職缺 | Internal Featured Position</title>
+    
+    <!-- 引入微軟正黑體與 Google 推薦的 Noto Sans TC 字型 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           【1. 全域與版面基礎設定】
+           這裡設定了整個區塊的背景顏色、預設字型以及盒模型（Box-sizing）
+           ========================================================================== */
+        * {
+            box-sizing: border-box; /* 讓 padding 和 border 不會撐大元素的寬度，極度推薦新手使用 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 這是你指定的「內部精選職缺」主區塊 (Class Name 已更新為符合語意之名稱) */
+        .internal-featured-position {
+            width: 100%;
+            padding: 80px 0;
+            background-color: #f8faf6; /* 極淡的綠色基調背景，襯托白色卡片 */
+            font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+            color: #333333;
+        }
+
+        /* 限制內容的最大寬度，並在畫面左右居中 */
+        .position-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+           【2. 標題區塊樣式】
+           ========================================================================== */
+        .position-header {
+            text-align: left; /* 將標題區塊改為靠左對齊 */
+            margin-bottom: 50px;
+        }
+
+        /* 小標題 (英文名稱) - 使用企業亮綠色 #86BC25 */
+        .position-eyebrow {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #86BC25;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 主標題 - 使用沉穩的黑色 #000000 */
+        .position-main-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #000000;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        /* 主標題下方的點綴裝飾線 - 使用企業色作漸層 */
+        .position-main-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0; /* 配合標題靠左，將裝飾線對齊左側 */
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #86BC25, #43B02A);
+            border-radius: 2px;
+        }
+
+        /* ==========================================================================
+           【3. 職缺卡片網格 (Grid Layout)】
+           使用 CSS Grid 輕鬆做出 RWD 響應式排版，電腦版 3 欄，平板/手機版會自動轉為 1 欄
+           ========================================================================== */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 平分三等分 */
+            gap: 30px; /* 卡片之間的間距 */
+            margin-bottom: 40px;
+        }
+
+        /* ==========================================================================
+           【4. 單張職缺卡片基礎樣式】
+           ========================================================================== */
+        .job-card {
+            background-color: #ffffff;
+            border-radius: 16px; /* 圓角設計，看起來更現代親和 */
+            padding: 32px 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 柔和的陰影增加立體浮空感 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* 讓內容在上方，按鈕在最下方貼齊 */
+            position: relative; 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 平滑過渡效果 */
+            border-top: 6px solid #86BC25; /* 預設頂部裝飾線 */
+            overflow: visible; /* 確保下拉選單彈出時不被卡片遮擋 */
+        }
+
+        /* 滑鼠懸停時的動態效果 (微往上漂浮，陰影加深) */
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(134, 188, 37, 0.15); /* 淡淡的企業綠陰影 */
+        }
+
+        /* 為不同職缺套用不同的企業/輔助色邊框，幫助求職者視覺分類 */
+        .card-audit { border-top-color: #86BC25; }    /* 企業核心綠色 */
+        .card-digital { border-top-color: #0D8390; }  /* 輔助色: 藍綠色 */
+        .card-intern { border-top-color: #007CB0; }   /* 輔助色: 藍色 */
+
+        /* 職缺標題 */
+        .job-card-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* 職缺地點 (搭配小圖標或淡底色) */
+        .job-card-loc {
+            font-size: 13px;
+            font-weight: 700;
+            color: #666666;
+            background-color: #f1f4eb;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        /* 數位的地點背景改用其對應的色調 */
+        .card-digital .job-card-loc {
+            background-color: #e6f3f5;
+            color: #0D8390;
+        }
+        /* 實習的地點背景改用其對應的色調 */
+        .card-intern .job-card-loc {
+            background-color: #e5f2f7;
+            color: #007CB0;
+        }
+
+        /* 職缺任務與條件列表 */
+        .job-card-list {
+            list-style: none; /* 移除預設的黑點點 */
+            margin-bottom: 30px;
+            flex-grow: 1; /* 讓清單自動撐開，確保各卡片底部的按鈕對齊 */
+        }
+
+        .job-card-list li {
+            font-size: 14px;
+            color: #444444;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px; /* 為自訂的綠色點點留出空間 */
+        }
+
+        /* 用 CSS 偽元素 ::before 製作漂亮、高質感的點綴點 */
+        .job-card-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        /* 根據不同的卡片，改變點綴點的顏色 */
+        .card-audit .job-card-list li::before { color: #86BC25; }
+        .card-digital .job-card-list li::before { color: #0D8390; }
+        .card-intern .job-card-list li::before { color: #007CB0; }
+
+        .job-card-list li b {
+            color: #000000;
+            font-weight: 700;
+        }
+
+        /* ==========================================================================
+           【5. 按鈕元件】
+           ========================================================================== */
+        /* 投遞按鈕 */
+        .ldc-card-apply-btn {
+            width: 100%;
+            padding: 12px 24px;
+            background-color: transparent;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 30px; /* 膠囊狀圓角 */
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* 根據不同職缺設定專屬的按鈕邊框與字體顏色 */
+        .card-audit .ldc-card-apply-btn {
+            border-color: #86BC25;
+            color: #86BC25;
+        }
+        .card-digital .ldc-card-apply-btn {
+            border-color: #0D8390;
+            color: #0D8390;
+        }
+        .card-intern .ldc-card-apply-btn {
+            border-color: #007CB0;
+            color: #007CB0;
+        }
+
+        /* 按鈕 Hover 效果：滿版填色，背景一律轉為高質感的 Deloitte 黑色 #000000 */
+        .ldc-card-apply-btn:hover {
+            background-color: #000000 !important;
+            border-color: #000000 !important;
+            color: #ffffff !important;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ==========================================================================
+           【6. 響應式排版 (Responsive Design breakpoints)】
+           ========================================================================== */
+        /* 當螢幕寬度小於 1024px (平版直向或大螢幕手機)，網格變成 2 欄 */
+        @media (max-width: 1024px) {
+            .job-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 當螢幕寬度小於 768px (一般手機)，網格變為 1 欄，並且縮小大標題字體 */
+        @media (max-width: 768px) {
+            .internal-featured-position {
+                padding: 50px 0;
+            }
+            .position-main-title {
+                font-size: 28px;
+            }
+            .job-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .job-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 主要區塊 (區塊名稱已改為：internal-featured-position) -->
+<section class="internal-featured-position">
+    <div class="position-container">
+        
+        <!-- 標題區塊 (標題已修改為：LDC內部精選職缺) -->
+        <header class="position-header">
+            <span class="position-eyebrow">Internal Featured Position</span>
+            <h2 class="position-main-title">LDC內部精選職缺</h2>
+        </header>
+
+        <!-- 3 個 Job Cards 容器 -->
+        <div class="job-grid">
+            
+            <!-- Job Card 1: 審計專員 (使用主企業色 #86BC25) -->
+            <div class="job-card card-audit">
+                <div>
+                    <span class="job-card-title">LDC 領組 (台北)</span>
+                    <span class="job-card-loc">📍 台北</span>
+                </div>
+                
+                <a href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E8%AB%AE%E8%A9%A2%E6%9C%8D%E5%8B%99%E3%80%91LDC-%E5%B0%88%E6%A1%88%E6%9C%8D%E5%8B%99%E4%B8%AD%E5%BF%83-%E5%AF%A9%E8%A8%88%E5%B0%88%E5%93%A1%28%E5%8F%B0%E5%8C%97%29/553-zh_TW" target="_blank" class="ldc-card-apply-btn">立即投遞</a>
+            </div>
+
+            <!-- Job Card 2: 數位專員 (使用輔助色 #0D8390) -->
+            <div class="job-card card-digital">
+                <div>
+                    <span class="job-card-title">LDC 領組 (台中)</span>
+                    <span class="job-card-loc">📍 台中</span>
+                </div>
+                <!-- 單一地點的職缺，直接放按鈕超連結，不需要下拉選單 -->
+                <a href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E8%AB%AE%E8%A9%A2%E6%9C%8D%E5%8B%99%E3%80%91LDC-%E5%B0%88%E6%A1%88%E6%9C%8D%E5%8B%99%E4%B8%AD%E5%BF%83-%E6%95%B8%E4%BD%8D%E5%B0%88%E5%93%A1%28%E5%8F%B0%E5%8C%97%29/1098-zh_TW" target="_blank" class="ldc-card-apply-btn">立即投遞</a>
+            </div>
+
+            <!-- Job Card 3: 長期實習生 (使用輔助色 #007CB0) -->
+            <div class="job-card card-intern">
+                <div>
+                    <span class="job-card-title">LDC 領組 (高雄)</span>
+                    <span class="job-card-loc">📍 高雄</span>
+                </div>
+                
+                <a href="https://careers.apac.deloitte.com/Taiwan/job/FY27%E3%80%90%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E8%AB%AE%E8%A9%A2%E6%9C%8D%E5%8B%99%E3%80%91LDC-%E5%B0%88%E6%A1%88%E6%9C%8D%E5%8B%99%E4%B8%AD%E5%BF%83-%E5%AF%A6%E7%BF%92%E7%94%9F-%28%E5%8F%B0%E5%8C%97%29/1094-zh_TW" target="_blank" class="ldc-card-apply-btn">立即投遞</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
