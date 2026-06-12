@@ -452,8 +452,6 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
   <div class="container">
     <span class="eyebrow">Apply Now</span>
     <h2 class="section-title">Professional Stream</h2>
-    <p class="lead">完成履歷投遞後，將會收到TestGorilla線上測驗的通知，煩請於7日內盡速完成，若未完成將不會進入後續審查。<br>
-    另外為避免重複測驗，建議投遞以最符合您的興趣的專業領域為主</p>
     <div class="job-list">
       <!-- 職缺卡片 1：精算與保險諮詢 -->
       <article class="job-card">
