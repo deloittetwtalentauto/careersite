@@ -459,8 +459,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
           <h3 class="job-title">Actuarial & Insurance Stream</h3>
         </header>
         <p>地點：台北</p>
-        <p class="job-desc">
-Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決金融業實務挑戰，並深入精算模型建置、商品定價與風險管理等核心領域。在這裡，你將有機會接觸 IFRS 17 等業界標準，將數理統計專業應用於真實商業情境，轉化為具體的策略洞察，為職涯扎實累積專業實力。        </p>
+       
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -471,11 +470,7 @@ Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決�
         <header class="job-header">
           <h3 class="job-title">Technical Stream <br>(SAP / AI & Data / Full Stack)</h3>
         </header>
-        <p>地點：台北</p>
-        <p class="job-desc">
-聚焦於為客戶設計、開發與維護技術解決方案，你將以使用者體驗為出發點，深入了解客戶商業需求，並參與技術研究與原型開發，將技術專長實際發揮於真實商業場景中，涵蓋三大技術領域發展方向：SAP (ABAP 開發)、全端開發以及 AI & Data。
-
-        </p>
+        <p>地點：台北</p>      
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -487,9 +482,6 @@ Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決�
           <h3 class="job-title">Digital Transformation Stream<br> (Martech / SAP / HR Transformation)</h3>
         </header>
         <p>地點：台北</p>
-        <p class="job-desc">
-提供 ERP系統導入(SAP)、人資轉型(Human Resources Transformation)與客戶策略與設計三個不同的領域方向讓你深入探索。從使用者體驗出發，透過運用數據分析與設計思考，協助客戶將傳統系統接軌現代數位平台。將參與創新解決方案設計與實作，累積專案實戰經驗。
-        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -501,8 +493,6 @@ Deloitte 精算與保險團隊致力於協助企業運用數據分析，解決�
           <h3 class="job-title">Cyber Stream</h3>
         </header>
         <p>地點：台北</p>
-        <p class="job-desc">
-Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建立風險管理系統、協助威脅偵測與設計資安解決方案，並引導客戶遵循隱私法規。你將深入了解產業創新趨勢，運用批判性思維與數據分析來優化技術報告，在實作中確保資安防護與企業的商業目標緊密結合。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
@@ -514,8 +504,6 @@ Deloitte的資安團隊專注於協助企業應對新興資安威脅，參與建
           <h3 class="job-title">Finance Transformation Stream</h3>
         </header>
         <p>地點：台北</p>
-        <p class="job-desc">
-運用數位科技、雲端解決方案與數據分析，提供客戶全方位的財務轉型服務，實現財務職能現代化、提升效率並創造企業價值，協助企業應對複雜且快速變動的商業環境。        </p>
         <div class="job-actions">
           <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
