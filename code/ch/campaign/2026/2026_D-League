@@ -512,22 +512,22 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <!-- 職缺卡片 6： -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title"> Stream</h3>
+          <h3 class="job-title">ESG Stream</h3>
         </header>
         <p>地點：台北</p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ESG-STREAM/1140-en_US" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
 
       <!-- 職缺卡片 7： -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title"> Stream</h3>
+          <h3 class="job-title"> Risk Management Stream</h3>
         </header>
         <p>地點：台北</p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
+          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91RISK-MANAGEMENT-STREAM/1143-en_US" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
         </div>
       </article>
     </div>
