@@ -411,7 +411,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <div><strong>招募對象：</strong>大三以上同學</div>
       <div><strong>實習期間：</strong>4-5個月(從2026年8、9月至2026/12/31)</div>
       <div><strong>履歷投遞截止：</strong>即日起至2026/06/30（二）23:59（台灣時間）</div>
-      <div style="color: var(--brand);"><strong>(會依照實際情況滾動式調整，建議您盡早投遞)</strong></div>
+      <div style="color: var(--brand);"><strong>(會依照實際情況滾動式調整，建議盡早投遞)</strong></div>
     </div>
 
     <!-- 小提醒區塊（圓角外框與列點設計） -->
@@ -419,7 +419,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <div class="note-box-title">💡 小提醒：</div>
       <ul class="note-list">
         <li>完成履歷投遞後，將會收到 TestGorilla 線上測驗的通知，煩請於 7 日內盡速完成，若未完成將不會進入後續審查</li>
-        <li>為確保您能完整參與專案並獲得扎實的實習體驗，<strong>需每週上班天數達3天(24小時)以上</strong>（可配合學校課表彈性調整）</li>
+        <li>為確保你能完整參與專案並獲得扎實的實習體驗，<strong>需每週上班天數達3天(24小時)以上</strong>（可配合學校課表彈性調整）</li>
       </ul>
     </div>
 
