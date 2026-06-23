@@ -125,60 +125,79 @@ body {
 /* Apply Now 區（淡綠底） */
 .apply {background:var(--surface);}
 
-/* 職缺清單 */
-.job-list {display:grid;grid-template-columns:1fr;gap:16px;}
-@media (min-width:720px){
-  .job-list {grid-template-columns:1fr 1fr;}
+/* 職缺清單：改用 CSS Grid 實現完美的響應式佈局 */
+.job-list {
+  display: grid;
+  gap: 20px; /* 卡片間距 */
+  grid-template-columns: 1fr; /* 手機版預設一行 1 個 */
 }
 
-/* 卡片容器：設為 flex 佈局使內容可以垂直伸展 */
+/* 平板版：一行 2 個 */
+@media (min-width: 768px) {
+  .job-list {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* 電腦版：一行 4 個 */
+@media (min-width: 992px) {
+  .job-list {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+/* 卡片容器 */
 .job-card {
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:var(--shadow);
+  background: var(--card-bg, var(--card));
+  border: 1px solid var(--card-accent, var(--border)); /* 這裡將外框改為卡片專屬的同色系跳色 */
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* 定義每張卡片的跳色變數 (完美結合 Deloitte 品牌輔色) */
+.job-card:nth-child(1) { --card-accent: #53565A; --card-bg: #f4f6f6; }  /* 專業穩重的灰色調 */
+.job-card:nth-child(2) { --card-accent: var(--accent-4); --card-bg: #f2fafa; }  /* 藍綠色 */
+/* 修改第 3 個職缺 (Digital Transformation Stream) 為品牌綠色 */
+.job-card:nth-child(3) { --card-accent: var(--brand); --card-bg: #f9fdf5; }     /* 經典綠 */
+.job-card:nth-child(4) { --card-accent: var(--accent-3); --card-bg: #f2f7f4; }  /* 深綠色 */
+.job-card:nth-child(5) { --card-accent: var(--accent-1); --card-bg: #f6fcf4; }  /* 亮綠色 */
+.job-card:nth-child(6) { --card-accent: var(--brand); --card-bg: #f9fdf5; }      /* 經典綠 */
+.job-card:nth-child(7) { --card-accent: var(--accent-5); --card-bg: #f0f8fb; }  /* 藍色 (Risk Management) */
+
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,.08);
 }
 .job-header {
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:space-between;
   gap:12px;
 }
 .job-title {
   font-size:18px;
   margin:0;
-  color:#111;
+  color: var(--card-accent, var(--accent-3)) !important; /* 強制鎖定字體跳色 */
   font-weight:700;
+  line-height: 1.4;
 }
 .job-badge {
-  display:inline-block;
-  padding:6px 10px;
-  background:var(--brand);
-  color:var(--white);
-  border-radius:999px;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.3px;
-  white-space:nowrap;
+  gap: 6px;
+  padding: 6px 12px;
+  background: color-mix(in srgb, var(--card-accent) 8%, white); /* 背景自動混色變淡 */
+  color: var(--card-accent, var(--accent-3)); /* 文字跟著跳色 */
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  width: fit-content;
 }
-.job-info {
-  list-style:none;
-  margin:12px 0 16px;
-  padding:0;
-  color:#333;
-  font-size:14px;
-}
-.job-info li {margin:6px 0;}
-
-.job-desc {
-  margin: 12px 0 16px;
-  color: #444;
-  font-size: 14px;
-  line-height: 1.75;
-  text-align: justify;
+.location-badge svg {
+  stroke: var(--card-accent, var(--accent-3)); /* Icon跟著跳色 */
 }
 
 /* 按鈕容器：設為 flex 佈局使內容可以垂直伸展 */
@@ -208,19 +227,26 @@ body {
   line-height:1;
   transition:transform .06s ease, filter .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
 }
-.btn-primary {
-  background:var(--brand);
-  color:var(--white)!important;
-  border:2px solid var(--brand);
+
+/* 提升 CSS 權重 (Specificity)，徹底壓制招募系統的預設超連結黑字 */
+html body .dleague .job-card a.btn-primary,
+html body .dleague .job-card a.btn-primary:link,
+html body .dleague .job-card a.btn-primary:visited {
+  background: var(--card-accent, var(--brand)) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--card-accent, var(--brand)) !important;
+  -webkit-text-fill-color: #ffffff !important; /* 殺手鐧：防禦系統強制覆蓋文字顏色 */
 }
 
 /* 懸停(Hover)時變為精緻的黑底白字 */
-.btn-primary:hover {
-  background:var(--black);
-  color:var(--white);
-  border-color:var(--black);
+html body .dleague .job-card a.btn-primary:hover,
+html body .dleague .job-card a.btn-primary:focus {
+  background: #1a1a1a !important; 
+  color: #ffffff !important; 
+  border-color: #1a1a1a !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
-.btn-primary:active {transform:translateY(1px);}
+html body .dleague .job-card a.btn-primary:active {transform:translateY(1px);}
 
 /* 已截止/已結束按鈕樣式 */
 .btn-disabled {
@@ -358,7 +384,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
 @media (max-width:768px){
   .timeline-circles .steps {
     flex-direction:column;      /* 直向堆疊 */
-    align-items:center;         /* 水平置中每個 .step（含圈圈）*/
+    align-items:center;          /* 水平置中每個 .step（含圈圈）*/
     justify-content:flex-start; /* 取消 space-between 造成的上下撐開 */
     gap:20px;
   }
@@ -476,7 +502,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         </div>
       </article>
 
-      <!-- 職缺卡片 3：數位轉型諮詢 -->
+      <!-- 職缺卡片 3：數位轉型諮詢 (已調整為綠色) -->
       <article class="job-card">
         <header class="job-header">
           <h3 class="job-title">Digital Transformation Stream</h3>
