@@ -468,7 +468,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <!-- 職缺卡片 2：技術開發諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Technical Stream <br>(SAP / AI & Data / Full Stack)</h3>
+          <h3 class="job-title">Software Development Stream</h3>
         </header>
         <p>地點：台北</p>      
         <div class="job-actions">
@@ -479,7 +479,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <!-- 職缺卡片 3：數位轉型諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Digital Transformation Stream<br> (Martech / SAP / HR Transformation)</h3>
+          <h3 class="job-title">Digital Transformation Stream</h3>
         </header>
         <p>地點：台北</p>
         <div class="job-actions">
@@ -490,7 +490,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
       <!-- 職缺卡片 4：網路安全諮詢 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Cyber Stream</h3>
+          <h3 class="job-title">Cyber Security Stream</h3>
         </header>
         <p>地點：台北</p>
         <div class="job-actions">
