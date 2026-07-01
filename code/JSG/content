@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deloitte JSG 招募專頁</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // 在此設定 Deloitte 企業品牌色
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#86BC25',
+            'brand-hover': '#43B02A',
+            'brand-dark': '#046A38',
+            'brand-teal': '#0D8390',
+            'brand-blue': '#007CB0'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 全域字體與平滑設定 */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    /* iframe 影片的比例確保 */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 比例 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* 限制多行文字截斷 (為了專欄卡片排版整齊) */
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- ==========================================
+       區塊專屬導覽列 (黑底、按鈕置中)
+  =========================================== -->
+  <nav class="w-full bg-black relative z-10 pt-8 pb-4">
+    <!-- justify-center 置中，拉開按鈕間距 -->
+    <div class="w-[90%] max-w-[1400px] mx-auto flex items-center justify-center gap-10 md:gap-16">
+      
+      <!-- 語言切換按鈕：預留 border-b-[3px] 空間給底線，加入 tracking-widest 增加字距質感 -->
+      <button class="nav-lang-btn px-2 py-2 text-[14px] md:text-[16px] tracking-widest font-bold transition-all duration-300 border-b-[3px] focus:outline-none" data-lang="zh">
+        中文
+      </button>
+      <button class="nav-lang-btn px-2 py-2 text-[14px] md:text-[16px] tracking-widest font-bold transition-all duration-300 border-b-[3px] focus:outline-none" data-lang="ja">
+        日本語
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       區塊一：關於日商服務 (企業介紹 & 影片)
+  =========================================== -->
+  <section class="w-full py-12 md:py-20 bg-black">
+    <div class="w-[90%] max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-14 items-start">
+      
+      <!-- 左側：文字介紹 -->
+      <div class="text-left">
+        
+        <!-- Eyebrow -->
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase" data-lang-target="zh">
+          日商服務團隊
+        </div>
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase hidden" data-lang-target="ja">
+          日系企業サービスグループ
+        </div>
+        
+        <!-- 加入 !important 強制覆蓋招募系統的設定 -->
+        <h2 class="pl-4 border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight" style="color: #ffffff !important;" data-lang-target="zh">
+          關於日商服務
+        </h2>
+        <h2 class="pl-4 border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight hidden" style="color: #ffffff !important;" data-lang-target="ja">
+          日系企業サービスについて
+        </h2>
+        
+        <!-- 內文也加上 !important -->
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300" style="color: #e5e7eb !important;" data-lang-target="zh">
+          勤業眾信台灣日系企業服務小組（台灣JSG）自1988年成立以來，已陪伴在台日系企業走過三十餘年。
+          我們台灣JSG致力於從日系企業踏出進軍台灣的第一步起，即提供全方位的支援，
+          目標是在審計、稅務、併購、風險顧問、管理顧問等各專業領域中，
+          提供一站式的整合服務。
+        </p>
+        
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 hidden" style="color: #e5e7eb !important;" data-lang-target="ja">
+          デロイト台湾日系企業サービスグループ（台湾JSG）は、1988年に発足し、
+          以来、30数年にわたり台湾における日系企業の皆様とともに歩んでまいりました。
+          我々台湾JSGは、日系企業の皆様を台湾進出の第一歩からサポートし、
+          監査、税務、M&A、リスク・アドバイザリー、コンサルティングなど
+          各専門分野において、ワンストップのサービスを提供することを目標としています。
+        </p>
+        
+        <!-- 了解更多按鈕 -->
+        <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html?icid=top_deloitte-tw-jsg"
+           target="_blank"
+           data-lang-target="zh"
+           class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">
+          &gt; 更多關於 JSG
+        </a>
+        <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html?icid=top_deloitte-tw-jsg"
+           target="_blank"
+           data-lang-target="ja"
+           class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md hidden">
+          &gt; JSG についてもっと知る
+        </a>
+      </div>
+
+      <!-- 右側：影片 -->
+      <div class="w-full bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-800">
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/5PmHWmzXDG4?autoplay=1&mute=1&loop=1&playlist=5PmHWmzXDG4&controls=0&modestbranding=1&showinfo=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       區塊二：JSG 人物介紹 / 團隊見證 (Quotes)
+  =========================================== -->
+  <section class="w-full py-16 md:py-24 bg-[#f5f5f5]">
+    <div class="w-[90%] max-w-[1400px] mx-auto">
+      
+      <!-- 標題區 -->
+      <div class="mb-10 md:mb-14 text-center md:text-left">
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">我們的團隊</div>
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">私たちのチーム</div>
+        
+        <h2 class="text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">認識 JSG 團隊</h2>
+        <h2 class="text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="ja">チーム紹介</h2>
+        
+        <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-3xl mx-auto md:mx-0" data-lang-target="zh">
+          歡迎加入 JSG 團隊，這裡有來自審計、稅務與顧問服務等不同領域的夥伴，與你分享服務日商客戶的實務經驗。
+        </p>
+        <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-3xl mx-auto md:mx-0 hidden" data-lang-target="ja">
+          JSGチームへようこそ。<br>監査・税務・アドバイザリーサービスなど、さまざまな分野のメンバーが在籍し、日系企業向けサービスの実務経験を共有しています。
+        </p>
+      </div>
+
+      <!-- 卡片列表：三欄排版 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- 卡片 1 -->
+        <article class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <figure class="flex flex-col items-center gap-3 m-0">
+            <div class="w-[110px] h-[110px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden border-[3px] border-brand bg-gray-100">
+              <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/Profile/Yao%20Spencer.jpg" alt="姚勝雄 Spencer Yao" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center leading-[1.4]">
+              <p class="text-[15px] font-bold text-gray-900 m-0">姚勝雄 Spencer Yao</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">資深會計師</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">シニア会計士</p>
+            </div>
+          </figure>
+          <blockquote class="m-0 p-3 pl-4 border-l-[3px] border-brand flex-grow bg-gray-50/50 rounded-r-lg">
+            <p class="mentor-quote-text text-[15px] leading-[1.8] text-gray-800 transition-all duration-300 transform"
+               data-zh="加入Deloitte JSG你有機會接觸日商經營管理，或伴隨著台商赴日投資一同前往日本提供服務，無論審計或顧問服務，你將有機會與我們立足台灣、放眼國際。"
+               data-ja="Deloitte Taiwan JSG に加わることで、日系企業の経営管理案件に携わる機会に加え、日本への投資を行う台湾企業に伴走し、現地でサービスを提供する機会が得られます。監査・アドバイザリーのいずれにおいても、台湾に根ざしつつ、国際的な視野で活躍していただけます。">
+              加入Deloitte JSG你有機會接觸日商經營管理，或伴隨著台商赴日投資一同前往日本提供服務，無論審計或顧問服務，你將有機會與我們立足台灣、放眼國際。
+            </p>
+          </blockquote>
+        </article>
+
+        <!-- 卡片 2 -->
+        <article class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <figure class="flex flex-col items-center gap-3 m-0">
+            <div class="w-[110px] h-[110px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden border-[3px] border-brand bg-gray-100">
+              <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/Profile/Hiromitsu%20Harada.jpg" alt="原田 浩光 Hiromitsu Harada" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center leading-[1.4]">
+              <p class="text-[15px] font-bold text-gray-900 m-0">原田 浩光 Hiromitsu Harada</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">資深執行副總經理</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">シニア執行副総経理</p>
+            </div>
+          </figure>
+          <blockquote class="m-0 p-3 pl-4 border-l-[3px] border-brand flex-grow bg-gray-50/50 rounded-r-lg">
+            <p class="mentor-quote-text text-[15px] leading-[1.8] text-gray-800 transition-all duration-300 transform"
+               data-zh="可透過專案分工、訓練與回饋機制，逐步建立可轉移的工作方法與產出節奏。"
+               data-ja="役割分担、研修、フィードバックの仕組みを通じて、再現可能な働き方とアウトプットの作り方を身につけられます。">
+              可透過專案分工、訓練與回饋機制，逐步建立可轉移的工作方法與產出節奏。
+            </p>
+          </blockquote>
+        </article>
+
+        <!-- 卡片 3 -->
+        <article class="bg-white border border-gray-200 rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:shadow-lg transition-shadow duration-300">
+          <figure class="flex flex-col items-center gap-3 m-0">
+            <div class="w-[110px] h-[110px] md:w-[120px] md:h-[120px] rounded-full overflow-hidden border-[3px] border-brand bg-gray-100">
+              <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/Profile/Haruhiko%20Kondo.jpg" alt="近藤 晴彥 Haruhiko Kondo" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center leading-[1.4]">
+              <p class="text-[15px] font-bold text-gray-900 m-0">近藤 晴彥 Haruhiko Kondo</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">資深執行副總經理</p>
+              <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">シニア執行副総経理</p>
+            </div>
+          </figure>
+          <blockquote class="m-0 p-3 pl-4 border-l-[3px] border-brand flex-grow bg-gray-50/50 rounded-r-lg">
+            <p class="mentor-quote-text text-[15px] leading-[1.8] text-gray-800 transition-all duration-300 transform"
+               data-zh="建議以可量化的交付項目設定目標，並在固定節點回顧成果與下一步行動。"
+               data-ja="測定可能な成果物を目標に設定し、節目ごとに結果と次のアクションをレビューすることを勧めます。">
+              建議以可量化的交付項目設定目標，並在固定節點回顧成果與下一步行動。
+            </p>
+          </blockquote>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       區塊三：專欄文章 / 專家觀點 (Insights)
+  =========================================== -->
+  <section class="w-full py-16 md:py-24 bg-white">
+    <div class="w-[90%] max-w-[1400px] mx-auto">
+      
+      <!-- 標題區 -->
+      <div class="mb-10 md:mb-14 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">專家觀點</div>
+          <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">専門家の視点</div>
+          
+          <h2 class="text-[28px] md:text-[36px] font-bold text-black m-0" data-lang-target="zh">JSG 專欄文章</h2>
+          <h2 class="text-[28px] md:text-[36px] font-bold text-black m-0 hidden" data-lang-target="ja">JSG コラム・インサイト</h2>
+        </div>
+        
+        <!-- 可選：查看更多按鈕 (桌面版靠右) -->
+        <a href="#" class="hidden md:inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors" data-lang-target="zh">
+          探索更多文章 <span class="ml-1">&rarr;</span>
+        </a>
+        <a href="#" class="hidden md:inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors hidden" data-lang-target="ja">
+          もっと記事を見る <span class="ml-1">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- 專欄卡片列表 (3欄) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 專欄 1 -->
+        <article class="group cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <!-- 圖片預覽 -->
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
+            <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+1" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-black/80 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">審計服務</div>
+            <div class="absolute top-4 left-4 bg-black/80 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">監査サービス</div>
+          </div>
+          <!-- 內文區塊 -->
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">跨國企業在台投資的法規挑戰與機遇解析</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">多国籍企業の台湾投資における法規制の課題と機会</h3>
+            
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
+              隨著供應鏈重組，越來越多日系企業選擇在台灣設立據點或擴大投資。本文將深入解析最新的合規要求，並提供實務上的前瞻性應對策略。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
+              サプライチェーンの再編に伴い、台湾に拠点を設立する日系企業が増加しています。最新のコンプライアンス要件を深く掘り下げ、実務的な対応策を提供します。
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
+              <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="ja" class="hidden">続きを読む</span>
+              <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 專欄 2 -->
+        <article class="group cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
+            <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+2" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-brand text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">職涯發展</div>
+            <div class="absolute top-4 left-4 bg-brand text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">キャリア</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">從 JSG 走向國際：建立你的專業護城河</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">JSGからグローバルへ：プロフェッショナルとしての基盤構築</h3>
+            
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
+              在 JSG 不僅是服務日商，更是累積跨國專案經驗的絕佳平台。聽聽資深同仁分享他們是如何透過專案實戰，培養出具備國際視野的專業能力。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
+              JSGは日系企業を支援するだけでなく、クロスボーダー案件の経験を積む絶好の環境です。シニアメンバーが国際的な専門スキルの磨き方を共有します。
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
+              <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="ja" class="hidden">続きを読む</span>
+              <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 專欄 3 -->
+        <article class="group cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
+            <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+3" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-4 left-4 bg-gray-800 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">產業趨勢</div>
+            <div class="absolute top-4 left-4 bg-gray-800 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">業界トレンド</div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">ESG 永續轉型：在台日系企業的最佳實踐案例</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">ESGトランスフォーメーション：台湾日系企業のベストプラクティス</h3>
+            
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
+              永續發展已成為企業核心競爭力。我們整理了多個日商成功推動綠色轉型的第一手觀察，探討如何在合規標準與商業創新中取得完美平衡。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
+              サステナビリティは企業のコア競争力です。成功した日系企業のグリーン転換事例をまとめ、コンプライアンスとイノベーションのバランスを探ります。
+            </p>
+            
+            <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
+              <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="ja" class="hidden">続きを読む</span>
+              <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+      
+      <!-- 手機版：探索更多按鈕 (置中顯示) -->
+      <div class="mt-8 text-center md:hidden">
+        <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors bg-white border border-brand px-6 py-2 rounded-full" data-lang-target="zh">
+          探索更多文章
+        </a>
+        <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors bg-white border border-brand px-6 py-2 rounded-full hidden" data-lang-target="ja">
+          もっと記事を見る
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navButtons = Array.from(document.querySelectorAll(".nav-lang-btn"));
+      const quotes = Array.from(document.querySelectorAll(".mentor-quote-text"));
+      const zhElements = Array.from(document.querySelectorAll('[data-lang-target="zh"]'));
+      const jaElements = Array.from(document.querySelectorAll('[data-lang-target="ja"]'));
+      let current = ""; // 初始化為空
+
+      // 設定導覽列按鈕的外觀 (文字顏色 + 企業色底線)
+      function updateButtonStyles(activeLang) {
+        navButtons.forEach(btn => {
+          const isMatch = btn.dataset.lang === activeLang;
+          if (isMatch) {
+            // 啟用狀態：白色字體 + 企業綠底線
+            btn.classList.add("text-white", "border-brand");
+            btn.classList.remove("text-gray-500", "border-transparent", "hover:text-gray-300");
+          } else {
+            // 未啟用狀態：灰色字體 + 透明底線
+            btn.classList.remove("text-white", "border-brand");
+            btn.classList.add("text-gray-500", "border-transparent", "hover:text-gray-300");
+          }
+        });
+      }
+
+      // 切換語言功能
+      function switchLang(lang) {
+        if (lang === current) return;
+        
+        // 1. 卡片引言文字先加入淡出與位移的 CSS class
+        quotes.forEach(q => {
+          q.classList.add("opacity-0", "-translate-y-2");
+        });
+
+        // 2. 標題與簡介文字瞬間切換 (透過 Tailwind 的 hidden)
+        if (lang === 'zh') {
+          zhElements.forEach(el => el.classList.remove('hidden'));
+          jaElements.forEach(el => el.classList.add('hidden'));
+        } else {
+          zhElements.forEach(el => el.classList.add('hidden'));
+          jaElements.forEach(el => el.classList.remove('hidden'));
+        }
+
+        // 3. 等待 200 毫秒後，替換人物卡片引言內容並淡入
+        setTimeout(() => {
+          quotes.forEach(q => {
+            q.textContent = q.dataset[lang] || q.textContent;
+            q.classList.remove("opacity-0", "-translate-y-2");
+          });
+        }, 200);
+
+        updateButtonStyles(lang);
+        current = lang;
+      }
+
+      // 監聽導覽列的點擊事件
+      navButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          switchLang(btn.dataset.lang);
+        });
+      });
+
+      // 畫面初始載入時，預設顯示「中文」
+      switchLang("zh");
+    });
+  </script>
+
+</body>
+</html>
