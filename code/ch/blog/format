@@ -1,0 +1,390 @@
+<style>
+        /* =========================================
+           自訂原生 CSS (Jobs2Web/ATS 專用)
+           保證排版不跑版，不依賴外部腳本
+        ========================================= */
+        .hr-article-wrapper {
+            max-width: 1024px; /* 設定電腦版最大寬度 */
+            width: 100%;
+            /* ★ 調整這裡：大幅增加 margin-top 到 160px，並加上 padding，確保絕不被導覽列遮擋 */
+            margin: 160px auto 40px auto; 
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+            font-family: 'Noto Sans TC', "Microsoft JhengHei", sans-serif;
+            box-sizing: border-box;
+            color: #333333;
+            line-height: 1.8;
+            /* ★ 新增：如果 margin 還是失效，用 padding-top 加上 margin-top 雙管齊下 */
+            padding-top: 60px;
+        }
+
+        /* 標題與頭部區塊 */
+        .hr-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        .hr-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(134, 188, 37, 0.15); /* 企業主色淡化 */
+            color: #26890D;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .hr-h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.3;
+            margin: 0 0 20px 0;
+        }
+        .hr-author-box {
+            display: flex;
+            align-items: center;
+            color: #666;
+            font-size: 14px;
+        }
+        .hr-avatar {
+            width: 48px;
+            height: 48px;
+            background-color: #86BC25; /* 企業主色 */
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .hr-author-info p {
+            margin: 0;
+            font-weight: bold;
+            color: #000;
+            font-size: 16px;
+        }
+
+        /* 圖片區塊 */
+        .hr-hero-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: block;
+        }
+        .hr-img-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* 內文排版 */
+        .hr-content p {
+            font-size: 18px;
+            margin-bottom: 24px;
+            color: #444;
+        }
+        .hr-intro {
+            font-size: 20px !important;
+            font-weight: 500;
+            color: #000 !important;
+            margin-bottom: 30px !important;
+        }
+        
+        /* H2 區塊標題 */
+        .hr-h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin: 48px 0 20px 0;
+            display: flex;
+            align-items: center;
+        }
+        .hr-h2-line {
+            width: 6px;
+            height: 24px;
+            background-color: #86BC25;
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+        
+        /* H3 次級標題 */
+        .hr-h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000;
+            margin: 32px 0 16px 0;
+        }
+
+        /* 引言區塊 */
+        .hr-quote {
+            margin: 40px 0;
+            padding: 24px 24px 24px 30px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #86BC25;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+        .hr-quote p {
+            font-size: 20px;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .hr-quote-footer {
+            font-size: 15px;
+            font-weight: bold;
+            color: #0D8390;
+        }
+
+        /* 清單樣式 */
+        .hr-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+        .hr-list-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #fcfcfc;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-bottom: 16px;
+            transition: border 0.3s;
+        }
+        .hr-list-item:hover {
+            border-color: #86BC25;
+        }
+        .hr-list-icon {
+            margin-right: 16px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            background-color: rgba(134, 188, 37, 0.15);
+            padding: 6px;
+            border-radius: 50%;
+        }
+        .hr-list-content strong {
+            display: block;
+            font-size: 18px;
+            color: #000;
+            margin-bottom: 5px;
+        }
+        .hr-list-content span {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* 推薦文章區塊 */
+        .hr-related-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+        .hr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .hr-card {
+            display: block;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.3s;
+        }
+        .hr-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .hr-card-img-wrap {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hr-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hr-card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(255,255,255,0.95);
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        .hr-tag-1 { color: #0D8390; }
+        .hr-tag-2 { color: #007CB0; }
+        
+        .hr-card-body {
+            padding: 20px;
+        }
+        .hr-card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #111;
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+        .hr-card-time {
+            font-size: 14px;
+            color: #888;
+            margin: 0;
+        }
+
+        /* 手機版響應式設定 */
+        @media (max-width: 768px) {
+            .hr-article-wrapper { padding: 20px; }
+            .hr-h1 { font-size: 28px; }
+            .hr-grid { grid-template-columns: 1fr; } /* 手機版變單欄 */
+            .hr-quote p { font-size: 18px; }
+        }
+    </style>
+</head>
+<body style="background-color: #f4f5f7; padding: 20px;">
+
+<!-- 
+  =========================================
+  專欄內文樣式區塊開始 (Copy Start Here)
+  請從下方 <section> 開始複製，貼入 Jobs2Web 編輯器中
+  =========================================
+-->
+<section class="hr-article-wrapper">
+    
+    <!-- 文章頭部 -->
+    <section class="hr-header">
+        <span class="hr-tag">日商文化</span>
+        <h1 class="hr-h1">【HR專欄】傳承「一期一會」的服務精神：揭秘我們的日商企業文化與人才培育藍圖</h1>
+        
+        <div class="hr-author-box">
+            <div class="hr-avatar">HR</div>
+            <div class="hr-author-info">
+                <p>人才招募團隊 (Talent Acquisition)</p>
+                <span style="font-size: 13px; color: #999;">2023 年 10 月 25 日 ｜ 閱讀時間約 5 分鐘</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主視覺圖 -->
+    <section style="margin-bottom: 40px;">
+        <img src="https://placehold.co/1000x500/86BC25/ffffff?text=Omotenashi+Service" alt="日系服務精神示意圖" class="hr-hero-img">
+        <div class="hr-img-caption">圖 1：揉合傳統日式款待精神與現代創新，我們打造具溫度的服務體驗。</div>
+    </section>
+
+    <!-- 文章內文 -->
+    <section class="hr-content">
+        
+        <p class="hr-intro">提到日商，許多人腦海中浮現的第一個詞往往是「嚴謹」或「高標準」。然而，在這些標準背後，支撐我們每日營運的核心，其實是一份對「人」的細膩關懷。</p>
+
+        <p>身為招募團隊，我們最常被面試者問到的問題就是：「沒有日商經驗可以加入嗎？」這篇文章將帶你深入了解我們引以為傲的日系服務文化，以及我們如何透過扎實的培育計畫，讓每一位夥伴都能從細節中淬鍊出專業的職人精神。</p>
+
+        <div class="hr-h2">
+            <div class="hr-h2-line"></div>
+            究極的「款待精神 (Omotenashi)」
+        </div>
+        
+        <p>「Omotenashi」不僅僅是微笑服務，而是能夠在顧客開口前，就察覺他們的需求並預先準備。我們相信，服務的最高境界，是讓每一位接觸到我們品牌的顧客，都能感受到彷彿回到家一般的安心與尊榮。</p>
+
+        <!-- 引言區塊 -->
+        <div class="hr-quote">
+            <p>每一次與客人的相遇都是「一期一會」。我們不只是提供服務，更是在創造無可取代的回憶。你的細心與熱忱，就是品牌最大的價值。</p>
+            <div class="hr-quote-footer">台灣區總經理 (General Manager)</div>
+        </div>
+
+        <div class="hr-h3">職人精神的傳承與實踐</div>
+        <p>在我們的團隊中，每一位員工都是傳遞服務價值的「職人」。我們不追求速成，而是重視基本功的累積。從一句簡單的問候（挨拶，Aisatsu）到標準作業流程（SOP）的精進，每一個細節都蘊含著對專業的堅持。</p>
+
+        <div class="hr-h2">
+            <div class="hr-h2-line"></div>
+            完善的日系培育與職涯藍圖 (OJT & Career Path)
+        </div>
+
+        <p>即使你沒有日商背景，也不用擔心！我們擁有業界著名的完善培訓制度，為你打下最穩固的基礎：</p>
+
+        <!-- 特色清單 -->
+        <ul class="hr-list">
+            <li class="hr-list-item">
+                <div class="hr-list-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86BC25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="hr-list-content">
+                    <strong>專屬「前輩 (Senpai)」指導制度</strong>
+                    <span>落實日商特有的 OJT (On-the-Job Training)。每位新人都有專屬的資深前輩一對一帶領，不僅傳授工作技能，更協助你適應企業文化。</span>
+                </div>
+            </li>
+            <li class="hr-list-item">
+                <div class="hr-list-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86BC25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="hr-list-content">
+                    <strong>赴日研修與跨國交流機會</strong>
+                    <span>表現優異者有機會獲得日本總部的研修資格，體驗最道地的日式服務哲學，並與跨國菁英進行實務交流。</span>
+                </div>
+            </li>
+            <li class="hr-list-item">
+                <div class="hr-list-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#86BC25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="hr-list-content">
+                    <strong>日語學習與專業證照補助</strong>
+                    <span>我們鼓勵夥伴持續學習！提供日文檢定 (JLPT) 考照補助及內部語言課程，幫助你在職涯上創造更多可能。</span>
+                </div>
+            </li>
+        </ul>
+
+        <p style="font-weight: 500; color: #000; margin-top: 40px;">加入我們，不只是擁有了一份工作，更是學會一種對細節與品質堅持的生活態度。如果你也認同「款待精神」，歡迎查看目前的招募職缺，我們期待你的加入！</p>
+    </section>
+
+    <!-- 更多推薦文章 -->
+    <section class="hr-related-section">
+        <div class="hr-h2" style="margin-top: 0;">
+            <div class="hr-h2-line"></div>
+            更多推薦文章
+        </div>
+        
+        <div class="hr-grid">
+            <!-- 推薦文章 1 -->
+            <a href="#" class="hr-card">
+                <div class="hr-card-img-wrap">
+                    <img src="https://placehold.co/600x400/0D8390/ffffff?text=Employee+Story" class="hr-card-img" alt="員工故事">
+                    <div class="hr-card-tag hr-tag-1">員工故事</div>
+                </div>
+                <div class="hr-card-body">
+                    <h4 class="hr-card-title">【員工故事】從初心到職人：我在日商學到的細節與堅持</h4>
+                    <p class="hr-card-time">閱讀時間 4 分鐘</p>
+                </div>
+            </a>
+
+            <!-- 推薦文章 2 -->
+            <a href="#" class="hr-card">
+                <div class="hr-card-img-wrap">
+                    <img src="https://placehold.co/600x400/007CB0/ffffff?text=Interview+Tips" class="hr-card-img" alt="面試指南">
+                    <div class="hr-card-tag hr-tag-2">面試指南</div>
+                </div>
+                <div class="hr-card-body">
+                    <h4 class="hr-card-title">【面試指南】前進日商！HR 教你如何展現日系企業看重的特質</h4>
+                    <p class="hr-card-time">閱讀時間 6 分鐘</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</section>
