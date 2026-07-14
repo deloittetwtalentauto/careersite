@@ -201,8 +201,8 @@
             </p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">姚勝雄 Spencer Yao</h4>
-            <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">台日跨境策略服務營運長/資深會計師</p>
-            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">(待補)/シニア会計士</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">台日跨境策略服務營運長<br>資深會計師</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">(待補)<br>シニア会計士</p>
           </div>
         </div>
 
