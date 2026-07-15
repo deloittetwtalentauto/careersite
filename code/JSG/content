@@ -287,14 +287,14 @@ JSGは、日本と台湾をつなぐ架け橋として、多様な専門家が�
           </div>
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-              擁抱挑戰是成長的最佳途徑。無論是在地深耕或是跨國專案，JSG 都能提供多樣化的舞台，讓你成就非凡職涯。
+              JSG是一個讓多元夥伴彼此學習、相互支持並共同成長的團隊。我們誠摯歡迎你加入連結日本與台灣的新挑戰。
             </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
-              Embracing challenges is the best way to grow. Whether it's localized deep-diving or cross-border projects, JSG provides diverse platforms for you to achieve an extraordinary career.
-            </p>
+JSG is a team where diverse colleagues learn from and support one another as they grow. We warmly welcome you to take on new challenges connecting Japan and Taiwan.
+</p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-              挑戦を受け入れることが成長への近道です。国内案件でもクロスボーダー案件でも、JSGは多様な舞台を提供し、あなたの素晴らしいキャリア形成をサポートします。
-            </p>
+JSGは、多様な仲間が互いに学び合い、支え合いながら成長できるチームです。日本と台湾をつなぐ新しい挑戦を、私たちは心より歓迎します。
+</p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">山崎拓史 Takushi Yamasaki</h4>
             <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">執行副總經理</p>
