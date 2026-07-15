@@ -72,10 +72,13 @@
        區塊專屬導覽列 (黑底、按鈕置中)
   =========================================== -->
   <nav class="w-full bg-black relative z-10 pt-8 pb-4">
-    <div class="w-[90%] max-w-[1400px] mx-auto flex items-center justify-center gap-10 md:gap-16">
+    <div class="w-[90%] max-w-[1400px] mx-auto flex items-center justify-center gap-6 md:gap-16">
       
       <button class="nav-lang-btn px-2 py-2 text-[14px] md:text-[16px] tracking-widest font-bold transition-all duration-300 border-b-[3px] focus:outline-none" data-lang="zh">
         中文
+      </button>
+      <button class="nav-lang-btn px-2 py-2 text-[14px] md:text-[16px] tracking-widest font-bold transition-all duration-300 border-b-[3px] focus:outline-none" data-lang="en">
+        English
       </button>
       <button class="nav-lang-btn px-2 py-2 text-[14px] md:text-[16px] tracking-widest font-bold transition-all duration-300 border-b-[3px] focus:outline-none" data-lang="ja">
         日本語
@@ -90,32 +93,41 @@
   <section class="w-full py-12 md:py-20 bg-black">
     <div class="w-[90%] max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-[45%_55%] gap-10 md:gap-14 items-start">
       
-      <!-- 左側：文字介紹 (改為手機置中、電腦靠左) -->
+      <!-- 左側：文字介紹 -->
       <div class="text-center md:text-left">
         
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase" data-lang-target="zh">
           日商服務團隊
         </div>
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase hidden" data-lang-target="en">
+          Japanese Services Group
+        </div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase hidden" data-lang-target="ja">
           日系企業サービスグループ
         </div>
         
-        <!-- 標題：手機版移除左邊框以配合置中，電腦版恢復左邊框 -->
-        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight" style="color: #ffffff !important;" data-lang-target="zh">
+        <!-- 標題 -->
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white" data-lang-target="zh">
           關於日商服務
         </h2>
-        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight hidden" style="color: #ffffff !important;" data-lang-target="ja">
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white hidden" data-lang-target="en">
+          About JSG
+        </h2>
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white hidden" data-lang-target="ja">
           日系企業サービスについて
         </h2>
         
-        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300" style="color: #e5e7eb !important;" data-lang-target="zh">
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200" data-lang-target="zh">
           勤業眾信台灣日系企業服務小組（台灣JSG）自1988年成立以來，已陪伴在台日系企業走過三十餘年。
           我們台灣JSG致力於從日系企業踏出進軍台灣的第一步起，即提供全方位的支援，
           目標是在審計、稅務、併購、風險顧問、管理顧問等各專業領域中，
           提供一站式的整合服務。
         </p>
-        
-        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 hidden" style="color: #e5e7eb !important;" data-lang-target="ja">
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 hidden" data-lang-target="en">
+          Since its establishment in 1988, the Deloitte Taiwan Japanese Services Group (Taiwan JSG) has accompanied Japanese enterprises in Taiwan for over 30 years. 
+          Taiwan JSG is committed to providing comprehensive support from the very first step of entering the Taiwan market, aiming to offer one-stop integrated services across professional fields including audit, tax, M&A, risk advisory, and management consulting.
+        </p>
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 hidden" data-lang-target="ja">
           デロイト台湾日系企業サービスグループ（台湾JSG）は、1988年に発足し、
           以来、30数年にわたり台湾における日系企業の皆様とともに歩んでまいりました。
           我々台湾JSGは、日系企業の皆様を台湾進出の第一歩からサポートし、
@@ -129,6 +141,13 @@
              target="_blank"
              class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">
             &gt; 更多關於 JSG
+          </a>
+        </div>
+        <div data-lang-target="en" class="hidden">
+          <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html?icid=top_deloitte-tw-jsg"
+             target="_blank"
+             class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">
+            &gt; Discover More
           </a>
         </div>
         <div data-lang-target="ja" class="hidden">
@@ -160,18 +179,21 @@
   <section class="w-full py-16 md:py-24 bg-[#f5f5f5]">
     <div class="w-[90%] max-w-[1200px] mx-auto">
       
-      <!-- 標題區 (手機置中，電腦靠左) -->
+      <!-- 標題區 -->
       <div class="mb-12 md:mb-20 text-center md:text-left">
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">我們的團隊</div>
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="en">Our Team</div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">私たちのチーム</div>
         
-        <!-- 標題：手機版移除左邊框與內距，電腦版恢復左邊框 -->
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">認識 JSG 團隊</h2>
+        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="en">Meet the JSG Team</h2>
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="ja">チーム紹介</h2>
         
-        <!-- 增加 mx-auto md:mx-0 讓限制寬度的段落在手機版也能完美置中 -->
         <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-2xl mx-auto md:mx-0" data-lang-target="zh">
           歡迎加入 JSG 團隊，這裡有來自審計、稅務與顧問服務等不同領域的夥伴，聽聽他們服務日商客戶的真實體驗。
+        </p>
+        <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-2xl mx-auto md:mx-0 hidden" data-lang-target="en">
+          Welcome to the JSG team. Hear from our professionals across audit, tax, and advisory services as they share their real-world experiences serving Japanese clients.
         </p>
         <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-2xl mx-auto md:mx-0 hidden" data-lang-target="ja">
           JSGチームへようこそ。監査・税務・アドバイザリーサービスなど、さまざまな分野のメンバーの実務経験をお聞きください。
@@ -183,109 +205,103 @@
         
         <!-- ================= 人物 1 ================= -->
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start group">
-          <!-- 頭像 (手機版置中，電腦版靠左) -->
           <div class="shrink-0 relative">
             <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Yao%20Spencer.jpg" 
                  alt="Spencer Yao" 
                  class="w-[90px] h-[90px] md:w-[110px] md:h-[110px] rounded-full object-cover shadow-sm group-hover:shadow-md transition-shadow duration-300">
-            <!-- 綠色引號裝飾 -->
             <div class="absolute -top-3 -left-3 text-[50px] font-serif text-brand leading-none select-none opacity-80">"</div>
           </div>
-          <!-- 內文與資訊 (手機版置中，電腦版靠左) -->
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-              加入Deloitte JSG你有機會接觸日商經營管理，或伴隨著台商赴日投資一同前往日本提供服務，無論審計或顧問服務，你將有機會與我們立足台灣、放眼國際。
-            </p>
+加入Deloitte JSG你有機會接觸日商經營管理，或伴隨著台商赴日投資一同前往日本提供服務，無論審計或顧問服務，你將有機會與我們立足台灣、放眼國際。            </p>
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
+By joining Deloitte Taiwan JSG, you will have opportunities to engage in management engagements with Japanese enterprises, and to accompany Taiwanese clients investing in Japan to deliver services on the ground. Whether in Audit or Advisory, you will build your career rooted in Taiwan while working with a global perspective.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-              Deloitte Taiwan JSG に加わることで、日系企業の経営管理案件に携わる機会に加え、日本への投資を行う台湾企業に伴走し、現地でサービスを提供する機会が得られます。
-            </p>
+Deloitte Taiwan JSG に加わることで、日系企業の経営管理案件に携わる機会に加え、日本への投資を行う台湾企業に伴走し、現地でサービスを提供する機会が得られます。監査・アドバイザリーのいずれにおいても、台湾に根ざしつつ、国際的な視野で活躍していただけます。            </p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">姚勝雄 Spencer Yao</h4>
             <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">台日跨境策略服務營運長<br>資深會計師</p>
-            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">(待補)<br>シニア会計士</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="en">COO of Taiwan-Japan Cross-Border Strategic Services<br>Senior Partner</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">台湾・日本クロスボーダー戦略サービスCOO<br>シニアパートナー</p>
           </div>
         </div>
 
         <!-- ================= 人物 2 ================= -->
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start group">
-          <!-- 頭像 -->
           <div class="shrink-0 relative">
             <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Hiromitsu%20Harada.jpg" 
                  alt="Hiromitsu Harada" 
                  class="w-[90px] h-[90px] md:w-[110px] md:h-[110px] rounded-full object-cover shadow-sm group-hover:shadow-md transition-shadow duration-300">
             <div class="absolute -top-3 -left-3 text-[50px] font-serif text-brand leading-none select-none opacity-80">"</div>
           </div>
-          <!-- 內文與資訊 -->
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
+            JSG是一個連結日本與台灣的專業團隊，我們透過跨領域合作，協助客戶創造價值並持續成長。歡迎勇於挑戰、自我成長的人才加入，一起開創更精彩的未來。
             </p>
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
+JSG is a bridge between Japan and Taiwan, where diverse professionals work together to help clients grow and succeed. We welcome people who embrace challenges and are eager to learn and develop. Let’s build the future together.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
-            </p>
+JSGは、日本と台湾をつなぐ架け橋として、多様な専門家が協力しながらクライアントの成長を支援しています。新しい挑戦を楽しみ、自ら成長したい方を心より歓迎します。ぜひ私たちと共に未来を創りましょう。
+</p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">原田浩光 Hiromitsu Harada</h4>
             <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">資深執行副總經理</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="en">Senior Executive Vice President</p>
             <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">シニア執行副総経理</p>
           </div>
         </div>
 
         <!-- ================= 人物 3 ================= -->
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start group">
-          <!-- 頭像 -->
           <div class="shrink-0 relative">
             <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Haruhiko%20Kondo.jpg" 
                  alt="Haruhiko Kondo" 
                  class="w-[90px] h-[90px] md:w-[110px] md:h-[110px] rounded-full object-cover shadow-sm group-hover:shadow-md transition-shadow duration-300">
             <div class="absolute -top-3 -left-3 text-[50px] font-serif text-brand leading-none select-none opacity-80">"</div>
           </div>
-          <!-- 內文與資訊 -->
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
+             在 JSG，我們非常重視人才培育。只要你有渴望學習的心，勤業眾信豐富的全球資源都將成為你職涯成長的強大後盾。
+            </p>
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
+             At JSG, we highly value talent development. With a desire to learn, Deloitte's abundant global resources will become a strong backing for your career growth.
             </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
+             JSGでは人材育成を重視しています。学ぶ意欲があれば、デロイトの豊富なグローバルリソースがあなたのキャリア成長の強力な後ろ盾となります。
             </p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">近藤晴彥 Haruhiko Kondo</h4>
             <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">資深執行副總經理</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="en">Senior Executive Vice President</p>
             <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">シニア執行副総経理</p>
           </div>
         </div>
+
         <!-- ================= 人物 4 ================= -->
-<div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start group">
-          <!-- 頭像 -->
+        <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start group">
           <div class="shrink-0 relative">
             <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Yamasaki%20Takushi.jpg" 
-                 alt="" 
+                 alt="Takushi Yamasaki" 
                  class="w-[90px] h-[90px] md:w-[110px] md:h-[110px] rounded-full object-cover shadow-sm group-hover:shadow-md transition-shadow duration-300">
             <div class="absolute -top-3 -left-3 text-[50px] font-serif text-brand leading-none select-none opacity-80">"</div>
           </div>
-          <!-- 內文與資訊 -->
           <div class="flex-1 pt-2 text-center sm:text-left">
-            <!-- 中文引言 -->
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
+              擁抱挑戰是成長的最佳途徑。無論是在地深耕或是跨國專案，JSG 都能提供多樣化的舞台，讓你成就非凡職涯。
             </p>
-            <!-- 日文引言 -->
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
+              Embracing challenges is the best way to grow. Whether it's localized deep-diving or cross-border projects, JSG provides diverse platforms for you to achieve an extraordinary career.
+            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-（這是一段假文字，可以放一些對人選們想要說的話喔~）
+              挑戦を受け入れることが成長への近道です。国内案件でもクロスボーダー案件でも、JSGは多様な舞台を提供し、あなたの素晴らしいキャリア形成をサポートします。
             </p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
-            <!-- 姓名與職稱 -->
             <h4 class="text-[16px] font-bold text-black m-0">山崎拓史 Takushi Yamasaki</h4>
             <p class="text-[13px] text-gray-500 mt-1 m-0" data-lang-target="zh">執行副總經理</p>
+            <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="en">Executive Vice President</p>
             <p class="text-[13px] text-gray-500 mt-1 m-0 hidden" data-lang-target="ja">執行副総経理</p>
           </div>
         </div>
-
 
       </div>
     </div>
@@ -301,18 +317,23 @@
       <div class="mb-10 md:mb-14 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="text-center md:text-left w-full md:w-auto">
           <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">專家觀點</div>
+          <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="en">Expert Insights</div>
           <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">専門家の視点</div>
           
-          <!-- 標題：手機版移除左邊框與內距，電腦版恢復左邊框 -->
           <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black m-0" data-lang-target="zh">JSG 專欄文章</h2>
+          <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black m-0 hidden" data-lang-target="en">JSG Articles</h2>
           <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black m-0 hidden" data-lang-target="ja">JSG コラム・インサイト</h2>
         </div>
         
-        <!-- 可選：查看更多按鈕 (桌面版靠右 - 修正雙語重疊問題) -->
         <div class="hidden md:block">
           <div data-lang-target="zh">
             <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors">
               探索更多文章 <span class="ml-1">&rarr;</span>
+            </a>
+          </div>
+          <div data-lang-target="en" class="hidden">
+            <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors">
+              Explore More <span class="ml-1">&rarr;</span>
             </a>
           </div>
           <div data-lang-target="ja" class="hidden">
@@ -330,19 +351,22 @@
         <article class="group relative cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
           <a href="https://deloittecot2.valhalla50.stage.jobs2web.com/Taiwan/content/blog_test/?locale=zh_TW" target="_blank" class="absolute inset-0 z-10"></a>
 
-          <!-- 圖片預覽 -->
           <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
             <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+1" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute top-4 left-4 bg-black/80 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">審計服務</div>
+            <div class="absolute top-4 left-4 bg-black/80 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="en">Audit Services</div>
             <div class="absolute top-4 left-4 bg-black/80 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">監査サービス</div>
           </div>
-          <!-- 內文區塊 -->
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">跨國企業在台投資的法規挑戰與機遇解析</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="en">Regulatory Challenges and Opportunities for MNCs in Taiwan</h3>
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">多国籍企業の台湾投資における法規制の課題と機会</h3>
             
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
               隨著供應鏈重組，越來越多日系企業選擇在台灣設立據點或擴大投資。本文將深入解析最新的合規要求，並提供實務上的前瞻性應對策略。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="en">
+              With supply chain restructuring, more Japanese enterprises are establishing bases in Taiwan. This article dives deep into the latest compliance requirements and strategies.
             </p>
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
               サプライチェーンの再編に伴い、台湾に拠点を設立する日系企業が増加しています。最新のコンプライアンス要件を深く掘り下げ、実務的な対応策を提供します。
@@ -350,6 +374,7 @@
             
             <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
               <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="en" class="hidden">Read Full Article</span>
               <span data-lang-target="ja" class="hidden">続きを読む</span>
               <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>
@@ -358,19 +383,24 @@
 
         <!-- 專欄 2 -->
         <article class="group relative cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          <a href="在此貼上你的文章網址_2" target="_blank" class="absolute inset-0 z-10"></a>
+          <a href="#" target="_blank" class="absolute inset-0 z-10"></a>
 
           <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
             <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+2" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute top-4 left-4 bg-brand text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">職涯發展</div>
+            <div class="absolute top-4 left-4 bg-brand text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="en">Career Dev</div>
             <div class="absolute top-4 left-4 bg-brand text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">キャリア</div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">從 JSG 走向國際：建立你的專業護城河</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="en">Going Global with JSG: Building Your Professional Moat</h3>
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">JSGからグローバルへ：プロフェッショナルとしての基盤構築</h3>
             
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
               在 JSG 不僅是服務日商，更是累積跨國專案經驗的絕佳平台。聽聽資深同仁分享他們是如何透過專案實戰，培養出具備國際視野的專業能力。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="en">
+              Working in JSG is an excellent platform to accumulate cross-border project experience. Hear how our senior colleagues develop international perspectives.
             </p>
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
               JSGは日系企業を支援するだけでなく、クロスボーダー案件の経験を積む絶好の環境です。シニアメンバーが国際的な専門スキルの磨き方を共有します。
@@ -378,6 +408,7 @@
             
             <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
               <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="en" class="hidden">Read Full Article</span>
               <span data-lang-target="ja" class="hidden">続きを読む</span>
               <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>
@@ -386,19 +417,24 @@
 
         <!-- 專欄 3 -->
         <article class="group relative cursor-pointer flex flex-col bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          <a href="在此貼上你的文章網址_3" target="_blank" class="absolute inset-0 z-10"></a>
+          <a href="#" target="_blank" class="absolute inset-0 z-10"></a>
 
           <div class="aspect-[16/10] overflow-hidden bg-gray-100 relative">
             <img src="https://placehold.co/600x400/eeeeee/86BC25?text=Insight+3" alt="Article Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute top-4 left-4 bg-gray-800 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider" data-lang-target="zh">產業趨勢</div>
+            <div class="absolute top-4 left-4 bg-gray-800 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="en">Industry Trends</div>
             <div class="absolute top-4 left-4 bg-gray-800 text-white text-[12px] px-3 py-1 rounded-full font-semibold tracking-wider hidden" data-lang-target="ja">業界トレンド</div>
           </div>
           <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors" data-lang-target="zh">ESG 永續轉型：在台日系企業的最佳實踐案例</h3>
+            <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="en">ESG Transformation: Best Practices for Japanese Firms in Taiwan</h3>
             <h3 class="text-[18px] font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-brand transition-colors hidden" data-lang-target="ja">ESGトランスフォーメーション：台湾日系企業のベストプラクティス</h3>
             
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed" data-lang-target="zh">
               永續發展已成為企業核心競爭力。我們整理了多個日商成功推動綠色轉型的第一手觀察，探討如何在合規標準與商業創新中取得完美平衡。
+            </p>
+            <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="en">
+              Sustainability is now a core competitive advantage. We have compiled first-hand observations of Japanese companies successfully driving green transformations.
             </p>
             <p class="text-[14px] text-gray-600 mb-5 flex-grow line-clamp-3 leading-relaxed hidden" data-lang-target="ja">
               サステナビリティは企業のコア競争力です。成功した日系企業のグリーン転換事例をまとめ、コンプライアンスとイノベーションのバランスを探ります。
@@ -406,6 +442,7 @@
             
             <div class="mt-auto pt-4 border-t border-gray-100 flex items-center text-[14px] font-semibold text-brand group-hover:text-brand-dark transition-colors">
               <span data-lang-target="zh">閱讀全文</span>
+              <span data-lang-target="en" class="hidden">Read Full Article</span>
               <span data-lang-target="ja" class="hidden">続きを読む</span>
               <span class="ml-1 transform group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>
@@ -414,11 +451,16 @@
 
       </div>
       
-      <!-- 手機版：探索更多按鈕 (置中顯示 - 修正雙語重疊問題) -->
+      <!-- 手機版：探索更多按鈕 -->
       <div class="mt-8 text-center md:hidden">
         <div data-lang-target="zh">
           <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors bg-white border border-brand px-6 py-2 rounded-full">
             探索更多文章
+          </a>
+        </div>
+        <div data-lang-target="en" class="hidden">
+          <a href="#" class="inline-flex items-center text-[14px] font-semibold text-brand hover:text-brand-dark transition-colors bg-white border border-brand px-6 py-2 rounded-full">
+            Explore More
           </a>
         </div>
         <div data-lang-target="ja" class="hidden">
@@ -434,8 +476,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const navButtons = Array.from(document.querySelectorAll(".nav-lang-btn"));
-      const zhElements = Array.from(document.querySelectorAll('[data-lang-target="zh"]'));
-      const jaElements = Array.from(document.querySelectorAll('[data-lang-target="ja"]'));
+      // 【HR 小提醒】我們把原本分開抓 zh 和 ja 的寫法，改成一次抓取所有有設定語系的標籤！
+      // 這樣程式碼更精簡，未來就算加第 4 種語言也不用一直寫重複的 code 哦！
+      const allLangElements = Array.from(document.querySelectorAll('[data-lang-target]'));
       let current = ""; // 初始化為空
 
       // --- 語言切換邏輯 ---
@@ -455,14 +498,15 @@
       function switchLang(lang) {
         if (lang === current) return;
         
-        // 標題與簡介文字切換 (透過 Tailwind 的 hidden)
-        if (lang === 'zh') {
-          zhElements.forEach(el => el.classList.remove('hidden'));
-          jaElements.forEach(el => el.classList.add('hidden'));
-        } else {
-          zhElements.forEach(el => el.classList.add('hidden'));
-          jaElements.forEach(el => el.classList.remove('hidden'));
-        }
+        // 透過迴圈檢查所有帶有 data-lang-target 的元素
+        // 如果這個元素的語系等於我們點擊的語系，就把 hidden 拿掉；不等於的就加上 hidden
+        allLangElements.forEach(el => {
+          if (el.dataset.langTarget === lang) {
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
 
         updateButtonStyles(lang);
         current = lang;
