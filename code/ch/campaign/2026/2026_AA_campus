@@ -631,7 +631,7 @@
     <section class="campus-section requirements" id="application-requirements">
       <div class="container">
         <span class="eyebrow">Application Requirement</span>
-        <h2 class="section-title">申請條件</h2>
+        <h2 class="section-title">申請條件及招募時程</h2>
 
         <div class="meta">
           <div><strong>招募對象：</strong>2027年應屆畢業生</div>
@@ -652,6 +652,10 @@
         <!-- ===== Timeline (Circles Style) ===== -->
         <div class="timeline-circles" aria-label="Important Dates">
           <div class="steps">
+             <div class="step">
+              <div class="circle"><span>09月</span></div>
+              <p class="label">校園徵才說明會</p>
+            </div>
             <div class="step">
               <div class="circle"><span>10/4前</span></div>
               <p class="label">線上履歷投遞完成</p>
