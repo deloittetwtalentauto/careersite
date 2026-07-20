@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 D-League Internship Program</title>
+<title>2026 A&A Campus</title>
 <!-- 引入 Google Fonts: Open Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* =========================
-   2026 D-League Internship Program – Sections CSS
+   2026 A&A Campus – Sections CSS
    Brand: 黑 / 白 / #86BC25（輔色含於變數）
    ========================= */
 :root{
-  --brand:#86BC25;       /* 主色 */
+  --brand:#86BC25;       /* 企業主色 */
   --black:#000;          /* 深色文字 */
   --white:#fff;          /* 反白背景 */
-  --accent-1:#43B02A;    /* 輔色 */
-  --accent-2:#26890D;
-  --accent-3:#046A38;
-  --accent-4:#0D8390;
-  --accent-5:#007CB0;
+  --accent-1:#43B02A;    /* 輔色 1 */
+  --accent-2:#26890D;    /* 輔色 2 */
+  --accent-3:#046A38;    /* 輔色 3 */
+  --accent-4:#0D8390;    /* 輔色 4 */
+  --accent-5:#007CB0;    /* 輔色 5 */
 
   --text:#1a1a1a;
   --muted:#666;
@@ -38,7 +38,7 @@ body {
 }
 
 /* 通用區塊 */
-.dleague {padding:56px 20px;}
+.campus-section {padding:56px 20px;}
 .container {max-width:1080px;margin:0 auto;}
 
 /* 眉批 (Eyebrow) 標題設計 */
@@ -46,7 +46,7 @@ body {
   display: block;
   font-size: 13px;
   font-weight: 800;
-  color: #75787B; /* 使用深綠色增加層次感 */
+  color: #75787B; 
   text-transform: uppercase;
   letter-spacing: 1.5px;
   margin-bottom: 6px;
@@ -93,7 +93,7 @@ body {
   right: -100px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(134, 188, 37, 0.1) 0%, rgba(255, 255, 255, 0) 70%); /* 品牌綠微光 */
+  background: radial-gradient(circle, rgba(134, 188, 37, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
@@ -105,51 +105,45 @@ body {
   left: -150px;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(13, 131, 144, 0.05) 0%, rgba(255, 255, 255, 0) 70%); /* 輔色藍綠色微光 */
+  background: radial-gradient(circle, rgba(13, 131, 144, 0.05) 0%, rgba(255, 255, 255, 0) 70%); 
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
 }
 .about .container {
   position: relative;
-  z-index: 2; /* 確保文字在光暈上方，不影響選取 */
+  z-index: 2;
 }
 
-/* 申請條件區（可與 about 同色，或改為非常淡的灰） */
+/* 申請條件區 */
 .requirements {
   background:#f5f5f5 !important;
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
 }
 
-/* Apply Now 區（淡綠底） */
+/* Apply Now 區 */
 .apply {background:var(--surface);}
 
 /* 職缺清單：改用 CSS Grid 實現完美的響應式佈局 */
 .job-list {
   display: grid;
-  gap: 20px; /* 卡片間距 */
-  grid-template-columns: 1fr; /* 手機版預設一行 1 個 */
+  gap: 20px; 
+  grid-template-columns: 1fr; 
 }
 
-/* 平板版：一行 2 個 */
 @media (min-width: 768px) {
-  .job-list {
-    grid-template-columns: repeat(2, 1fr); 
-  }
+  .job-list { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* 電腦版：一行 4 個 */
 @media (min-width: 992px) {
-  .job-list {
-    grid-template-columns: repeat(4, 1fr); 
-  }
+  .job-list { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* 卡片容器 */
 .job-card {
   background: var(--card-bg, var(--card));
-  border: 1px solid var(--card-accent, var(--border)); /* 這裡將外框改為卡片專屬的同色系跳色 */
+  border: 1px solid var(--card-accent, var(--border)); 
   border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
@@ -159,15 +153,11 @@ body {
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-/* 定義每張卡片的跳色變數 (完美結合 Deloitte 品牌輔色) */
-.job-card:nth-child(1) { --card-accent: #53565A; --card-bg: #f4f6f6; }  /* 專業穩重的灰色調 */
-.job-card:nth-child(2) { --card-accent: var(--accent-4); --card-bg: #f2fafa; }  /* 藍綠色 */
-/* 修改第 3 個職缺 (Digital Transformation Stream) 為品牌綠色 */
-.job-card:nth-child(3) { --card-accent: var(--brand); --card-bg: #f9fdf5; }     /* 經典綠 */
-.job-card:nth-child(4) { --card-accent: var(--accent-3); --card-bg: #f2f7f4; }  /* 深綠色 */
-.job-card:nth-child(5) { --card-accent: var(--accent-1); --card-bg: #f6fcf4; }  /* 亮綠色 */
-.job-card:nth-child(6) { --card-accent: var(--brand); --card-bg: #f9fdf5; }      /* 經典綠 */
-.job-card:nth-child(7) { --card-accent: var(--accent-5); --card-bg: #f0f8fb; }  /* 藍色 (Risk Management) */
+/* 定義每張卡片的跳色變數 (結合 Deloitte 品牌輔色) */
+.job-card:nth-child(1) { --card-accent: var(--brand); --card-bg: #f9fdf5; }     /* 經典綠 - 審計 */
+.job-card:nth-child(2) { --card-accent: var(--accent-4); --card-bg: #f2fafa; }  /* 藍綠色 - 數位審計 */
+.job-card:nth-child(3) { --card-accent: var(--accent-3); --card-bg: #f2f7f4; }  /* 深綠色 - 稅務 */
+.job-card:nth-child(4) { --card-accent: var(--accent-5); --card-bg: #f0f8fb; }  /* 藍色 - 風險/財顧 */
 
 .job-card:hover {
   transform: translateY(-6px);
@@ -182,42 +172,42 @@ body {
 .job-title {
   font-size:18px;
   margin:0;
-  color: var(--card-accent, var(--accent-3)) !important; /* 強制鎖定字體跳色 */
+  color: var(--card-accent, var(--accent-3)) !important; 
   font-weight:700;
   line-height: 1.4;
 }
-.job-badge {
-  gap: 6px;
-  padding: 6px 12px;
-  background: color-mix(in srgb, var(--card-accent) 8%, white); /* 背景自動混色變淡 */
-  color: var(--card-accent, var(--accent-3)); /* 文字跟著跳色 */
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  width: fit-content;
-}
-.location-badge svg {
-  stroke: var(--card-accent, var(--accent-3)); /* Icon跟著跳色 */
+
+/* 新增：地點與職缺說明的樣式 */
+.job-location {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: -4px 0 4px 0;
 }
 
-/* 按鈕容器：設為 flex 佈局使內容可以垂直伸展 */
+.job-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  /* 讓描述區塊佔據剩餘空間，確保不管字數多少，底部的按鈕都能對齊 */
+  flex-grow: 1; 
+}
+
 .job-actions {
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-top: auto;      /* 置底關鍵 */
-  justify-content: center; /* 手機板預設置中 */
+  margin-top: auto;      
+  justify-content: center; 
 }
 
 @media (min-width: 768px) {
-  .job-actions {
-    justify-content: flex-start; /* 電腦版改為靠左對齊 */
-  }
+  .job-actions { justify-content: flex-start; }
 }
 
 /* 按鈕 */
-.btn-primary,
-.btn-outline {
+.btn-primary, .btn-outline {
   display:inline-block;
   text-decoration:none;
   padding:10px 14px;
@@ -228,52 +218,45 @@ body {
   transition:transform .06s ease, filter .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-/* 提升 CSS 權重 (Specificity)，徹底壓制招募系統的預設超連結黑字 */
-html body .dleague .job-card a.btn-primary,
-html body .dleague .job-card a.btn-primary:link,
-html body .dleague .job-card a.btn-primary:visited {
+/* 提升 CSS 權重，徹底壓制招募系統的預設超連結黑字 */
+html body .campus-section .job-card a.btn-primary,
+html body .campus-section .job-card a.btn-primary:link,
+html body .campus-section .job-card a.btn-primary:visited {
   background: var(--card-accent, var(--brand)) !important;
   color: #ffffff !important;
   border: 2px solid var(--card-accent, var(--brand)) !important;
-  -webkit-text-fill-color: #ffffff !important; /* 殺手鐧：防禦系統強制覆蓋文字顏色 */
+  -webkit-text-fill-color: #ffffff !important; 
 }
 
 /* 懸停(Hover)時變為精緻的黑底白字 */
-html body .dleague .job-card a.btn-primary:hover,
-html body .dleague .job-card a.btn-primary:focus {
+html body .campus-section .job-card a.btn-primary:hover,
+html body .campus-section .job-card a.btn-primary:focus {
   background: #1a1a1a !important; 
   color: #ffffff !important; 
   border-color: #1a1a1a !important;
   -webkit-text-fill-color: #ffffff !important;
 }
-html body .dleague .job-card a.btn-primary:active {transform:translateY(1px);}
 
-/* 已截止/已結束按鈕樣式 */
-.btn-disabled {
-  background-color: #d1d5db !important; /* 灰色背景 */
+/* 已截止/已結束按鈕樣式 (加強防護 CSB 覆蓋) */
+html body .campus-section .btn-disabled,
+html body .campus-section a.btn-disabled {
+  background-color: #d1d5db !important; 
   border-color: #d1d5db !important;
-  color: #9ca3af !important; /* 灰字 */
-  cursor: not-allowed !important; /* 禁用游標 */
-  pointer-events: none; /* 禁用所有點擊與滑鼠事件 */
+  color: #9ca3af !important; 
+  -webkit-text-fill-color: #9ca3af !important;
+  cursor: not-allowed !important; 
+  pointer-events: none; 
   transform: none !important;
   box-shadow: none !important;
 }
 
-.btn-outline {
-  border:2px solid var(--black);
-  color:var(--black);
-  background:transparent;
-}
-.btn-outline:hover {background:var(--black)!important;color:var(--white)!important;}
-.btn-outline:active {transform:translateY(1px);}
-
-/* 小備註區塊（圓角外框與左側品牌條） */
+/* 小備註區塊 */
 .note-box {
   margin-top: 24px;
   padding: 18px 20px;
-  background-color: #fbfdf9; /* 極淡綠色底，舒適溫和 */
+  background-color: #fbfdf9; 
   border: 1px solid #e2ebd5;
-  border-left: 4px solid var(--brand); /* 左側高質感品牌綠色標籤 */
+  border-left: 4px solid var(--brand); 
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,.02);
 }
@@ -290,51 +273,12 @@ html body .dleague .job-card a.btn-primary:active {transform:translateY(1px);}
   color: #444;
   line-height: 1.7;
 }
-.note-list li {
-  margin-bottom: 6px;
-}
-.note-list li:last-child {
-  margin-bottom: 0;
-}
-.note-list li strong {
-  color: var(--accent-3); /* 使用深綠色強調 */
-}
 
-/* 鍵盤可及性：聚焦樣式 */
-a:focus-visible,
-button:focus-visible,
-.btn-primary:focus-visible,
-.btn-outline:focus-visible {
-  outline:3px solid color-mix(in oklab, var(--brand) 60%, white);
-  outline-offset:2px;
-  border-radius:12px;
-}
-
-/* 使用者偏好：減少動態 */
-@media (prefers-reduced-motion:reduce){
-  .btn-primary,.btn-outline{transition:none;}
-}
-
-/* 可選：內文中強調色（若需要） */
-.emphasis-brand {color:var(--brand);font-weight:700;}
-.emphasis-accent {color:var(--accent-3);font-weight:700;}
-
-/* 可選：錨點平滑滾動（若頁面上有導覽錨點） */
-html:has(#about-dleague, #application-requirements, #apply-now) {
-  scroll-behavior:smooth;
-}
-
-/* ===== Circles Timeline（命名空間避免衝突） ===== */
+/* ===== Circles Timeline ===== */
 .timeline-circles {
   margin-top:28px;
   padding:10px 0;
   text-align:center;
-}
-.timeline-circles .timeline-title {
-  font-size:20px;
-  font-weight:800;
-  color:var(--brand);
-  margin-bottom:16px;
 }
 .timeline-circles .steps {
   display:flex;
@@ -355,7 +299,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
   display:flex; align-items:center; justify-content:center;
   color:var(--brand); font-weight:800; line-height:1.15; text-align:center;
   background:var(--white);
-  border: 4px solid var(--brand); /* 綠色外框 */
+  border: 4px solid var(--brand);
   box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 .timeline-circles .circle span {
@@ -367,7 +311,6 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
   margin:0;
 }
 
-/* 桌面水平導線（可選） */
 @media (min-width:769px){
   .timeline-circles .steps::before {
     content:"";
@@ -375,77 +318,343 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     height:4px; background:var(--brand);
     z-index:-1; border-radius:2px;
   }
-  .timeline-circles .steps {
-    position:relative;
-  }
+  .timeline-circles .steps { position:relative; }
 }
 
-/* RWD：手機改直式堆疊 + 置中修正 */
 @media (max-width:768px){
   .timeline-circles .steps {
-    flex-direction:column;      /* 直向堆疊 */
-    align-items:center;          /* 水平置中每個 .step（含圈圈）*/
-    justify-content:flex-start; /* 取消 space-between 造成的上下撐開 */
+    flex-direction:column;      
+    align-items:center;         
+    justify-content:flex-start; 
     gap:20px;
   }
   .timeline-circles .step {
-    flex:none;                  /* 避免 flex:1 撐滿寬度造成視覺偏左 */
+    flex:none;                 
     width:100%;
     text-align:center;
   }
   .timeline-circles .circle {
     width:96px; height:96px;
-    margin:0 auto;              /* 再保險，圈圈本身也置中 */
+    margin:0 auto;              
   }
-  .timeline-circles .circle span {
-    font-size:16px;
+}
+
+/* ===== Info Sessions (新增說明會樣式) ===== */
+.info-session {
+  background: var(--white);
+}
+
+/* 線上說明會主打卡片 */
+.online-session-card {
+  background: linear-gradient(135deg, var(--accent-3) 0%, var(--brand) 100%);
+  color: var(--white);
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 10px 30px rgba(134, 188, 37, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.online-session-card::after {
+  content: "💻";
+  font-size: 100px;
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+@media(min-width: 768px){
+  .online-session-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
+}
+.online-session-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: var(--white) !important;
+  font-weight: 700;
+}
+.online-session-info p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+.btn-white {
+  background: var(--white);
+  color: var(--accent-3);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+  text-align: center;
+  z-index: 2; /* 確保按鈕在裝飾 icon 之上 */
+}
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* 實體說明會小標題 */
+.subsection-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.subsection-title::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 22px;
+  background: var(--brand);
+  border-radius: 3px;
+}
+
+/* 實體說明會網格 */
+.physical-sessions-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 600px) {
+  .physical-sessions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .physical-sessions-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* 實體說明會卡片 */
+.session-card {
+  background: #fdfdfd;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--brand);
+  padding: 18px 20px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.session-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  border-left-color: var(--accent-3); /* Hover 時左側線條變深綠色 */
+}
+.session-school {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent-3);
+  margin: 0 0 10px 0;
+}
+.session-details {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 16px 0;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 讓按鈕自動對齊底部 */
+}
+.session-details span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 說明會專屬報名按鈕 (輕量線條感) */
+html body .campus-section .session-card a.btn-session,
+html body .campus-section .session-card a.btn-session:link,
+html body .campus-section .session-card a.btn-session:visited {
+  display: inline-block;
+  text-align: center;
+  background: var(--white) !important;
+  color: var(--accent-3) !important;
+  border: 1px solid var(--accent-3) !important;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-text-fill-color: var(--accent-3) !important;
+  transition: all 0.2s ease;
+}
+html body .campus-section .session-card a.btn-session:hover,
+html body .campus-section .session-card a.btn-session:focus {
+  background: var(--accent-3) !important;
+  color: var(--white) !important;
+  -webkit-text-fill-color: var(--white) !important;
 }
 </style>
 </head>
 <body>
 
 <!-- ===== About ===== -->
-<section class="dleague about" id="about-dleague">
+<section class="campus-section about" id="about-aa-campus">
   <div class="container">
-    <span class="eyebrow">Overview</span>
-    <h2 class="section-title">About 2026 D-League Internship Program</h2>
+    <span class="eyebrow">About 2026 Audit & Assurance Campus Recruitment</span>
+    <h2 class="section-title">關於 2026 審計及確信諮詢服務部門校園徵才</h2>
 
     <p class="lead">
-      D-League Internship Program為Deloitte 顧問業務服務 (Consulting Businesses)的實習計畫，在資深專業顧問的帶領下參與實戰專案，利用理論結合實務的方式，協助解決客戶真實面臨的難題。我們提供專業的實務訓練，也重視你的多元想法與創新思維。本次計畫涵蓋精算與保險、ERP 系統導入、財務轉型、資訊及網路安全、程式開發、永續、風險管理等專業領域，讓同學能深入探索感興趣的發展方向。
+Deloitte 審計與確信服務（Audit & Assurance）透過快速高效的合作分工、運用最新的數位工具、服務國內外知名企業並提供高水準的專業服務。
+你將有機會提升在多元產業專業知識及企業運營流程，熟悉政府主管機關作業，透過參與不同專案提升數據分析及問題解決能力，累積豐富的審計實務經驗。
       <br><br>
-      我們歡迎來自會計與財務、企業管理、資訊工程、資訊管理等領域的同學，與我們一起在挑戰中培養紮實的專業技能，探索個人職涯發展道路，將你的創意化為實際的影響力！
-    </p>
+我們歡迎來自會計、企業管理、資訊管理等領域的同學加入Deloitte。透過多元專案歷練與完善培育制度，培養紮實的專業能力，並將創新想法轉化為真正的影響力，為未來開創無限可能。    </p>
 
     <h3>透過此計畫成為 Deloitte 發揮影響力的夥伴，你將獲得：</h3>
     <ul class="highlights">
-      <li><span>專案實戰經驗：</span>由資深專業顧問團隊帶領，親身參與第一線真實專案，協助解決客戶與市場的真實挑戰</li>
-      <li><span>專業課程訓練：</span>結合理論與實務，為實習生量身打造專屬培訓課程，全方位培養專業技能與領導力</li>
-      <li><span>多元活動交流：</span>透過多元交流活動，與同仁相互交流學習，拓展跨領域人脈網並體驗多元包容的企業文化</li>
-      <li><span>職涯方向探索：</span>探索職涯發展路徑，表現優秀者有機會獲得轉調機會</li>
+      <li><span>審計實戰經驗：</span>參與真實審計專案，實際操作查核流程，深入了解企業運作。</li>
+      <li><span>多元交流與學習：</span>透過跨部門溝通及同仁交流，拓展人脈網絡，提升團隊合作能力。</li>
+      <li><span>多元活動交流：</span>透過職務與專案歷練，表現優異者可申請轉調海外發展機會。</li>
     </ul>
   </div>
 </section>
 
-<!-- ===== Application Requirements ===== -->
-<section class="dleague requirements" id="application-requirements">
+<!-- ===== Info Sessions (說明會資訊) ===== -->
+<section class="campus-section info-session" id="info-sessions">
   <div class="container">
-    <span class="eyebrow">2026 D-League Internship Program</span>
-    <h2 class="section-title">Application Requirements</h2>
+    <span class="eyebrow">Campus Info Sessions</span>
+    <h2 class="section-title">2026 校園說明會資訊</h2>
+    <p class="lead">想更深入了解 A&A 審計及確信諮詢服務的工作日常？歡迎報名參加我們的線上與實體校園說明會，與 Deloitte 學長姐面對面交流，為你的職涯解惑！</p>
 
-    <div class="meta">
-      <div><strong>招募對象：</strong>大三以上同學</div>
-      <div><strong>實習期間：</strong>4-5個月(從2026年8、9月至2026/12/31)</div>
-      <div><strong>履歷投遞截止：</strong>即日起至2026/06/30（二）23:59（台灣時間）</div>
-      <div style="color: var(--brand);"><strong>(依投遞順序依序審核，招滿為止，建議你盡早投遞~)</strong></div>
+    <!-- 區塊 1：線上說明會 (主打) -->
+    <div class="online-session-card">
+      <div class="online-session-info">
+        <h3>🟢 全台線上招募說明會 (Online)</h3>
+        <p>不受地區限制，帶你一次掌握 A&A 審計部門全貌、履歷撰寫秘笈與面試準備重點。<br><strong>📅 時間：2026/09/10 (四) 19:00 - 20:30 (Teams 直播)</strong></p>
+      </div>
+      <a href="#" target="_blank" class="btn-white">手刀報名線上場</a>
     </div>
 
-    <!-- 小提醒區塊（圓角外框與列點設計） -->
+    <!-- 區塊 2：實體校園說明會 (10間學校) -->
+    <h3 class="subsection-title">實體校園說明會 (實體見面，好禮相送🎁)</h3>
+    <div class="physical-sessions-grid">
+      
+      <div class="session-card">
+        <h4 class="session-school">台灣大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/15 (二) 12:20 - 14:00</span>
+          <span>📍 管院一號館 104 教室</span>
+        </div>
+        <!-- 加上 data-end-date 即可自動控制截止 (測試用：設定一個今天之前的日期，預覽時就會看到反灰了) -->
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-07-15">報名實體場</a>
+      </div>
+      
+      <div class="session-card">
+        <h4 class="session-school">政治大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/16 (三) 12:10 - 13:50</span>
+          <span>📍 商學院 1 樓玉山國際廳</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-16">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">臺北大學 (三峽校區)</h4>
+        <div class="session-details">
+          <span>📅 2026/09/17 (四) 12:00 - 13:30</span>
+          <span>📍 商學院 111 教室</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-17">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">東吳大學 (城中校區)</h4>
+        <div class="session-details">
+          <span>📅 2026/09/18 (五) 12:10 - 13:30</span>
+          <span>📍 鑄秋大樓 2123 會議室</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-18">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">輔仁大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/21 (一) 12:30 - 14:00</span>
+          <span>📍 濟時樓 9 樓國際會議廳</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-21">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">成功大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/22 (二) 12:10 - 13:40</span>
+          <span>📍 光復校區 管理學院 B1 演講廳</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-22">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">中山大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/23 (三) 12:00 - 13:30</span>
+          <span>📍 管理學院 2027 教室</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-23">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">中正大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/24 (四) 12:10 - 13:40</span>
+          <span>📍 管理學院 1 樓 131 階梯教室</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-24">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">中興大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/25 (五) 12:00 - 13:30</span>
+          <span>📍 社管大樓 1 樓 112 演講廳</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-25">報名實體場</a>
+      </div>
+
+      <div class="session-card">
+        <h4 class="session-school">東海大學</h4>
+        <div class="session-details">
+          <span>📅 2026/09/28 (一) 12:20 - 13:50</span>
+          <span>📍 管理學院 M201 教室</span>
+        </div>
+        <a href="#" target="_blank" class="btn-session" data-end-date="2026-09-28">報名實體場</a>
+      </div>
+
+    </div> <!-- 結束網格 -->
+  </div>
+</section>
+
+<!-- ===== Application Requirements ===== -->
+<section class="campus-section requirements" id="application-requirements">
+  <div class="container">
+    <span class="eyebrow">Application Requirement</span>
+    <h2 class="section-title">申請條件</h2>
+
+    <div class="meta">
+      <div><strong>招募對象：</strong>2027年應屆畢業生</div>
+      <div><strong>預計報到日：</strong>2027年 07、09月</div>
+      <div><strong>履歷投遞截止：</strong>即日起至2026/10/04（日）23:59（台灣時間）</div>\
+    </div>
+
+    <!-- 小提醒區塊 -->
     <div class="note-box">
       <div class="note-box-title">💡 小提醒：</div>
       <ul class="note-list">
-        <li>完成履歷投遞後，將會收到 TestGorilla 線上測驗的通知，煩請於 7 日內盡速完成，若未完成將不會進入後續審查</li>
-        <li>為確保你能完整參與專案並獲得扎實的實習體驗，<strong>需每週上班天數達3天(24小時)以上</strong>（可配合學校課表彈性調整）</li>
+        <li>具國內外大學(含)以上學歷</li>
+        <li>需修畢初級會計學及中級會計學學分(修習過審計尤佳) </li>
+        <li>請務必上傳大學/碩士歷年成績單作為附件</li>
       </ul>
     </div>
 
@@ -453,109 +662,70 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
     <div class="timeline-circles" aria-label="Important Dates">
       <div class="steps">
         <div class="step">
-          <div class="circle"><span>6/30前</span></div>
-          <p class="label">線上投遞履歷</p>
+          <div class="circle"><span>10/4前</span></div>
+          <p class="label">線上履歷投遞完成</p>
         </div>
         <div class="step">
-          <div class="circle"><span>7/7前</span></div>
-          <p class="label">完成線上測驗</p>
-        </div>
-        <div class="step">
-          <div class="circle"><span>7-8月</span></div>
+          <div class="circle"><span>10月</span></div>
           <p class="label">安排面談</p>
         </div>
         <div class="step">
-          <div class="circle"><span>8月/9月</span></div>
+          <div class="circle"><span>11月</span></div>
+          <p class="label">錄取結果通知</p>
+        </div>
+        <div class="step">
+          <div class="circle"><span>2027年<br>07、09月</span></div>
           <p class="label">報到入職</p>
         </div>
       </div>
     </div>
-  </div> <!-- 關閉 .container（requirements 區） -->
-</section> <!-- 關閉 .dleague.requirements -->
+  </div> 
+</section> 
 
 <!-- ===== Apply Now ===== -->
-<section class="dleague apply" id="apply-now">
+<section class="campus-section apply" id="apply-now">
   <div class="container">
     <span class="eyebrow">Apply Now</span>
-    <h2 class="section-title">Professional Stream</h2>
+    <h2 class="section-title">職缺資訊</h2>
     <div class="job-list">
-      <!-- 職缺卡片 1：精算與保險諮詢 -->
+      
+      <!-- 職缺卡片 1：審計與確信 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Actuarial & Insurance Stream</h3>
+          <h3 class="job-title">初級審計員</h3>
         </header>
-        <p>地點：台北</p>
-       
+        <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 台南 / 高雄</p>
+        <p class="job-desc">協助完成審計財務報表、審計文件進行分析審查、協助審計客戶的財務及交易和內部控制流程</p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ACTUARIAL-&-INSURANCE-STREAM/1138-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
+          <!-- 記得把 href 替換成 SuccessFactors 上真實的職缺連結 -->
+          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 2：技術開發諮詢 -->
+      <!-- 職缺卡片 2：數位審計/電腦審計 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Software Development Stream</h3>
+          <h3 class="job-title">電腦審計顧問</h3>
         </header>
-        <p>地點：台北</p>      
+        <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 高雄</p>      
+        <p class="job-desc">檢視及評估客戶資訊作業中，控制點設計是否妥適及遵循情形之檢查、提供客戶資訊循環和內部控制流程改善建議方案</p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91TECHNICAL-STREAM-%28SAP-AI-&-DATA-Full-Stack%29/1144-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
+          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
         </div>
       </article>
 
-      <!-- 職缺卡片 3：數位轉型諮詢 (已調整為綠色) -->
+      <!-- 職缺卡片 3：稅務服務 -->
       <article class="job-card">
         <header class="job-header">
-          <h3 class="job-title">Digital Transformation Stream</h3>
+          <h3 class="job-title">確信諮詢顧問</h3>
         </header>
-        <p>地點：台北</p>
+        <p class="job-location">📍 地點：台北</p>
+        <p class="job-desc">各大金融機構洗錢防制確信、個人資料保護及內控稽核、新興科技資訊安全查核服務、永續相關確信及顧問服務</p>
         <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91DIGITAL-TRANSFORMATION-STREAM-%28SAP-HR-DIGITAL%29/1136-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
+          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
         </div>
       </article>
-
-      <!-- 職缺卡片 4：網路安全諮詢 -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">Cyber Security Stream</h3>
-        </header>
-        <p>地點：台北</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91CYBER-STREAM/1139-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
-        </div>
-      </article>
-
-      <!-- 職缺卡片 5：財務轉型諮詢 -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">Finance Transformation Stream</h3>
-        </header>
-        <p>地點：台北</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91FINANCE-TRANSFORMATION-STREAM/1141-en_US/" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
-        </div>
-      </article>
-
-      <!-- 職缺卡片 6： -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">ESG Stream</h3>
-        </header>
-        <p>地點：台北</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91ESG-STREAM/1140-en_US" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
-        </div>
-      </article>
-
-      <!-- 職缺卡片 7： -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title"> Risk Management Stream</h3>
-        </header>
-        <p>地點：台北</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="https://careers.apac.deloitte.com/Taiwan/job/%E3%80%90D-League-Internship-Program-%E3%80%91RISK-MANAGEMENT-STREAM/1143-en_US" target="_blank" rel="noopener" data-end-date="2026-07-07">Learn more</a>
-        </div>
-      </article>
+      
     </div>
   </div>
 </section>
@@ -575,7 +745,7 @@ html:has(#about-dleague, #application-requirements, #apply-now) {
         const endDate = new Date(endDateStr);
         endDate.setHours(0, 0, 0, 0);
 
-        // 如果今天大於或等於截止日期 (2026-07-07)
+        // 如果今天大於或等於截止日期
         if (today >= endDate) {
           button.textContent = "已截止";
           button.href = "javascript:void(0);"; // 移除超連結點擊行為
