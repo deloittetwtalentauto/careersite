@@ -1,911 +1,911 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026 A&A Campus</title>
-<!-- 引入 Google Fonts: Open Sans -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-/* =========================
-   2026 A&A Campus – Sections CSS
-   Brand: 黑 / 白 / #86BC25（輔色含於變數）
-   ========================= */
-:root{
-  --brand:#86BC25;       /* 企業主色 */
-  --black:#000;          /* 深色文字 */
-  --white:#fff;          /* 反白背景 */
-  --accent-1:#43B02A;    /* 輔色 1 */
-  --accent-2:#26890D;    /* 輔色 2 */
-  --accent-3:#046A38;    /* 輔色 3 */
-  --accent-4:#0D8390;    /* 輔色 4 */
-  --accent-5:#007CB0;    /* 輔色 5 */
-
-  --text:#1a1a1a;
-  --muted:#666;
-  --border:#e6e6e6;
-  --card:#ffffff;
-  --surface:#f7f9f5;     /* Apply Now 區塊底色 */
-  --radius:16px;
-  --shadow:0 2px 10px rgba(0,0,0,.04);
-}
-
-/* 設定全局字體：英文優先使用 Aptos(Apotos)，遇到中文退回使用 Open Sans 及微軟正黑體 */
-body {
-  font-family: "Apotos", "Aptos", "Open Sans", "Microsoft JhengHei", "PingFang TC", sans-serif;
-}
-
-/* 通用區塊 */
-.campus-section {padding:56px 20px;}
-.container {max-width:1080px;margin:0 auto;}
-
-/* 眉批 (Eyebrow) 標題設計 */
-.eyebrow {
-  display: block;
-  font-size: 13px;
-  font-weight: 800;
-  color: #75787B; 
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 6px;
-}
-
-.section-title {
-  font-size:clamp(24px,3vw,32px);
-  font-weight:600;
-  margin:0 0 16px;
-  color:#86BC25 !important;
-  letter-spacing:.5px;
-}
-.lead {
-  font-size:clamp(16px,2.2vw,18px);
-  line-height:1.8;
-  color:var(--text);
-  margin:0 0 16px;
-}
-
-/* 小重點條列 */
-.highlights {margin:12px 0 20px;padding:0 0 0 20px;}
-.highlights li {margin:8px 0;line-height:1.7;color:var(--text);}
-.highlights li span {color:var(--brand);font-weight:700;}
-
-/* 左右資訊條列（需求/條件） */
-.meta {
-  display:grid;
-  gap:10px;
-  margin-top:8px;
-  font-size:15px;
-  color:#333;
-}
-
-/* 關於區塊（白底改為精緻漸層與品牌雙色微光） */
-.about {
-  background: linear-gradient(135deg, var(--white) 0%, #f6faf2 100%);
-  position: relative;
-  overflow: hidden;
-}
-.about::before {
-  content: "";
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(134, 188, 37, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-.about::after {
-  content: "";
-  position: absolute;
-  bottom: -150px;
-  left: -150px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(13, 131, 144, 0.05) 0%, rgba(255, 255, 255, 0) 70%); 
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
-}
-.about .container {
-  position: relative;
-  z-index: 2;
-}
-
-/* 申請條件區 */
-.requirements {
-  background:#f5f5f5 !important;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-
-/* Apply Now 區 */
-.apply {background:var(--surface);}
-
-/* 職缺清單：改用 CSS Grid 實現完美的響應式佈局 */
-.job-list {
-  display: grid;
-  gap: 20px; 
-  grid-template-columns: 1fr; 
-}
-
-@media (min-width: 768px) {
-  .job-list { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (min-width: 992px) {
-  .job-list { grid-template-columns: repeat(4, 1fr); }
-}
-
-/* 卡片容器 */
-.job-card {
-  background: var(--card-bg, var(--card));
-  border: 1px solid var(--card-accent, var(--border)); 
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-/* 定義每張卡片的跳色變數 (結合 Deloitte 品牌輔色) */
-.job-card:nth-child(1) { --card-accent: var(--brand); --card-bg: #f9fdf5; }     /* 經典綠 - 審計 */
-.job-card:nth-child(2) { --card-accent: var(--accent-4); --card-bg: #f2fafa; }  /* 藍綠色 - 數位審計 */
-.job-card:nth-child(3) { --card-accent: var(--accent-3); --card-bg: #f2f7f4; }  /* 深綠色 - 稅務 */
-.job-card:nth-child(4) { --card-accent: var(--accent-5); --card-bg: #f0f8fb; }  /* 藍色 - 風險/財顧 */
-
-.job-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0,0,0,.08);
-}
-.job-header {
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:12px;
-}
-.job-title {
-  font-size:18px;
-  margin:0;
-  color: var(--card-accent, var(--accent-3)) !important; 
-  font-weight:700;
-  line-height: 1.4;
-}
-
-/* 新增：地點與職缺說明的樣式 */
-.job-location {
-  font-size: 14px;
-  font-weight: 700;
-  color: #333;
-  margin: -4px 0 4px 0;
-}
-
-.job-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  margin: 0;
-  /* 讓描述區塊佔據剩餘空間，確保不管字數多少，底部的按鈕都能對齊 */
-  flex-grow: 1; 
-}
-
-.job-actions {
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top: auto;      
-  justify-content: center; 
-}
-
-@media (min-width: 768px) {
-  .job-actions { justify-content: flex-start; }
-}
-
-/* 按鈕 */
-.btn-primary, .btn-outline {
-  display:inline-block;
-  text-decoration:none;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:700;
-  font-size:14px;
-  line-height:1;
-  transition:transform .06s ease, filter .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
-}
-
-/* 提升 CSS 權重，徹底壓制招募系統的預設超連結黑字 */
-html body .campus-section .job-card a.btn-primary,
-html body .campus-section .job-card a.btn-primary:link,
-html body .campus-section .job-card a.btn-primary:visited {
-  background: var(--card-accent, var(--brand)) !important;
-  color: #ffffff !important;
-  border: 2px solid var(--card-accent, var(--brand)) !important;
-  -webkit-text-fill-color: #ffffff !important; 
-}
-
-/* 懸停(Hover)時變為精緻的黑底白字 */
-html body .campus-section .job-card a.btn-primary:hover,
-html body .campus-section .job-card a.btn-primary:focus {
-  background: #1a1a1a !important; 
-  color: #ffffff !important; 
-  border-color: #1a1a1a !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-/* 已截止/已結束按鈕樣式 (加強防護 CSB 覆蓋) */
-html body .campus-section .btn-disabled,
-html body .campus-section a.btn-disabled {
-  background-color: #d1d5db !important; 
-  border-color: #d1d5db !important;
-  color: #9ca3af !important; 
-  -webkit-text-fill-color: #9ca3af !important;
-  cursor: not-allowed !important; 
-  pointer-events: none; 
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-/* 小備註區塊 */
-.note-box {
-  margin-top: 24px;
-  padding: 18px 20px;
-  background-color: #fbfdf9; 
-  border: 1px solid #e2ebd5;
-  border-left: 4px solid var(--brand); 
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.02);
-}
-.note-box-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  margin: 0 0 10px 0;
-}
-.note-list {
-  margin: 0;
-  padding-left: 20px;
-  font-size: 14px;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* ===== Circles Timeline ===== */
-.timeline-circles {
-  margin-top:28px;
-  padding:10px 0;
-  text-align:center;
-}
-.timeline-circles .steps {
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:32px;
-}
-.timeline-circles .step {
-  flex:1;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:12px;
-  text-align:center;
-}
-.timeline-circles .circle {
-  width:120px; height:120px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  color:var(--brand); font-weight:800; line-height:1.15; text-align:center;
-  background:var(--white);
-  border: 4px solid var(--brand);
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-.timeline-circles .circle span {
-  display:inline-block;
-  font-size:18px;
-}
-.timeline-circles .label {
-  font-size:15px; font-weight:600; color:#53565A;
-  margin:0;
-}
-
-@media (min-width:769px){
-  .timeline-circles .steps::before {
-    content:"";
-    position:absolute; left:0; right:0; top:70px;
-    height:4px; background:var(--brand);
-    z-index:-1; border-radius:2px;
-  }
-  .timeline-circles .steps { position:relative; }
-}
-
-@media (max-width:768px){
-  .timeline-circles .steps {
-    flex-direction:column;      
-    align-items:center;         
-    justify-content:flex-start; 
-    gap:20px;
-  }
-  .timeline-circles .step {
-    flex:none;                 
-    width:100%;
-    text-align:center;
-  }
-  .timeline-circles .circle {
-    width:96px; height:96px;
-    margin:0 auto;              
-  }
-}
-
-/* ===== Info Sessions (全新兩欄動態渲染樣式) ===== */
-.info-session {
-  background: var(--surface); 
-  border-top: 1px solid var(--border);
-}
-
-.info-split-layout {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 60px;
-  align-items: flex-start;
-  margin-top: 40px;
-}
-
-/* 左側：導覽按鈕 */
-.info-left { text-align: left; }
-.info-bu-buttons {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 24px;
-}
-.info-bu-btn {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  border-radius: 12px;
-  border: 1px solid #dddddd;
-  background: #ffffff;
-  color: #000000;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-}
-.info-bu-btn:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-.info-bu-btn.is-active { border-color: var(--brand); background: var(--text); color: #ffffff; transform: none; box-shadow: none;}
-.info-bu-tag {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--brand);
-  text-transform: uppercase;
-}
-
-/* 右側：內容網格 */
-.info-right {
-  border-left: 3px solid var(--brand);
-  padding-left: 40px;
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-}
-.info-right-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-.info-right-title { font-size: 22px; font-weight: 800; margin: 0; color: var(--text); }
-.info-count { font-size: 15px; color: var(--muted); margin: 0; font-weight: 600;}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  margin-bottom: 30px;
-  animation: fadeIn 0.4s ease;
-}
-
-/* 單張卡片 */
-.info-card {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
-  border-radius: 14px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* 新增：滿版卡片 (橫跨兩欄) */
-.info-card.full-width {
-  grid-column: 1 / -1;
-}
-
-.info-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #d4d4d4;}
-.info-card-title { font-size: 18px; font-weight: 800; margin: 0; line-height: 1.4; color: var(--accent-3); }
-
-/* 標籤 (地點/會議室) */
-.info-pill {
-  display: inline-flex;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: #f2f7f4;
-  color: var(--accent-3);
-  font-size: 13px;
-  font-weight: 700;
-  width: fit-content;
-}
-
-.info-card-desc {
-  font-size: 14px; line-height: 1.7; color: #555; margin: 0;
-  white-space: pre-line; /* 支援換行符號 */
-}
-
-/* 卡片報名按鈕 */
-.info-card-link {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: 1.5px solid var(--brand);
-  color: var(--text);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-.info-card .info-card-link:hover {
-  background-color: var(--brand);
-  color: #ffffff !important;
-  text-decoration: none;
-}
-
-/* 動態生成的已截止按鈕樣式 */
-.info-card .info-card-link.btn-disabled,
-.info-list-item .info-card-link.btn-disabled {
-  background-color: #e5e7eb;
-  border-color: #e5e7eb;
-  color: #9ca3af !important;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* ===== 實體說明會專屬：橫條清單樣式 ===== */
-.info-list-container {
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 0.4s ease;
-}
-
-.info-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 16px;
-  border-bottom: 1px solid #e6e6e6;
-  gap: 20px;
-  transition: background-color 0.2s ease;
-  border-radius: 8px;
-}
-
-.info-list-item:hover {
-  background-color: #fcfdfa;
-}
-
-.info-list-item:last-child {
-  border-bottom: none;
-}
-
-.info-list-content {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.info-list-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.info-list-title {
-  font-size: 18px;
-  font-weight: 800;
-  margin: 0;
-  color: var(--accent-3);
-}
-
-.info-list-desc {
-  font-size: 14px;
-  color: #555;
-  margin: 0;
-}
-
-.info-list-action {
-  flex-shrink: 0; 
-}
-
-.info-list-item .info-card-link:hover {
-  background-color: var(--brand);
-  color: #ffffff !important;
-}
-
-@media (max-width: 992px) { .info-grid { grid-template-columns: 1fr; } }
-@media (max-width: 768px) {
-  .info-split-layout { grid-template-columns: 1fr; gap: 30px; }
-  .info-right { border-left: none; border-top: 3px solid var(--brand); padding: 30px 0 0 0; min-height: auto;}
-  
-  /* 手機版清單適應 */
-  .info-list-item {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 0;
-  }
-  .info-list-action, .info-list-item .info-card-link {
-    width: 100%;
-    text-align: center;
-  }
-}
-</style>
-</head>
-<body>
-
-<!-- ===== About ===== -->
-<section class="campus-section about" id="about-aa-campus">
-  <div class="container">
-    <span class="eyebrow">About 2026 Audit & Assurance Campus Recruitment</span>
-    <h2 class="section-title">關於 2026 審計及確信諮詢服務部門校園徵才</h2>
-
-    <p class="lead">
-Deloitte 審計與確信服務（Audit & Assurance）透過快速高效的合作分工、運用最新的數位工具、服務國內外知名企業並提供高水準的專業服務。
-你將有機會提升在多元產業專業知識及企業運營流程，熟悉政府主管機關作業，透過參與不同專案提升數據分析及問題解決能力，累積豐富的審計實務經驗。
-      <br><br>
-我們歡迎來自會計、企業管理、資訊管理等領域的同學加入Deloitte。透過多元專案歷練與完善培育制度，培養紮實的專業能力，並將創新想法轉化為真正的影響力，為未來開創無限可能。    </p>
-
-    <h3>透過此計畫成為 Deloitte 發揮影響力的夥伴，你將獲得：</h3>
-    <ul class="highlights">
-      <li><span>審計實戰經驗：</span>參與真實審計專案，實際操作查核流程，深入了解企業運作。</li>
-      <li><span>多元交流與學習：</span>透過跨部門溝通及同仁交流，拓展人脈網絡，提升團隊合作能力。</li>
-      <li><span>多元活動交流：</span>透過職務與專案歷練，表現優異者可申請轉調海外發展機會。</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== Info Sessions (全新兩欄動態渲染) ===== -->
-<section class="campus-section info-session" id="info-sessions">
-  <div class="container">
-    
-    <div class="info-split-layout">
-      <!-- 左側導覽區 -->
-      <div class="info-left">
-        <span class="eyebrow">INFO SESSIONS</span>
-        <h2 class="section-title">2026 校園說明會資訊</h2>
-        <p class="lead" style="font-size: 16px;">想更深入了解 A&A 審計及確信諮詢服務的工作日常？歡迎報名參加，與學長姐面對面交流!</p>
-        <br>
-        <p class="lead" style="font-size: 14px;"><strong>*請確實填寫報名資料，將會於活動前1日以email寄出提醒!</strong></p>
-
-        <div class="info-bu-buttons" role="tablist">
-          <button class="info-bu-btn is-active" type="button" role="tab" data-type="online">
-            <span>線上校園徵才說明會</span>
-            <span class="info-bu-tag">Online</span>
-          </button>
-          <button class="info-bu-btn" type="button" role="tab" data-type="physical">
-            <span>實體校園徵才說明會</span>
-            <span class="info-bu-tag">Onsite</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- 右側資料區 -->
-      <div class="info-right">
-        <div class="info-right-head">
-          <h3 class="info-right-title" id="sessionPanelTitle">線上校園徵才說明會</h3>
-          <p class="info-count" id="sessionCount">0 sessions</p>
-        </div>
-        
-        <div id="sessionGrid" class="info-grid" aria-live="polite">
-          <!-- 卡片會透過 JavaScript 渲染到這裡 -->
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ===== Application Requirements ===== -->
-<section class="campus-section requirements" id="application-requirements">
-  <div class="container">
-    <span class="eyebrow">Application Requirement</span>
-    <h2 class="section-title">申請條件</h2>
-
-    <div class="meta">
-      <div><strong>招募對象：</strong>2027年應屆畢業生</div>
-      <div><strong>預計報到日：</strong>2027年 07、09月</div>
-      <div><strong>履歷投遞截止：</strong>即日起至2026/10/04（日）23:59（台灣時間）</div>
-    </div>
-
-    <!-- 小提醒區塊 -->
-    <div class="note-box">
-      <div class="note-box-title">💡 小提醒：</div>
-      <ul class="note-list">
-        <li>具國內外大學(含)以上學歷</li>
-        <li>需修畢初級會計學及中級會計學學分(修習過審計尤佳) </li>
-        <li>請務必上傳大學/碩士歷年成績單作為附件</li>
-      </ul>
-    </div>
-
-    <!-- ===== Timeline (Circles Style) ===== -->
-    <div class="timeline-circles" aria-label="Important Dates">
-      <div class="steps">
-        <div class="step">
-          <div class="circle"><span>10/4前</span></div>
-          <p class="label">線上履歷投遞完成</p>
-        </div>
-        <div class="step">
-          <div class="circle"><span>10月</span></div>
-          <p class="label">安排面談</p>
-        </div>
-        <div class="step">
-          <div class="circle"><span>11月</span></div>
-          <p class="label">錄取結果通知</p>
-        </div>
-        <div class="step">
-          <div class="circle"><span>2027年<br>07、09月</span></div>
-          <p class="label">報到入職</p>
-        </div>
-      </div>
-    </div>
-  </div> 
-</section> 
-
-<!-- ===== Apply Now ===== -->
-<section class="campus-section apply" id="apply-now">
-  <div class="container">
-    <span class="eyebrow">Apply Now</span>
-    <h2 class="section-title">職缺資訊</h2>
-    <div class="job-list">
-      
-      <!-- 職缺卡片 1：審計與確信 -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">初級審計員</h3>
-        </header>
-        <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 台南 / 高雄</p>
-        <p class="job-desc">協助完成審計財務報表、審計文件進行分析審查、協助審計客戶的財務及交易和內部控制流程</p>
-        <div class="job-actions">
-          <!-- 記得把 href 替換成 SuccessFactors 上真實的職缺連結 -->
-          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
-        </div>
-      </article>
-
-      <!-- 職缺卡片 2：數位審計/電腦審計 -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">電腦審計顧問</h3>
-        </header>
-        <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 高雄</p>      
-        <p class="job-desc">檢視及評估客戶資訊作業中，控制點設計是否妥適及遵循情形之檢查、提供客戶資訊循環和內部控制流程改善建議方案</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
-        </div>
-      </article>
-
-      <!-- 職缺卡片 3：稅務服務 -->
-      <article class="job-card">
-        <header class="job-header">
-          <h3 class="job-title">確信諮詢顧問</h3>
-        </header>
-        <p class="job-location">📍 地點：台北</p>
-        <p class="job-desc">各大金融機構洗錢防制確信、個人資料保護及內控稽核、新興科技資訊安全查核服務、永續相關確信及顧問服務</p>
-        <div class="job-actions">
-          <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
-        </div>
-      </article>
-      
-    </div>
-  </div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    /* =========================================================
-       1. 職缺區塊 (Apply Now) 截止日判斷
-       ========================================================= */
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const actionButtons = document.querySelectorAll("[data-end-date]");
-    actionButtons.forEach(button => {
-      const endDateStr = button.getAttribute("data-end-date");
-      if (endDateStr) {
-        const endDate = new Date(endDateStr);
-        endDate.setHours(0, 0, 0, 0);
-
-        if (today >= endDate) {
-          button.textContent = "已截止";
-          button.href = "javascript:void(0);"; 
-          button.removeAttribute("target");    
-          button.classList.add("btn-disabled"); 
-        }
-      }
-    });
-
-    /* =========================================================
-       2. 說明會 (Info Sessions) 動態資料渲染與切換邏輯
-       ========================================================= */
-    const sessionBtns = document.querySelectorAll(".info-bu-btn");
-    const sessionGrid = document.getElementById("sessionGrid");
-    const sessionCount = document.getElementById("sessionCount");
-    const sessionPanelTitle = document.getElementById("sessionPanelTitle");
-
-    const sessionTitleMap = {
-      online: "💻 報名線上校園徵才說明會",
-      physical: "🏫 報名實體校園徵才說明會"
-    };
-
-    // 說明會資料庫 (支援 endDate 設定)
-    const sessionData = {
-      online: [
-        {
-          title: "線上校園徵才說明會",
-          pill: "Teams會議",
-          desc: `歡迎以下同學報名參與:
-1. 各校會計科系、商管科系各年級同學、應屆畢業生
-2. 資管系所應屆畢業生 及 雙主修、輔系資管系所應屆畢業生
-3. 修習過中級會計學
-
-活動時間: 2026-09-XX(TBC)XX:00 - XX:30`,
-          url: "#",
-          endDate: "2026-09-30", // 注意：這裡必須填寫正確的日期格式 (如 2026-09-30)，自動反灰功能才會生效喔！
-          fullWidth: true /* 新增：讓這張卡片佔滿兩格 */
-        }
-      ],
-      physical: [
-        // 注意：刻意中原設定為過期日期 (2026-07-15) 以展示自動反灰功能
-        { title: "中原大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-07-15" },
-        { title: "國立臺北大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-16" },
-        { title: "國立成功大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-17" },
-        { title: "元智大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-18" },
-        { title: "輔仁大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-21" },
-        { title: "逢甲大學(會計)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-22" },
-        { title: "淡江大學(資管)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-23" },
-        { title: "靜宜大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-24" },
-        { title: "東吳大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-25" },
-        { title: "東吳大學(資管)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-28" },
-        { title: "東海大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-28" }
-      ]
-    };
-
-    // 防止 XSS 的跳脫字元處理
-    function escapeHtml(str) {
-      return String(str).replace(/[&<>"']/g, m => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
-      })[m]);
+    <html lang="zh-TW">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 A&A Campus</title>
+    <!-- 引入 Google Fonts: Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    /* =========================
+      2026 A&A Campus – Sections CSS
+      Brand: 黑 / 白 / #86BC25（輔色含於變數）
+      ========================= */
+    :root{
+      --brand:#86BC25;       /* 企業主色 */
+      --black:#000;          /* 深色文字 */
+      --white:#fff;          /* 反白背景 */
+      --accent-1:#43B02A;    /* 輔色 1 */
+      --accent-2:#26890D;    /* 輔色 2 */
+      --accent-3:#046A38;    /* 輔色 3 */
+      --accent-4:#0D8390;    /* 輔色 4 */
+      --accent-5:#007CB0;    /* 輔色 5 */
+
+      --text:#1a1a1a;
+      --muted:#666;
+      --border:#e6e6e6;
+      --card:#ffffff;
+      --surface:#f7f9f5;     /* Apply Now 區塊底色 */
+      --radius:16px;
+      --shadow:0 2px 10px rgba(0,0,0,.04);
     }
 
-    // 渲染卡片/清單功能
-    function renderSessions(typeKey) {
-      const rawSessions = sessionData[typeKey] || [];
-      
-      // 【新增：自動排序功能】依據 endDate 進行時間先後排序 
-      // 邏輯：日期越早的排越上面，如果沒有填寫 endDate (還在 TBC 的)，自動排在最後面
-      const sessions = [...rawSessions].sort((a, b) => {
-        const dateA = a.endDate ? new Date(a.endDate).getTime() : Infinity;
-        const dateB = b.endDate ? new Date(b.endDate).getTime() : Infinity;
-        return dateA - dateB; // 由小排到大 (由早排到晚)
-      });
-      
-      sessionGrid.innerHTML = "";
-      sessionPanelTitle.textContent = sessionTitleMap[typeKey];
-      sessionCount.textContent = `${sessions.length} sessions`;
-      
-      // 如果是「實體說明會」，使用橫條清單排版
-      if (typeKey === 'physical') {
-        sessionGrid.className = "info-list-container";
-        
-        const listHtml = sessions.map(s => {
-          let btnText = "報名參加";
-          let btnClass = "info-card-link";
-          let btnHref = escapeHtml(s.url);
-          let targetAttr = 'target="_blank"';
+    /* 設定全局字體：英文優先使用 Aptos(Apotos)，遇到中文退回使用 Open Sans 及微軟正黑體 */
+    body {
+      font-family: "Apotos", "Aptos", "Open Sans", "Microsoft JhengHei", "PingFang TC", sans-serif;
+    }
 
-          // 判斷是否已截止
-          if (s.endDate) {
-            const ed = new Date(s.endDate);
-            ed.setHours(0, 0, 0, 0);
-            if (today >= ed) {
-              btnText = "已截止";
-              btnClass += " btn-disabled";
-              btnHref = "javascript:void(0);";
-              targetAttr = "";
+    /* 通用區塊 */
+    .campus-section {padding:56px 20px;}
+    .container {max-width:1080px;margin:0 auto;}
+
+    /* 眉批 (Eyebrow) 標題設計 */
+    .eyebrow {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #75787B; 
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size:clamp(24px,3vw,32px);
+      font-weight:600;
+      margin:0 0 16px;
+      color:#86BC25 !important;
+      letter-spacing:.5px;
+    }
+    .lead {
+      font-size:clamp(16px,2.2vw,18px);
+      line-height:1.8;
+      color:var(--text);
+      margin:0 0 16px;
+    }
+
+    /* 小重點條列 */
+    .highlights {margin:12px 0 20px;padding:0 0 0 20px;}
+    .highlights li {margin:8px 0;line-height:1.7;color:var(--text);}
+    .highlights li span {color:var(--brand);font-weight:700;}
+
+    /* 左右資訊條列（需求/條件） */
+    .meta {
+      display:grid;
+      gap:10px;
+      margin-top:8px;
+      font-size:15px;
+      color:#333;
+    }
+
+    /* 關於區塊（白底改為精緻漸層與品牌雙色微光） */
+    .about {
+      background: linear-gradient(135deg, var(--white) 0%, #f6faf2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .about::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(134, 188, 37, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about::after {
+      content: "";
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(13, 131, 144, 0.05) 0%, rgba(255, 255, 255, 0) 70%); 
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .about .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 申請條件區 */
+    .requirements {
+      background:#f5f5f5 !important;
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+
+    /* Apply Now 區 */
+    .apply {background:var(--surface);}
+
+    /* 職缺清單：改用 CSS Grid 實現完美的響應式佈局 */
+    .job-list {
+      display: grid;
+      gap: 20px; 
+      grid-template-columns: 1fr; 
+    }
+
+    @media (min-width: 768px) {
+      .job-list { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 992px) {
+      /* 這裡將原本的 repeat(4, 1fr) 改為 repeat(3, 1fr) ，讓電腦版呈現一行三個 */
+      .job-list { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* 卡片容器 */
+    .job-card {
+      background: var(--card-bg, var(--card));
+      border: 1px solid var(--card-accent, var(--border)); 
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    /* 定義每張卡片的跳色變數 (結合 Deloitte 品牌輔色) */
+    .job-card:nth-child(1) { --card-accent: var(--accent-3); --card-bg: #f2f7f4; }   
+    .job-card:nth-child(2) { --card-accent: var(--accent-4); --card-bg: #f2fafa; } 
+    .job-card:nth-child(3) {--card-accent: var(--accent-5); --card-bg: #f0f8fb;5;} 
+
+    .job-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0,0,0,.08);
+    }
+    .job-header {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .job-title {
+      font-size:18px;
+      margin:0;
+      color: var(--card-accent, var(--accent-3)) !important; 
+      font-weight:700;
+      line-height: 1.4;
+    }
+
+    /* 新增：地點與職缺說明的樣式 */
+    .job-location {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+      margin: -4px 0 4px 0;
+    }
+
+    .job-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+      /* 讓描述區塊佔據剩餘空間，確保不管字數多少，底部的按鈕都能對齊 */
+      flex-grow: 1; 
+    }
+
+    .job-actions {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: auto;      
+      justify-content: center; 
+    }
+
+    @media (min-width: 768px) {
+      .job-actions { justify-content: flex-start; }
+    }
+
+    /* 按鈕 */
+    .btn-primary, .btn-outline {
+      display:inline-block;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+      line-height:1;
+      transition:transform .06s ease, filter .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    /* 提升 CSS 權重，徹底壓制招募系統的預設超連結黑字 */
+    html body .campus-section .job-card a.btn-primary,
+    html body .campus-section .job-card a.btn-primary:link,
+    html body .campus-section .job-card a.btn-primary:visited {
+      background: var(--card-accent, var(--brand)) !important;
+      color: #ffffff !important;
+      border: 2px solid var(--card-accent, var(--brand)) !important;
+      -webkit-text-fill-color: #ffffff !important; 
+    }
+
+    /* 懸停(Hover)時變為精緻的黑底白字 */
+    html body .campus-section .job-card a.btn-primary:hover,
+    html body .campus-section .job-card a.btn-primary:focus {
+      background: #1a1a1a !important; 
+      color: #ffffff !important; 
+      border-color: #1a1a1a !important;
+      -webkit-text-fill-color: #ffffff !important;
+    }
+
+    /* 已截止/已結束按鈕樣式 (加強防護 CSB 覆蓋) */
+    html body .campus-section .btn-disabled,
+    html body .campus-section a.btn-disabled {
+      background-color: #d1d5db !important; 
+      border-color: #d1d5db !important;
+      color: #9ca3af !important; 
+      -webkit-text-fill-color: #9ca3af !important;
+      cursor: not-allowed !important; 
+      pointer-events: none; 
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* 小備註區塊 */
+    .note-box {
+      margin-top: 24px;
+      padding: 18px 20px;
+      background-color: #fbfdf9; 
+      border: 1px solid #e2ebd5;
+      border-left: 4px solid var(--brand); 
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.02);
+    }
+    .note-box-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 10px 0;
+    }
+    .note-list {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* ===== Circles Timeline ===== */
+    .timeline-circles {
+      margin-top:28px;
+      padding:10px 0;
+      text-align:center;
+    }
+    .timeline-circles .steps {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:32px;
+    }
+    .timeline-circles .step {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      text-align:center;
+    }
+    .timeline-circles .circle {
+      width:120px; height:120px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      color:var(--brand); font-weight:800; line-height:1.15; text-align:center;
+      background:var(--white);
+      border: 4px solid var(--brand);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+    }
+    .timeline-circles .circle span {
+      display:inline-block;
+      font-size:18px;
+    }
+    .timeline-circles .label {
+      font-size:15px; font-weight:600; color:#53565A;
+      margin:0;
+    }
+
+    @media (min-width:769px){
+      .timeline-circles .steps::before {
+        content:"";
+        position:absolute; left:0; right:0; top:70px;
+        height:4px; background:var(--brand);
+        z-index:-1; border-radius:2px;
+      }
+      .timeline-circles .steps { position:relative; }
+    }
+
+    @media (max-width:768px){
+      .timeline-circles .steps {
+        flex-direction:column;      
+        align-items:center;         
+        justify-content:flex-start; 
+        gap:20px;
+      }
+      .timeline-circles .step {
+        flex:none;                 
+        width:100%;
+        text-align:center;
+      }
+      .timeline-circles .circle {
+        width:96px; height:96px;
+        margin:0 auto;              
+      }
+    }
+
+    /* ===== Info Sessions (全新兩欄動態渲染樣式) ===== */
+    .info-session {
+      background: var(--surface); 
+      border-top: 1px solid var(--border);
+    }
+
+    .info-split-layout {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 60px;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+
+    /* 左側：導覽按鈕 */
+    .info-left { text-align: left; }
+    .info-bu-buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .info-bu-btn {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid #dddddd;
+      background: #ffffff;
+      color: #000000;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .info-bu-btn:hover { border-color: var(--brand); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .info-bu-btn.is-active { border-color: var(--brand); background: var(--text); color: #ffffff; transform: none; box-shadow: none;}
+    .info-bu-tag {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+
+    /* 右側：內容網格 */
+    .info-right {
+      border-left: 3px solid var(--brand);
+      padding-left: 40px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    .info-right-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .info-right-title { font-size: 22px; font-weight: 600; margin: 0; color: var(--text); }
+    .info-count { font-size: 15px; color: var(--muted); margin: 0; font-weight: 600;}
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    /* 單張卡片 */
+    .info-card {
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 新增：滿版卡片 (橫跨兩欄) */
+    .info-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .info-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.06); border-color: #d4d4d4;}
+    .info-card-title { font-size: 18px; font-weight: 600; margin: 0; line-height: 1.4; color: var(--accent-3); }
+
+    /* 標籤 (地點/會議室) */
+    .info-pill {
+      display: inline-flex;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #f2f7f4;
+      color: var(--accent-3);
+      font-size: 13px;
+      font-weight: 700;
+      width: fit-content;
+    }
+
+    .info-card-desc {
+      font-size: 14px; line-height: 1.7; color: #555; margin: 0;
+      white-space: pre-line; /* 支援換行符號 */
+    }
+
+    /* 卡片報名按鈕 */
+    .info-card-link {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1.5px solid var(--brand);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    .info-card .info-card-link:hover {
+      background-color: var(--brand);
+      color: #ffffff !important;
+      text-decoration: none;
+    }
+
+    /* 動態生成的已截止按鈕樣式 */
+    .info-card .info-card-link.btn-disabled,
+    .info-list-item .info-card-link.btn-disabled {
+      background-color: #e5e7eb;
+      border-color: #e5e7eb;
+      color: #9ca3af !important;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* ===== 實體說明會專屬：橫條清單樣式 ===== */
+    .info-list-container {
+      display: flex;
+      flex-direction: column;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .info-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 16px;
+      border-bottom: 1px solid #e6e6e6;
+      gap: 20px;
+      transition: background-color 0.2s ease;
+      border-radius: 8px;
+    }
+
+    .info-list-item:hover {
+      background-color: #fcfdfa;
+    }
+
+    .info-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-list-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .info-list-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .info-list-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--accent-3);
+    }
+
+    .info-list-desc {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .info-list-action {
+      flex-shrink: 0; 
+    }
+
+    .info-list-item .info-card-link:hover {
+      background-color: var(--brand);
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 992px) { .info-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) {
+      .info-split-layout { grid-template-columns: 1fr; gap: 30px; }
+      .info-right { border-left: none; border-top: 3px solid var(--brand); padding: 30px 0 0 0; min-height: auto;}
+      
+      /* 手機版清單適應 */
+      .info-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 0;
+      }
+      .info-list-action, .info-list-item .info-card-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    </style>
+    </head>
+    <body>
+
+    <!-- ===== About ===== -->
+    <section class="campus-section about" id="about-aa-campus">
+      <div class="container">
+        <span class="eyebrow">About 2026 Audit & Assurance Campus Recruitment</span>
+        <h2 class="section-title">關於 2026 審計及確信諮詢服務部門校園徵才</h2>
+
+        <p class="lead">
+    Deloitte 審計與確信服務（Audit & Assurance）透過快速高效的合作分工、運用最新的數位工具、服務國內外知名企業並提供高水準的專業服務。
+    你將有機會提升在多元產業專業知識及企業運營流程，熟悉政府主管機關作業，透過參與不同專案提升數據分析及問題解決能力，累積豐富的審計實務經驗。
+          <br><br>
+    我們歡迎來自會計、企業管理、資訊管理等領域的同學加入Deloitte。透過多元專案歷練與完善培育制度，培養紮實的專業能力，並將創新想法轉化為真正的影響力，為未來開創無限可能。    </p>
+
+        <h3>透過此計畫成為 Deloitte 發揮影響力的夥伴，你將獲得：</h3>
+        <ul class="highlights">
+          <li><span>審計實戰經驗：</span>參與真實審計專案，實際操作查核流程，深入了解企業運作。</li>
+          <li><span>多元交流與學習：</span>透過跨部門溝通及同仁交流，拓展人脈網絡，提升團隊合作能力。</li>
+          <li><span>多元活動交流：</span>透過職務與專案歷練，表現優異者可申請轉調海外發展機會。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Info Sessions (全新兩欄動態渲染) ===== -->
+    <section class="campus-section info-session" id="info-sessions">
+      <div class="container">
+        
+        <div class="info-split-layout">
+          <!-- 左側導覽區 -->
+          <div class="info-left">
+            <span class="eyebrow">2026 Campus Talk</span>
+            <h2 class="section-title">2026校園徵才說明會</h2>
+            <p class="lead" style="font-size: 16px;">想更深入了解 A&A 審計及確信諮詢服務的工作日常？歡迎報名參加，與學長姐面對面交流!</p>
+            <br>
+            <p class="lead" style="font-size: 14px;"><strong>*請確實填寫報名資料，將會於活動前1日以email寄出提醒!</strong></p>
+
+            <div class="info-bu-buttons" role="tablist">
+              <button class="info-bu-btn is-active" type="button" role="tab" data-type="online">
+                <span>線上校園徵才說明會</span>
+                <span class="info-bu-tag">Online</span>
+              </button>
+              <button class="info-bu-btn" type="button" role="tab" data-type="physical">
+                <span>實體校園徵才說明會</span>
+                <span class="info-bu-tag">Onsite</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 右側資料區 -->
+          <div class="info-right">
+            <div class="info-right-head">
+              <h3 class="info-right-title" id="sessionPanelTitle">線上校園徵才說明會</h3>
+              <p class="info-count" id="sessionCount">0 sessions</p>
+            </div>
+            
+            <div id="sessionGrid" class="info-grid" aria-live="polite">
+              <!-- 卡片會透過 JavaScript 渲染到這裡 -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== Application Requirements ===== -->
+    <section class="campus-section requirements" id="application-requirements">
+      <div class="container">
+        <span class="eyebrow">Application Requirement</span>
+        <h2 class="section-title">申請條件</h2>
+
+        <div class="meta">
+          <div><strong>招募對象：</strong>2027年應屆畢業生</div>
+          <div><strong>預計報到日：</strong>2027年 07、09月</div>
+          <div><strong>履歷投遞截止：</strong>即日起至2026/10/04（日）23:59（台灣時間）</div>
+        </div>
+
+        <!-- 小提醒區塊 -->
+        <div class="note-box">
+          <div class="note-box-title">💡 小提醒：</div>
+          <ul class="note-list">
+            <li>具國內外大學(含)以上學歷</li>
+            <li>需修畢初級會計學及中級會計學學分(修習過審計尤佳) </li>
+            <li>請務必上傳大學/碩士歷年成績單作為附件</li>
+          </ul>
+        </div>
+
+        <!-- ===== Timeline (Circles Style) ===== -->
+        <div class="timeline-circles" aria-label="Important Dates">
+          <div class="steps">
+            <div class="step">
+              <div class="circle"><span>10/4前</span></div>
+              <p class="label">線上履歷投遞完成</p>
+            </div>
+            <div class="step">
+              <div class="circle"><span>10月</span></div>
+              <p class="label">安排面談</p>
+            </div>
+            <div class="step">
+              <div class="circle"><span>11月</span></div>
+              <p class="label">錄取結果通知</p>
+            </div>
+            <div class="step">
+              <div class="circle"><span>2027年<br>07、09月</span></div>
+              <p class="label">報到入職</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </section> 
+
+    <!-- ===== Apply Now ===== -->
+    <section class="campus-section apply" id="apply-now">
+      <div class="container">
+        <span class="eyebrow">Apply Now</span>
+        <h2 class="section-title">職缺資訊</h2>
+        <div class="job-list">
+          
+          <!-- 職缺卡片 1：審計與確信 -->
+          <article class="job-card">
+            <header class="job-header">
+              <h3 class="job-title">初級審計員</h3>
+            </header>
+            <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 台南 / 高雄</p>
+            <p class="job-desc">協助完成審計財務報表、審計文件進行分析審查、協助審計客戶的財務及交易和內部控制流程</p>
+            <div class="job-actions">
+              <!-- 記得把 href 替換成 SuccessFactors 上真實的職缺連結 -->
+              <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
+            </div>
+          </article>
+
+          <!-- 職缺卡片 2：電腦審計 -->
+          <article class="job-card">
+            <header class="job-header">
+              <h3 class="job-title">電腦審計顧問</h3>
+            </header>
+            <p class="job-location">📍 地點：台北 / 新竹 / 台中 / 高雄</p>      
+            <p class="job-desc">檢視及評估客戶資訊作業中，控制點設計是否妥適及遵循情形之檢查、提供客戶資訊循環和內部控制流程改善建議方案</p>
+            <div class="job-actions">
+              <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
+            </div>
+          </article>
+
+          <!-- 職缺卡片 3：確信諮詢 -->
+          <article class="job-card">
+            <header class="job-header">
+              <h3 class="job-title">確信諮詢顧問</h3>
+            </header>
+            <p class="job-location">📍 地點：台北</p>
+            <p class="job-desc">各大金融機構洗錢防制確信、個人資料保護及內控稽核、新興科技資訊安全查核服務、永續相關確信及顧問服務</p>
+            <div class="job-actions">
+              <a class="btn-primary" href="#" target="_blank" rel="noopener" data-end-date="2026-10-04">Learn more</a>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* =========================================================
+          1. 職缺區塊 (Apply Now) 截止日判斷
+          ========================================================= */
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const actionButtons = document.querySelectorAll("[data-end-date]");
+        actionButtons.forEach(button => {
+          const endDateStr = button.getAttribute("data-end-date");
+          if (endDateStr) {
+            const endDate = new Date(endDateStr);
+            endDate.setHours(0, 0, 0, 0);
+
+            if (today >= endDate) {
+              button.textContent = "已截止";
+              button.href = "javascript:void(0);"; 
+              button.removeAttribute("target");    
+              button.classList.add("btn-disabled"); 
             }
           }
+        });
 
-          return `
-            <div class="info-list-item">
-              <div class="info-list-content">
-                <div class="info-list-header">
-                  <h4 class="info-list-title">${escapeHtml(s.title)}</h4>
-                  <span class="info-pill">📍 ${escapeHtml(s.pill)}</span>
+        /* =========================================================
+          2. 說明會 (Info Sessions) 動態資料渲染與切換邏輯
+          ========================================================= */
+        const sessionBtns = document.querySelectorAll(".info-bu-btn");
+        const sessionGrid = document.getElementById("sessionGrid");
+        const sessionCount = document.getElementById("sessionCount");
+        const sessionPanelTitle = document.getElementById("sessionPanelTitle");
+
+        const sessionTitleMap = {
+          online: "💻 報名線上校園徵才說明會",
+          physical: "🏫 報名實體校園徵才說明會"
+        };
+
+        // 說明會資料庫 (支援 endDate 設定)
+        const sessionData = {
+          online: [
+            {
+              title: "線上校園徵才說明會",
+              pill: "Teams會議",
+              desc: `歡迎以下同學報名參與:
+    1. 各校會計科系、商管科系各年級同學、應屆畢業生
+    2. 資管系所應屆畢業生 及 雙主修、輔系資管系所應屆畢業生
+    3. 修習過中級會計學
+
+    活動時間: 2026-09-XX(TBC)XX:00 - XX:30`,
+              url: "#",
+              endDate: "2026-09-30", // 注意：這裡必須填寫正確的日期格式 (如 2026-09-30)，自動反灰功能才會生效喔！
+              fullWidth: true /* 新增：讓這張卡片佔滿兩格 */
+            }
+          ],
+          physical: [
+            // 注意：刻意中原設定為過期日期 (2026-07-15) 以展示自動反灰功能
+            { title: "中原大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-07-15" },
+            { title: "國立臺北大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-16" },
+            { title: "國立成功大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-17" },
+            { title: "元智大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-18" },
+            { title: "輔仁大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-21" },
+            { title: "逢甲大學(會計)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-22" },
+            { title: "淡江大學(資管)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-23" },
+            { title: "靜宜大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-24" },
+            { title: "東吳大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-25" },
+            { title: "東吳大學(資管)", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-28" },
+            { title: "東海大學", pill: "TBC", desc: "活動時間: 2026-09-XX(TBC)XX:00 - XX:30", url: "#", endDate: "2026-09-28" }
+          ]
+        };
+
+        // 防止 XSS 的跳脫字元處理
+        function escapeHtml(str) {
+          return String(str).replace(/[&<>"']/g, m => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+          })[m]);
+        }
+
+        // 渲染卡片/清單功能
+        function renderSessions(typeKey) {
+          const rawSessions = sessionData[typeKey] || [];
+          
+          // 【新增：自動排序功能】依據 endDate 進行時間先後排序 
+          // 邏輯：日期越早的排越上面，如果沒有填寫 endDate (還在 TBC 的)，自動排在最後面
+          const sessions = [...rawSessions].sort((a, b) => {
+            const dateA = a.endDate ? new Date(a.endDate).getTime() : Infinity;
+            const dateB = b.endDate ? new Date(b.endDate).getTime() : Infinity;
+            return dateA - dateB; // 由小排到大 (由早排到晚)
+          });
+          
+          sessionGrid.innerHTML = "";
+          sessionPanelTitle.textContent = sessionTitleMap[typeKey];
+          sessionCount.textContent = `${sessions.length} sessions`;
+          
+          // 如果是「實體說明會」，使用橫條清單排版
+          if (typeKey === 'physical') {
+            sessionGrid.className = "info-list-container";
+            
+            const listHtml = sessions.map(s => {
+              let btnText = "報名參加";
+              let btnClass = "info-card-link";
+              let btnHref = escapeHtml(s.url);
+              let targetAttr = 'target="_blank"';
+
+              // 判斷是否已截止
+              if (s.endDate) {
+                const ed = new Date(s.endDate);
+                ed.setHours(0, 0, 0, 0);
+                if (today >= ed) {
+                  btnText = "已截止";
+                  btnClass += " btn-disabled";
+                  btnHref = "javascript:void(0);";
+                  targetAttr = "";
+                }
+              }
+
+              return `
+                <div class="info-list-item">
+                  <div class="info-list-content">
+                    <div class="info-list-header">
+                      <h4 class="info-list-title">${escapeHtml(s.title)}</h4>
+                      <span class="info-pill">📍 ${escapeHtml(s.pill)}</span>
+                    </div>
+                    <p class="info-list-desc">${escapeHtml(s.desc)}</p>
+                  </div>
+                  <div class="info-list-action">
+                    <a class="${btnClass}" href="${btnHref}" ${targetAttr}>${btnText}</a>
+                  </div>
                 </div>
-                <p class="info-list-desc">${escapeHtml(s.desc)}</p>
-              </div>
-              <div class="info-list-action">
-                <a class="${btnClass}" href="${btnHref}" ${targetAttr}>${btnText}</a>
-              </div>
-            </div>
-          `;
-        }).join("");
-        
-        sessionGrid.innerHTML = listHtml;
-      
-      // 如果是「線上說明會」，維持原本的網格卡片排版
-      } else {
-        sessionGrid.className = "info-grid";
-        
-        const cardsHtml = sessions.map(s => {
-          let btnText = "報名參加";
-          let btnClass = "info-card-link";
-          let btnHref = escapeHtml(s.url);
-          let targetAttr = 'target="_blank"';
-          let cardClass = "info-card";
+              `;
+            }).join("");
+            
+            sessionGrid.innerHTML = listHtml;
+          
+          // 如果是「線上說明會」，維持原本的網格卡片排版
+          } else {
+            sessionGrid.className = "info-grid";
+            
+            const cardsHtml = sessions.map(s => {
+              let btnText = "報名參加";
+              let btnClass = "info-card-link";
+              let btnHref = escapeHtml(s.url);
+              let targetAttr = 'target="_blank"';
+              let cardClass = "info-card";
 
-          if (s.fullWidth) cardClass += " full-width";
+              if (s.fullWidth) cardClass += " full-width";
 
-          if (s.endDate) {
-            const ed = new Date(s.endDate);
-            ed.setHours(0, 0, 0, 0);
-            if (today >= ed) {
-              btnText = "已截止";
-              btnClass += " btn-disabled";
-              btnHref = "javascript:void(0);";
-              targetAttr = "";
-            }
+              if (s.endDate) {
+                const ed = new Date(s.endDate);
+                ed.setHours(0, 0, 0, 0);
+                if (today >= ed) {
+                  btnText = "已截止";
+                  btnClass += " btn-disabled";
+                  btnHref = "javascript:void(0);";
+                  targetAttr = "";
+                }
+              }
+
+              return `
+                <div class="${cardClass}">
+                  <h4 class="info-card-title">${escapeHtml(s.title)}</h4>
+                  <div><span class="info-pill">📍 ${escapeHtml(s.pill)}</span></div>
+                  <p class="info-card-desc">${escapeHtml(s.desc)}</p>
+                  <a class="${btnClass}" href="${btnHref}" ${targetAttr}>${btnText}</a>
+                </div>
+              `;
+            }).join("");
+            
+            sessionGrid.innerHTML = cardsHtml;
           }
+        }
 
-          return `
-            <div class="${cardClass}">
-              <h4 class="info-card-title">${escapeHtml(s.title)}</h4>
-              <div><span class="info-pill">📍 ${escapeHtml(s.pill)}</span></div>
-              <p class="info-card-desc">${escapeHtml(s.desc)}</p>
-              <a class="${btnClass}" href="${btnHref}" ${targetAttr}>${btnText}</a>
-            </div>
-          `;
-        }).join("");
-        
-        sessionGrid.innerHTML = cardsHtml;
-      }
-    }
+        // 綁定左側導覽按鈕點擊事件
+        sessionBtns.forEach(btn => {
+          btn.addEventListener("click", function () {
+            sessionBtns.forEach(b => b.classList.remove("is-active"));
+            this.classList.add("is-active");
+            renderSessions(this.getAttribute("data-type"));
+          });
+        });
 
-    // 綁定左側導覽按鈕點擊事件
-    sessionBtns.forEach(btn => {
-      btn.addEventListener("click", function () {
-        sessionBtns.forEach(b => b.classList.remove("is-active"));
-        this.classList.add("is-active");
-        renderSessions(this.getAttribute("data-type"));
+        // 預設渲染線上場次
+        renderSessions("online");
+
       });
-    });
+    </script>
 
-    // 預設渲染線上場次
-    renderSessions("online");
-
-  });
-</script>
-
-</body>
-</html>
+    </body>
+    </html>
