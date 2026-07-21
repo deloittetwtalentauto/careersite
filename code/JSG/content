@@ -7,12 +7,11 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // 在此設定 Deloitte 企業品牌色
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: '#86BC25', // 企業主色
+            brand: '#86BC25', // 企業主色 (Deloitte Green)
             'brand-hover': '#43B02A', // 輔色：滑鼠移過去的顏色
             'brand-dark': '#046A38',
             'brand-teal': '#0D8390',
@@ -23,12 +22,20 @@
     }
   </script>
   <style>
-    /* 全域字體與平滑設定 */
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+    
+    /* 【HR小提醒】這個是專門對付 SAP CSB 系統強制吃掉標題顏色的終極武器 */
+    .force-white-text {
+      color: #ffffff !important; 
+    }
+    .force-gray-text {
+      color: #e5e7eb !important; /* 確保內文也不會被系統變成黑色 */
+    }
+
     /* iframe 影片的比例確保 */
     .video-container {
       position: relative;
@@ -106,28 +113,29 @@
           日系企業サービスグループ
         </div>
         
-        <!-- 標題 -->
-        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white" data-lang-target="zh">
+        <!-- 【HR小提醒】加上 force-white-text 確保在 SAP 系統中不會被變成黑字 -->
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white force-white-text" data-lang-target="zh">
           關於日商服務
         </h2>
-        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white hidden" data-lang-target="en">
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white force-white-text hidden" data-lang-target="en">
           About JSG
         </h2>
-        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white hidden" data-lang-target="ja">
+        <h2 class="pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold mb-6 leading-tight text-white force-white-text hidden" data-lang-target="ja">
           日系企業サービスについて
         </h2>
         
-        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200" data-lang-target="zh">
+        <!-- 同理，內文也加上 force-gray-text 確保閱讀性 -->
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text" data-lang-target="zh">
           勤業眾信台灣日系企業服務小組（台灣JSG）自1988年成立以來，已陪伴在台日系企業走過三十餘年。
           我們台灣JSG致力於從日系企業踏出進軍台灣的第一步起，即提供全方位的支援，
           目標是在審計、稅務、併購、風險顧問、管理顧問等各專業領域中，
           提供一站式的整合服務。
         </p>
-        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 hidden" data-lang-target="en">
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text hidden" data-lang-target="en">
           Since its establishment in 1988, the Deloitte Taiwan Japanese Services Group (Taiwan JSG) has accompanied Japanese enterprises in Taiwan for over 30 years. 
           Taiwan JSG is committed to providing comprehensive support from the very first step of entering the Taiwan market, aiming to offer one-stop integrated services across professional fields including audit, tax, M&A, risk advisory, and management consulting.
         </p>
-        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 hidden" data-lang-target="ja">
+        <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text hidden" data-lang-target="ja">
           デロイト台湾日系企業サービスグループ（台湾JSG）は、1988年に発足し、
           以来、30数年にわたり台湾における日系企業の皆様とともに歩んでまいりました。
           我々台湾JSGは、日系企業の皆様を台湾進出の第一歩からサポートし、
@@ -135,7 +143,6 @@
           各専門分野において、ワンストップのサービスを提供することを目標としています。
         </p>
         
-        <!-- 了解更多按鈕 -->
         <div data-lang-target="zh">
           <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html?icid=top_deloitte-tw-jsg"
              target="_blank"
@@ -261,13 +268,12 @@ JSGは、日本と台湾をつなぐ架け橋として、多様な専門家が�
           </div>
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4" data-lang-target="zh">
-             在 JSG，我們非常重視人才培育。只要你有渴望學習的心，勤業眾信豐富的全球資源都將成為你職涯成長的強大後盾。
+             日本與台灣在經濟上保持著非常緊密的合作關係。許多日系企業已進駐台灣，而近年來，來自各個產業領域的台灣企業也積極評估進軍日本市場的機會。我們期待能與有志於協助這些企業發展的人才攜手合作，共同支持其跨境商業活動與成長。
             </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="en">
-             At JSG, we highly value talent development. With a desire to learn, Deloitte's abundant global resources will become a strong backing for your career growth.
-            </p>
+            Japan and Taiwan maintain strong and close economic ties. Many Japanese companies have expanded into Taiwan, while an increasing number of Taiwanese companies across diverse industries are now considering entering the Japanese market. We are seeking a motivated individual to help support these companies and contribute to their cross-border growth and success.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 hidden" data-lang-target="ja">
-             JSGでは人材育成を重視しています。学ぶ意欲があれば、デロイトの豊富なグローバルリソースがあなたのキャリア成長の強力な後ろ盾となります。
+             日本と台湾は経済的にも非常に密接な関係にあり、多くの日系企業が台湾に進出し、また最近では幅広い分野の台湾企業が日本進出を検討しています。こうした企業の活動を一緒にサポートする方をお待ちしています。
             </p>
             <div class="border-t-[3px] border-gray-200 group-hover:border-brand transition-colors duration-300 w-12 mb-3 mx-auto sm:mx-0"></div>
             <h4 class="text-[16px] font-bold text-black m-0">近藤晴彥 Haruhiko Kondo</h4>
@@ -476,8 +482,7 @@ JSGは、多様な仲間が互いに学び合い、支え合いながら成長�
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const navButtons = Array.from(document.querySelectorAll(".nav-lang-btn"));
-      // 【HR 小提醒】我們把原本分開抓 zh 和 ja 的寫法，改成一次抓取所有有設定語系的標籤！
-      // 這樣程式碼更精簡，未來就算加第 4 種語言也不用一直寫重複的 code 哦！
+      // 抓取所有有設定語系的標籤！
       const allLangElements = Array.from(document.querySelectorAll('[data-lang-target]'));
       let current = ""; // 初始化為空
 
@@ -499,7 +504,6 @@ JSGは、多様な仲間が互いに学び合い、支え合いながら成長�
         if (lang === current) return;
         
         // 透過迴圈檢查所有帶有 data-lang-target 的元素
-        // 如果這個元素的語系等於我們點擊的語系，就把 hidden 拿掉；不等於的就加上 hidden
         allLangElements.forEach(el => {
           if (el.dataset.langTarget === lang) {
             el.classList.remove('hidden');
