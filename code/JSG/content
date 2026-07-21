@@ -104,7 +104,7 @@
       <div class="text-center md:text-left">
         
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase" data-lang-target="zh">
-          日商服務團隊
+          日商服務
         </div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-3 uppercase hidden" data-lang-target="en">
           Japanese Services Group
@@ -126,10 +126,7 @@
         
         <!-- 同理，內文也加上 force-gray-text 確保閱讀性 -->
         <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text" data-lang-target="zh">
-          勤業眾信台灣日系企業服務小組（台灣JSG）自1988年成立以來，已陪伴在台日系企業走過三十餘年。
-          我們台灣JSG致力於從日系企業踏出進軍台灣的第一步起，即提供全方位的支援，
-          目標是在審計、稅務、併購、風險顧問、管理顧問等各專業領域中，
-          提供一站式的整合服務。
+日商服務(Japanese Services Group, JSG)在台成立日本服務團隊近四十年，專注支援台日雙邊企業的跨境發展，串聯Deloitte全球網絡與在地經驗，在審計、稅務、併購、風險顧問、管理顧問等各專業領域中茁壯，協助在台日商、來台日商以及本地台商對日投資等企業，團隊中匯集多名日籍及具日文溝通能力的專業人士，使JSG成為台日企業跨境成長的橋梁。
         </p>
         <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text hidden" data-lang-target="en">
           Since its establishment in 1988, the Deloitte Taiwan Japanese Services Group (Taiwan JSG) has accompanied Japanese enterprises in Taiwan for over 30 years. 
@@ -154,7 +151,7 @@
           <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html?icid=top_deloitte-tw-jsg"
              target="_blank"
              class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">
-            &gt; Discover More
+            &gt; Learn more
           </a>
         </div>
         <div data-lang-target="ja" class="hidden">
@@ -192,7 +189,7 @@
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="en">Our Team</div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">私たちのチーム</div>
         
-        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">認識 JSG 團隊</h2>
+        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">認識 JSG 管理團隊</h2>
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="en">Meet the JSG Team</h2>
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="ja">チーム紹介</h2>
         
