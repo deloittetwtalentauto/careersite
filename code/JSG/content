@@ -126,12 +126,12 @@
         
         <!-- 同理，內文也加上 force-gray-text 確保閱讀性 -->
         <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text" data-lang-target="zh">
-日商服務(Japanese Services Group, JSG)在台成立日本服務團隊近四十年，專注支援台日雙邊企業的跨境發展，串聯Deloitte全球網絡與在地經驗，在審計、稅務、併購、風險顧問、管理顧問等各專業領域中茁壯，協助在台日商、來台日商以及本地台商對日投資等企業，團隊中匯集多名日籍及具日文溝通能力的專業人士，使JSG成為台日企業跨境成長的橋梁。
+        日商服務(Japanese Services Group, JSG)在台成立日本服務團隊近四十年，專注支援台日雙邊企業的跨境發展，串聯Deloitte全球網絡與在地經驗，在審計、稅務、併購、風險顧問、管理顧問等各專業領域中，匯集多名日籍及具日文溝通能力的專業人士，協助在台日商、來台日商以及本地台商對日投資等企業茁壯成長，使JSG成為台日企業跨境成長的橋梁。
         </p>
         <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text hidden" data-lang-target="en">
-          Since its establishment in 1988, the Deloitte Taiwan Japanese Services Group (Taiwan JSG) has accompanied Japanese enterprises in Taiwan for over 30 years. 
-          Taiwan JSG is committed to providing comprehensive support from the very first step of entering the Taiwan market, aiming to offer one-stop integrated services across professional fields including audit, tax, M&A, risk advisory, and management consulting.
-        </p>
+         For nearly 40 years, the Japanese Services Group (JSG) has been dedicated to supporting the cross-border development of enterprises in Taiwan and Japan. Leveraging Deloitte’s global network and local expertise, our team of Japanese expatriates and bilingual professionals delivers comprehensive services across audit, tax, mergers and acquisitions (M&A), risk advisory, and consulting.
+         We assist Japanese companies operating in Taiwan, Japanese firms pursuing IPOs in Taiwan, and Taiwanese businesses expanding into Japan. By helping these organizations create long-term value, JSG provides a vital connection for cross-border corporate success.
+         </p>
         <p class="text-[15px] md:text-[16px] leading-[1.8] mb-5 transition-opacity duration-300 text-gray-200 force-gray-text hidden" data-lang-target="ja">
           デロイト台湾日系企業サービスグループ（台湾JSG）は、1988年に発足し、
           以来、30数年にわたり台湾における日系企業の皆様とともに歩んでまいりました。
@@ -185,16 +185,16 @@
       
       <!-- 標題區 -->
       <div class="mb-12 md:mb-20 text-center md:text-left">
-        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">我們的團隊</div>
+        <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase" data-lang-target="zh">認識團隊</div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="en">Our Team</div>
         <div class="text-[13px] md:text-[14px] font-semibold tracking-[0.12em] text-brand mb-2.5 uppercase hidden" data-lang-target="ja">私たちのチーム</div>
         
-        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">認識 JSG 管理團隊</h2>
-        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="en">Meet the JSG Team</h2>
+        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5" data-lang-target="zh">日商服務管理團隊</h2>
+        <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="en">Meet JSG Leadership</h2>
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="ja">チーム紹介</h2>
         
         <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-2xl mx-auto md:mx-0" data-lang-target="zh">
-          歡迎加入 JSG 團隊，這裡有來自審計、稅務與顧問服務等不同領域的夥伴，聽聽他們服務日商客戶的真實體驗。
+          我們的日商服務團隊成員包含來自審計、稅務、併購及各類顧問領域的專業夥伴，歡迎與我們一起發揮影響力。
         </p>
         <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] max-w-2xl mx-auto md:mx-0 hidden" data-lang-target="en">
           Welcome to the JSG team. Hear from our professionals across audit, tax, and advisory services as they share their real-world experiences serving Japanese clients.
