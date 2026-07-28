@@ -106,7 +106,13 @@
       --radius: 16px;
       --shadow: 0 2px 10px rgba(0, 0, 0, .04);
     }
+    .banner-desktop { display: block; }
+    .banner-mobile { display: none; }
 
+    @media (max-width: 768px) {
+      .banner-desktop { display: none; }
+      .banner-mobile { display: block; }
+    }
     /* 設定全局字體：英文優先使用 Aptos(Apotos)，遇到中文退回使用 Open Sans 及微軟正黑體 */
     body {
       font-family: "Apotos", "Aptos", "Open Sans", "Microsoft JhengHei", "PingFang TC", sans-serif;
@@ -820,6 +826,20 @@
 </head>
 
 <body>
+    <!-- ===== Banner 區塊 ===== -->
+    <!-- 電腦版 Banner (大於 768px 顯示) -->
+    <section class="banner-desktop" style="text-align: center; padding: 0; margin: 0;">
+      <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/banner/desktop/2026%20AA%20Campus_banner_desktop.png" 
+           alt="2026 A&A Campus Recruitment" 
+           style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    </section>
+
+    <!-- 手機版 Banner (小於等於 768px 顯示) -->
+    <section class="banner-mobile" style="text-align: center; padding: 0; margin: 0;">
+      <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/banner/mobile/2026%20AA%20Campus_banner_mobile.png" 
+           alt="2026 A&A Campus Recruitment" 
+           style="width: 100%; height: auto; display: block; margin: 0 auto;">
+    </section>
 
   <!-- ===== About ===== -->
   <section class="campus-section about" id="about-aa-campus">
