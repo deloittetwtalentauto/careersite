@@ -864,8 +864,8 @@
         }
       ],
 physical: [
-  { title: "東吳大學 會計系", pill: "城中校區第二大樓1樓 2123會議室", desc: "活動時間: 2026/09/15(二) 12:00 - 13:00", url: "https://forms.cloud.microsoft/e/Ej62cwLHzz", endDate: "2026-09-15" },
-  { title: "國立中正大學 會計與資訊系", pill: "會資系161演講廳", desc: "活動時間: 2026/09/15(二) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/n70T2TkVj0", endDate: "2026-09-15" },
+  { title: "東吳大學 會計系", pill: "城中校區第二大樓1樓 2123會議室", desc: "活動時間: 2026/09/15(二) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/Ej62cwLHzz", endDate: "2026-09-15" },
+  { title: "國立中正大學 會計與資訊科技學系", pill: "會資系161演講廳", desc: "活動時間: 2026/09/15(二) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/n70T2TkVj0", endDate: "2026-09-15" },
   { title: "國立臺北大學 會計系", pill: "商院205教室", desc: "活動時間: 2026/09/16(三) 11:10 - 14:00", url: "https://forms.cloud.microsoft/e/xBRx8tkjex", endDate: "2026-09-16" },
   { title: "逢甲大學 會計系", pill: "第六國際會議廳", desc: "活動時間: 2026/09/16(三) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/Pendadt4x0", endDate: "2026-09-16" },
   { title: "元智大學 會計系", pill: "待定，將以Email通知", desc: "活動時間: 2026/09/16(三) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/in137ECWQD", endDate: "2026-09-16" },
