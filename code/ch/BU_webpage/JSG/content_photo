@@ -96,20 +96,20 @@ JSGは、台湾の日系企業、台湾へ進出する日系企業、および�
         </p>
         
         <div data-lang-target="zh">
-          <a href="#" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; 更多關於 JSG</a>
+          <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; 更多關於 JSG</a>
         </div>
         <div data-lang-target="en" class="hidden">
-          <a href="#" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; Learn more</a>
+          <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; Learn more</a>
         </div>
         <div data-lang-target="ja" class="hidden">
-          <a href="#" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; JSG についてもっと知る</a>
+          <a href="https://www.deloitte.com/tw/tc/services/international-specialist-services/services/deloitte-tw-jsg.html" class="inline-block mt-4 px-7 py-3 bg-brand text-black no-underline font-semibold text-[14px] rounded-full hover:bg-brand-hover hover:text-white transition-colors duration-300 shadow-md">&gt; JSG についてもっと知る</a>
         </div>
       </div>
 
       <!-- Image Content -->
       <div class="w-full bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-800">
         <div class="aspect-[16/9] w-full overflow-hidden">
-          <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Yao%20Spencer.jpg" alt="Deloitte JSG" class="w-full h-full object-cover">
+          <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/about%20JSG.png" alt="Deloitte JSG" class="w-full h-full object-cover">
         </div>
       </div>
 
