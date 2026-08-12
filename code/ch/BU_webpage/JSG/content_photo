@@ -32,22 +32,6 @@
     .force-white-text { color: #ffffff !important; }
     .force-gray-text { color: #e5e7eb !important; }
 
-    /* Video iframe responsiveness */
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      overflow: hidden;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    
     /* Line clamping for cards */
     .line-clamp-2 {
       display: -webkit-box;
@@ -122,10 +106,10 @@ JSGは、台湾の日系企業、台湾へ進出する日系企業、および�
         </div>
       </div>
 
-      <!-- Video Content -->
+      <!-- Image Content -->
       <div class="w-full bg-gray-900 rounded-xl shadow-2xl overflow-hidden border border-gray-800">
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/5PmHWmzXDG4?autoplay=1&mute=1&loop=1&playlist=5PmHWmzXDG4&controls=0&modestbranding=1&showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="aspect-[16/9] w-full overflow-hidden">
+          <img src="https://raw.githubusercontent.com/deloittetwtalentauto/careersite/main/images/Profile/Yao%20Spencer.jpg" alt="Deloitte JSG" class="w-full h-full object-cover">
         </div>
       </div>
 
@@ -145,7 +129,6 @@ JSGは、台湾の日系企業、台湾へ進出する日系企業、および�
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="en">Meet JSG Leadership</h2>
         <h2 class="block pl-0 md:pl-4 border-l-0 md:border-l-[5px] border-brand text-[28px] md:text-[36px] font-bold text-black mb-5 hidden" data-lang-target="ja">JSG マネジメントチーム</h2>
         
-        <!-- FIX: Removed max-w-2xl class which was constraining the width and causing early line breaks -->
         <p class="text-[15px] md:text-[16px] text-gray-600 leading-[1.7] mx-auto md:mx-0 w-full lg:w-3/4" data-lang-target="zh">
           我們的日商服務團隊成員包含來自審計、稅務、併購及各類顧問領域的專業夥伴，歡迎與我們一起發揮影響力。
         </p>
@@ -169,7 +152,7 @@ JSGは、台湾の日系企業、台湾へ進出する日系企業、および�
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify" data-lang-target="zh">
 加入Deloitte JSG你有機會接觸日商經營管理，或伴隨著台商赴日投資一同前往日本提供服務，無論審計或顧問服務，你將有機會與我們立足台灣、放眼國際。
 </p>
-            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="en">
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-left hidden" data-lang-target="en">
 By joining Deloitte Taiwan JSG, you will have opportunities to engage in management engagements with Japanese enterprises, and to accompany Taiwanese clients investing in Japan to deliver services on the ground. Whether in Audit or Advisory, you will build your career rooted in Taiwan while working with a global perspective.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="ja">
 Deloitte台湾のJSGに加わることで、日系企業の経営・管理に携わる機会や、日本へ投資する台湾企業に伴走し、サービスを提供する機会があります。監査サービス、アドバイザリーサービスのいずれにおいても、台湾に根ざしつつ、国際的な視野で活躍していただけます。            </p>
@@ -190,7 +173,7 @@ Deloitte台湾のJSGに加わることで、日系企業の経営・管理に携
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify" data-lang-target="zh">
 JSG是一個連結日本與台灣的專業團隊，我們透過跨領域合作，協助客戶創造價值並持續成長。歡迎勇於挑戰、自我成長的人才加入，一起開創更精彩的未來。            </p>
-            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="en">
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-left hidden" data-lang-target="en">
 JSG is a bridge between Japan and Taiwan, where diverse professionals work together to help clients grow and succeed. We welcome people who embrace challenges and are eager to learn and develop. Let’s build the future together.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="ja">
 JSGは、日本と台湾をつなぐ架け橋として、多様な専門家が協力しながらクライアントの成長を支援しています。新しい挑戦を楽しみ、自ら成長したい方を心より歓迎します。ぜひ私たちと共に未来を創りましょう。            </p>
@@ -211,7 +194,7 @@ JSGは、日本と台湾をつなぐ架け橋として、多様な専門家が�
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify" data-lang-target="zh">
 日本與台灣在經濟上保持著非常緊密的合作關係。許多日系企業已進駐台灣，而近年來，來自各個產業領域的台灣企業也積極評估進軍日本市場的機會。我們期待能與有志於協助這些企業發展的人才攜手合作，共同支持其跨境商業活動與成長。            </p>
-            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="en">
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-left hidden" data-lang-target="en">
 Japan and Taiwan maintain strong and close economic ties. Many Japanese companies have expanded into Taiwan, while an increasing number of Taiwanese companies across diverse industries are now considering entering the Japanese market. We are seeking a motivated individual to help support these companies and contribute to their cross-border growth and success.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="ja">
 日本と台湾は経済的にも非常に密接な関係にあり、多くの日系企業が台湾に進出している一方、最近では幅広い分野の台湾企業が日本進出を検討しています。こうした企業の活動を一緒にサポートする方をお待ちしています。            </p>
@@ -232,7 +215,7 @@ Japan and Taiwan maintain strong and close economic ties. Many Japanese companie
           <div class="flex-1 pt-2 text-center sm:text-left">
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify" data-lang-target="zh">
 JSG是一個讓多元夥伴彼此學習、相互支持並共同成長的團隊。我們誠摯歡迎你加入連結日本與台灣的新挑戰。            </p>
-            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="en">
+            <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-left hidden" data-lang-target="en">
 JSG is a team where diverse colleagues learn from and support one another as they grow. We warmly welcome you to take on new challenges connecting Japan and Taiwan.            </p>
             <p class="text-[15px] md:text-[16px] leading-[1.8] text-gray-800 font-medium mb-4 text-justify hidden" data-lang-target="ja">
 JSGは、多様な仲間が互いに学び合い、支え合いながら成長できるチームです。日本と台湾をつなぐ新しい挑戦を、私たちは心より歓迎します。            </p>
