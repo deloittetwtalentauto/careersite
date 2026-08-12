@@ -759,7 +759,7 @@
             <i class="icon-briefcase_special"></i>
           </div>
           <div class="step-info">
-            <span class="step-date">2027年<br>7月、9月</span>
+            <span class="step-date">2027年7月、9月</span>
             <p class="label">報到入職</p>
           </div>
         </div>
@@ -856,7 +856,7 @@
       online: [
         {
           title: "線上校園徵才說明會",
-          pill: "Zoom Webinar",
+          pill: "Teams Webinar",
           desc: ` 活動時間: 2026/09/29(二) 12:20 - 13:30\n(活動前將以郵件發送會議連結)`,
           url: "#",
           endDate: "2026-09-29",
