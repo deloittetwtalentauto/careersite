@@ -660,7 +660,7 @@
             <span class="info-bu-tag">Onsite</span>
           </button>
           <button class="info-bu-btn" type="button" role="tab" data-type="online">
-            <span>線上校園徵才說明會</span>
+            <span>線上校園職涯講座暨徵才說明會</span>
             <span class="info-bu-tag">Online</span>
           </button>
         </div>
@@ -849,16 +849,16 @@
     const sessionPanelTitle = document.getElementById("sessionPanelTitle");
 
     const sessionTitleMap = {
-      online: "💻 報名線上校園徵才說明會",
+      online: "💻 報名線上校園職涯講座暨徵才說明會",
       physical: "🏫 報名實體校園徵才說明會"
     };
 
     const sessionData = {
       online: [
         {
-          title: "線上校園徵才說明會",
+          title: "線上校園職涯講座暨徵才說明會",
           pill: "Teams Webinar",
-          desc: ` 活動時間: 2026/09/29(二) 12:20 - 13:30\n(活動前將以郵件發送會議連結)`,
+          desc: ` 活動時間: 2026/09/29(二) 12:20 - 13:30\n(註冊成功後，將會收到發送通知郵件)`,
           url: "https://events.teams.microsoft.com/event/d24e3c5c-a649-4317-b628-7143970c5d96@36da45f1-dd2c-4d1f-af13-5abe46b99921?source=copyLinkLegacyShareEventDialog",
           endDate: "2026-09-29",
           fullWidth: true
