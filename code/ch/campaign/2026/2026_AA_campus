@@ -703,6 +703,7 @@
         <li>請務必完整填寫<strong style="color:var(--brand);">自傳</strong>及<strong
             style="color:var(--brand);">在學成績等資料</strong>，並上傳<strong
             style="color:var(--brand);">大學/碩士歷年成績單</strong>作為附件；資料不完整者，將不予審核</li>
+        <li>面談通知將於履歷投遞截止後統一寄發，無論書面審查結果是否通過皆會收到通知信，面談地點則依學校所在地安排，並以信件內容為準。</li>
       </ul>
     </div>
 
@@ -858,7 +859,7 @@
           title: "線上校園徵才說明會",
           pill: "Teams Webinar",
           desc: ` 活動時間: 2026/09/29(二) 12:20 - 13:30\n(活動前將以郵件發送會議連結)`,
-          url: "#",
+          url: "https://events.teams.microsoft.com/event/d24e3c5c-a649-4317-b628-7143970c5d96@36da45f1-dd2c-4d1f-af13-5abe46b99921?source=copyLinkLegacyShareEventDialog",
           endDate: "2026-09-29",
           fullWidth: true
         }
@@ -866,11 +867,11 @@
 physical: [
   { title: "東吳大學 會計系", pill: "城中校區第二大樓1樓 2123會議室", desc: "活動時間: 2026/09/15(二) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/Ej62cwLHzz", endDate: "2026-09-15" },
   { title: "國立中正大學 會計與資訊科技學系", pill: "會資系161演講廳", desc: "活動時間: 2026/09/15(二) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/n70T2TkVj0", endDate: "2026-09-15" },
-  { title: "國立臺北大學 會計系", pill: "商院205教室", desc: "活動時間: 2026/09/16(三) 11:10 - 14:00", url: "https://forms.cloud.microsoft/e/xBRx8tkjex", endDate: "2026-09-16" },
+  { title: "國立臺北大學 會計系", pill: "商院 205教室", desc: "活動時間: 2026/09/16(三) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/xBRx8tkjex", endDate: "2026-09-16" },
   { title: "逢甲大學 會計系", pill: "第六國際會議廳", desc: "活動時間: 2026/09/16(三) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/Pendadt4x0", endDate: "2026-09-16" },
   { title: "元智大學 會計系", pill: "待定，將以Email通知", desc: "活動時間: 2026/09/16(三) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/in137ECWQD", endDate: "2026-09-16" },
   { title: "淡江大學 資管系", pill: "待定，將以Email通知", desc: "活動時間: 2026/09/17(四) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/FVQkbQ0WvH", endDate: "2026-09-17" },
-  { title: "國立東華大學 會計系", pill: "待定，將以Email通知", desc: "活動時間: 2026/09/18(五) 12:30 - 14:00\n(請用學校連結報名參加)", url: "#", endDate: "2026-09-18" },
+  { title: "國立東華大學 會計系", pill: "管理學院 第二講堂D124", desc: "活動時間: 2026/09/18(五) 12:30 - 14:00\n(請用學校連結報名參加)", url: "#", endDate: "2026-09-18" },
   { title: "輔仁大學 會計系", pill: "國璽樓11樓 MD110郎世寧廳", desc: "活動時間: 2026/09/21(一) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/aj9QbND4gC", endDate: "2026-09-21" },
   { title: "國立臺北商業大學 會計資訊系", pill: "藝512", desc: "活動時間: 2026/09/30(三) 12:00 - 13:30", url: "https://forms.cloud.microsoft/e/kZ0rNN54z6", endDate: "2026-09-30" },
   { title: "東海大學 會計系", pill: "待定，將以Email通知", desc: "活動時間: 2026/09/22(二) 12:30 - 14:00", url: "https://forms.cloud.microsoft/e/WxNSduGaHt", endDate: "2026-09-22" },
