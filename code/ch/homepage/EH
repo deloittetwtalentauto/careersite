@@ -1,0 +1,251 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — 社會招募 section（整體左右兩欄版）
+  說明：
+  1. 整個 section 改為左右兩欄大架構（.professional-layout）：
+     - 左欄（.bu-list-col）：6 個 BU 按鈕直向排列成清單，每個按鈕
+       中英文並列呈現（中文為主、英文為輔，比照 Our Shared Values
+       卡片的中英文層次），白底、圓角、hover 時外框變綠並右移，
+       底部再加一個「查看所有職缺」的深色按鈕收尾。
+     - 右欄（.hero-col）：藍底圓角矩形標題框（比照校園招募左側
+       色塊的做法），內含 eyebrow + 標題 + 說明文字，垂直置中。
+  2. 6 個 BU 按鈕的 href 為預留錨點，對應到 data-target 屬性，
+     之後請替換成實際職缺篩選頁網址（例如 ?category=audit）。
+  3. 「查看所有職缺」按鈕的 href 目前為預留文字，請替換成實際的
+     一般所有職缺頁面連結。
+  4. 手機版（≤900px）改為單欄堆疊：標題框在上、BU 按鈕清單在下，
+     按鈕內的中英文字級同步縮小。
+-->
+
+<section class="professional-recruitment-section">
+
+  <style>
+    /* ===== Section ===== */
+    .professional-recruitment-section {
+      width: 100%;
+      padding: 80px 0;
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    .professional-recruitment-inner {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ===== 整體左右兩欄 ===== */
+    .professional-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    /* 左欄：BU 按鈕清單 */
+    .bu-list-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bu-list-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background-color: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      color: #1a1a1a;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .bu-list-btn-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .bu-list-btn-zh {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .bu-list-btn-en {
+      font-size: 12px;
+      font-weight: 400;
+      color: #777777;
+    }
+
+    .bu-list-btn::after {
+      content: "→";
+      color: #86BC25;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .bu-list-btn:hover {
+      border-color: #86BC25;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transform: translateX(4px);
+    }
+
+    .bu-list-btn:hover::after {
+      transform: translateX(3px);
+    }
+
+    .bu-list-btn.all-jobs-btn {
+      background-color: #1a1a1a;
+      border-color: #1a1a1a;
+      margin-top: 8px;
+    }
+
+    .bu-list-btn.all-jobs-btn .bu-list-btn-zh {
+      color: #ffffff !important;
+    }
+
+    .bu-list-btn.all-jobs-btn::after {
+      color: #ffffff;
+    }
+
+    .bu-list-btn.all-jobs-btn:hover {
+      background-color: #333333;
+      border-color: #333333;
+      transform: translateX(4px);
+    }
+
+    /* 右欄：藍底標題框 */
+    .hero-col {
+      background-color: #007CB0;
+      border-radius: 16px;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .professional-eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .professional-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff !important;
+      margin-bottom: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Segoe UI", "Heiti TC", sans-serif;
+    }
+
+    .professional-subtitle {
+      font-size: 16px;
+      color: #ffffff;
+      opacity: 0.9;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 900px) {
+      .professional-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-col {
+        order: 1;
+        padding: 36px 24px;
+      }
+
+      .bu-list-col {
+        order: 2;
+      }
+
+      .professional-title {
+        font-size: 26px;
+      }
+
+      .bu-list-btn {
+        padding: 14px 20px;
+      }
+
+      .bu-list-btn-zh {
+        font-size: 15px;
+      }
+
+      .bu-list-btn-en {
+        font-size: 11px;
+      }
+    }
+  </style>
+
+  <div class="professional-recruitment-inner">
+
+    <div class="professional-layout">
+
+      <!-- 左欄：BU 按鈕清單 -->
+      <div class="bu-list-col">
+        <a class="bu-list-btn" href="#" data-target="audit">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">審計與確信服務</span>
+            <span class="bu-list-btn-en">Audit &amp; Assurance</span>
+          </span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="tax-legal">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">稅務與法律服務</span>
+            <span class="bu-list-btn-en">Tax &amp; Legal</span>
+          </span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="strategy-risk">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">策略、風險與交易服務</span>
+            <span class="bu-list-btn-en">Strategy, Risk &amp; Transactions</span>
+          </span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="technology">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">科技與轉型服務</span>
+            <span class="bu-list-btn-en">Technology &amp; Transformation</span>
+          </span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="ldc">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">專案服務中心</span>
+            <span class="bu-list-btn-en">Local Delivery Center</span>
+          </span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="jsg">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">日商服務</span>
+            <span class="bu-list-btn-en">Japanese Services Group</span>
+          </span>
+        </a>
+        <a class="bu-list-btn all-jobs-btn" href="請替換成所有職缺頁面網址" data-target="all-jobs">
+          <span class="bu-list-btn-text">
+            <span class="bu-list-btn-zh">查看所有職缺</span>
+          </span>
+        </a>
+      </div>
+
+      <!-- 右欄：藍底標題框 -->
+      <div class="hero-col">
+        <div class="professional-eyebrow">PROFESSIONAL HIRING</div>
+        <h2 class="professional-title">社會招募</h2>
+        <p class="professional-subtitle">
+          選擇你的專業領域，探索 Deloitte 各服務線近期開放的職缺機會。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
