@@ -9,13 +9,13 @@
       <!-- HR 可以把 src 換成當期招募海報的網址，若無海報也可把 img 整行刪除 -->
       <!-- <img src="你的宣傳海報網址.jpg" alt="2026 D-League Internship"> -->
       
-      <div class="promo-title">🚀 2026 重點招募專案熱烈報名中！</div>
+      <div class="promo-title">🚀 2026 審計與確信服務 熱烈進行中!</div>
       <div class="promo-desc">
-        加入 Deloitte，開啟你的不凡職涯！<br>
-        2026 D-League Internship Program 與專案服務中心校園招募計畫同步開跑，尋找充滿熱情與潛力的你。
+        探索多元產業、迎接實務挑戰、累積專業實力，<br>加入 Deloitte，讓每一次挑戰，都成為職涯成長的養分！<br><br>
+        準備好開啟你的職涯旅程了嗎?
       </div>
       
-      <a href="https://careers.apac.deloitte.com/Taiwan/content/2026-D-League-Internship-Program/?locale=zh_TW" class="promo-btn">立即查看專案詳情</a>
+      <a href="https://careers.apac.deloitte.com/Taiwan/content/2026-AA-Campus-Recruitment/?locale=zh_TW" class="promo-btn">立即探索職缺</a>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@
   /* 內容排版設計 */
   .promo-content { text-align: center !important; }
   .promo-content img { max-width: 100% !important; border-radius: 4px !important; margin-bottom: 20px !important; }
-  .promo-title { color: #86BC25 !important; font-size: 28px !important; font-weight: bold !important; margin-bottom: 15px !important; }
+  .promo-title { color: #86BC25 !important; font-size: 20px !important; font-weight: bold !important; margin-bottom: 15px !important; }
   .promo-desc { color: #333 !important; font-size: 16px !important; line-height: 1.6 !important; margin-bottom: 30px !important; }
   
   /* 按鈕設計 */
