@@ -1,0 +1,40 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — 僅保留 Banner 區塊
+  說明：
+  1. 這是從你提供的完整版本中，移除以下內容後的結果：
+     - .entry-container 內的兩張入口卡片（校園招募 / 社會招募）
+     - 對應的 .entry-card / .btn-ghost 等 CSS
+     - 兩個 modal（campusModal / ehModal）與 openModal / closeModal 的 JS
+  2. 保留內容：桌機版 / 手機版 banner 圖片，以及依螢幕寬度切換
+     顯示哪張圖的 RWD 邏輯（.banner-desktop-img / .banner-mobile-img）。
+  3. section 外層原本的 padding-bottom: 60px 是為了幫下方卡片留白，
+     卡片移除後已經拿掉，避免 banner 下方留下不必要的空白區塊。
+-->
+
+<section style="position: relative !important; background-color: #f4f4f4 !important;">
+  
+  <div style="text-align: center !important; background-color: #000 !important;">
+    <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/banner/desktop/career_site_banner_desktop.jpg" 
+         alt="Job at Deloitte Desktop" 
+         class="banner-desktop-img"
+         style="max-width: 100% !important; height: auto !important; margin: 0 auto !important;">
+    
+    <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/banner/mobile/hompage_banner_mobile.jpg" 
+         alt="Job at Deloitte Mobile" 
+         class="banner-mobile-img"
+         style="max-width: 100% !important; height: auto !important; margin: 0 auto !important;">
+  </div>
+
+  <style>
+    /* --- Banner 顯示控制 --- */
+    .banner-desktop-img { display: block !important; }
+    .banner-mobile-img { display: none !important; }
+
+    /* --- 手機版響應式設定 --- */
+    @media (max-width: 768px) {
+      .banner-desktop-img { display: none !important; }
+      .banner-mobile-img { display: block !important; }
+    }
+  </style>
+
+</section>
