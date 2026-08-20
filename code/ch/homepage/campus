@@ -18,12 +18,23 @@
      - 標題框（.campaign-left）外層新增 .campaign-left-col 容器，
        框框下方加上一個等寬的「查看更多職缺資訊」按鈕
        （.campaign-more-btn），深色實心圓角矩形樣式（#1a1a1a 底、
-       白字、border-radius 12px），比照社會招募 section 的「查看
-       所有職缺」按鈕做法，hover 時加深為 #333333，連到一般所有
-       實習/新鮮人職缺頁面（沿用先前 modal 版本的職缺頁網址）。
-       按鈕獨立於標題框之外，寬度與標題框一致。
+       白字、border-radius 12px），hover 時加深為 #333333，連到
+       一般所有實習/新鮮人職缺頁面。
      其餘輪播卡片內容、圖片、結構維持不變。
-  6. 建議放置位置：Banner 之後、About Deloitte 之前（詳見對話中的說明）。
+  6. 已知問題修正：按鈕文字顏色先前設為 color: #ffffff !important
+     卻未在畫面上生效，原因是 SuccessFactors 平台/主題本身對
+     <a> 連結標籤（尤其是 :link、:visited 狀態）常帶有更高優先權
+     或同為 !important 的全站連結色設定，會蓋過單純用 class
+     選擇器寫的顏色。修正方式：
+     - 選擇器改為巢狀＋直接標籤選擇器（.campaign-left-col
+       a.campaign-more-btn），提高選擇器優先權（specificity）
+     - 額外針對 :link、:visited、:hover、:active 四種連結狀態
+       都各自明確宣告 color: #ffffff !important，避免瀏覽器對
+       未走訪/已走訪連結套用平台預設的連結色（例如藍色或紫色）
+     若替換平台後仍未生效，代表平台載入順序把自己的 CSS 排在
+     這段 HTML 之後，需請 IT/平台管理員確認此 widget 的 CSS
+     是否可以設定為「最後載入」或改用平台提供的樣式覆蓋機制。
+  7. 建議放置位置：Banner 之後、About Deloitte 之前（詳見對話中的說明）。
 -->
 
 <section class="campus-event-recruitment-campaign-section">
@@ -96,7 +107,10 @@
       box-sizing: border-box;
     }
 
-    .campaign-more-btn {
+    /* 按鈕文字顏色修正：提高選擇器優先權 + 覆蓋所有連結狀態 */
+    .campaign-left-col a.campaign-more-btn,
+    .campaign-left-col a.campaign-more-btn:link,
+    .campaign-left-col a.campaign-more-btn:visited {
       display: block;
       width: 100%;
       box-sizing: border-box;
@@ -105,16 +119,18 @@
       border-radius: 12px;
       border: 1px solid #1a1a1a;
       background-color: #1a1a1a;
-      color: #ffffff ! important;
+      color: #ffffff !important;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
       transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
-    .campaign-more-btn:hover {
+    .campaign-left-col a.campaign-more-btn:hover,
+    .campaign-left-col a.campaign-more-btn:active {
       background-color: #333333;
       border-color: #333333;
+      color: #ffffff !important;
     }
 
     /* ===== Right ===== */
