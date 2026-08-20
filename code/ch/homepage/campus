@@ -1,40 +1,21 @@
 <!--
-  Deloitte Taiwan Careers 首頁 — 校園招募 section（大圖輪播版）
+  Deloitte Taiwan Careers 首頁 — 校園招募 section（單張可點擊卡片版）
   說明：
-  1. 左側標題區改為綠底圓角矩形（.campaign-left：background #86BC25、
-     border-radius 16px），文字改為白色以確保對比度；已移除原本
-     .campaign-right 的中間分隔直線（border-left）。
-  2. 右側為大圖輪播卡片，一次顯示一張主圖並露出下一張的邊緣，
-     底部為左右箭頭 + 圓點導航，結構與原版相同。
-  3. 圖片路徑沿用原本的 GitHub 圖床連結，之後新增/替換項目時，
-     只需複製一組 .campaign-carousel-item 區塊，換掉 img src、
-     eyebrow、title、desc 文字即可，圓點導航會自動依卡片數量產生。
-  4. CI 色票沿用 #86BC25（Deloitte 綠），左側改為底色，右側輪播的
-     eyebrow/標題/圓點維持原本綠字白底的用法。
-  5. 內容更新：
-     - eyebrow：GRADUATE/STUDENT
-     - 標題：校園招募
-     - 說明文字：實習生計畫/ 校園招募活動
-     - 標題框（.campaign-left）外層新增 .campaign-left-col 容器，
-       框框下方加上一個等寬的「查看更多職缺資訊」按鈕
-       （.campaign-more-btn），深色實心圓角矩形樣式（#1a1a1a 底、
-       白字、border-radius 12px），hover 時加深為 #333333，連到
-       一般所有實習/新鮮人職缺頁面。
-     其餘輪播卡片內容、圖片、結構維持不變。
-  6. 已知問題修正：按鈕文字顏色先前設為 color: #ffffff !important
-     卻未在畫面上生效，原因是 SuccessFactors 平台/主題本身對
-     <a> 連結標籤（尤其是 :link、:visited 狀態）常帶有更高優先權
-     或同為 !important 的全站連結色設定，會蓋過單純用 class
-     選擇器寫的顏色。修正方式：
-     - 選擇器改為巢狀＋直接標籤選擇器（.campaign-left-col
-       a.campaign-more-btn），提高選擇器優先權（specificity）
-     - 額外針對 :link、:visited、:hover、:active 四種連結狀態
-       都各自明確宣告 color: #ffffff !important，避免瀏覽器對
-       未走訪/已走訪連結套用平台預設的連結色（例如藍色或紫色）
-     若替換平台後仍未生效，代表平台載入順序把自己的 CSS 排在
-     這段 HTML 之後，需請 IT/平台管理員確認此 widget 的 CSS
-     是否可以設定為「最後載入」或改用平台提供的樣式覆蓋機制。
-  7. 建議放置位置：Banner 之後、About Deloitte 之前（詳見對話中的說明）。
+  1. 左側標題區維持綠底圓角矩形（.campaign-left），下方等寬按鈕
+     「查看更多職缺資訊」維持深色實心樣式，結構與樣式均未更動。
+     左右兩欄比例已改為 1fr 1fr（原本 2fr 3fr），電腦版上左側
+     標題框與右側卡片同寬。
+  2. 右側原本的三張輪播卡片，改為單一張可點擊的卡片：
+     - 移除輪播相關的所有機制（.campaign-carousel-track 位移邏輯、
+       左右箭頭按鈕、圓點導航、對應的 JavaScript），因為只剩一張
+       卡片不再需要切換功能。
+     - 卡片外層改為 <a> 標籤（.campaign-single-card），整張卡片
+       （圖片＋文字）都可點擊，hover 時有輕微上移＋陰影回饋。
+     - 標題更新為「2026 審計與確信服務校園徵才」。
+     - href 目前沿用原本 Item 1 的圖片，連結網址請替換成實際的
+       職缺頁面網址（目前為預留錨點 #）。
+  3. CI 色票沿用 #86BC25（Deloitte 綠）。
+  4. 建議放置位置：Banner 之後、About Deloitte 之前。
 -->
 
 <section class="campus-event-recruitment-campaign-section">
@@ -83,7 +64,7 @@
     /* ===== Two Column Layout ===== */
     .campus-event-recruitment-campaign-content {
       display: grid;
-      grid-template-columns: 2fr 3fr;
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: stretch;
       margin-top: 40px;
@@ -94,6 +75,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      height: 100%;
     }
 
     .campaign-left {
@@ -101,13 +83,14 @@
       background-color: #86BC25;
       border-radius: 16px;
       padding: 40px 32px;
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       box-sizing: border-box;
     }
 
-    /* 按鈕文字顏色修正：提高選擇器優先權 + 覆蓋所有連結狀態 */
+    /* 按鈕文字顏色：提高選擇器優先權 + 覆蓋所有連結狀態 */
     .campaign-left-col a.campaign-more-btn,
     .campaign-left-col a.campaign-more-btn:link,
     .campaign-left-col a.campaign-more-btn:visited {
@@ -133,52 +116,48 @@
       color: #ffffff !important;
     }
 
-    /* ===== Right ===== */
+    /* ===== Right：單張可點擊卡片 ===== */
     .campaign-right {
-      padding-left: 0;
-    }
-
-    /* ===== Carousel ===== */
-    .campaign-carousel {
-      width: 100%;
-    }
-
-    .campaign-carousel-viewport {
-      overflow: hidden;
-      width: 100%;
-    }
-
-    .campaign-carousel-track {
       display: flex;
-      gap: 24px;
-      transition: transform 0.5s ease;
-      will-change: transform;
+      align-items: stretch;
     }
 
-    /* 右側露出下一張 */
-    .campaign-carousel-item {
-      flex: 0 0 85%;
-      box-sizing: border-box;
-    }
-
-    .campaign-carousel-image {
+    .campaign-single-card,
+    .campaign-single-card:link,
+    .campaign-single-card:visited {
+      display: block;
       width: 100%;
-      height: 260px;
+      text-decoration: none;
+      color: inherit;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .campaign-single-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .campaign-single-image {
+      width: 100%;
+      height: 320px;
       background-color: #eaeaea;
       overflow: hidden;
       border-radius: 12px;
     }
 
-    .campaign-carousel-image img {
+    .campaign-single-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    /* ===== Card Eyebrow ===== */
-    .campaign-carousel-eyebrow {
-      margin-top: 14px;
+    .campaign-single-eyebrow {
+      margin-top: 18px;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -186,67 +165,18 @@
       text-transform: uppercase;
     }
 
-    /* ===== Text ===== */
-    .campaign-carousel-title {
+    .campaign-single-title {
       margin-top: 10px;
-      font-size: 20px;
-      font-weight: 600;
-      color: #000000;
+      font-size: 22px;
+      font-weight: 700;
+      color: #000000 !important;
     }
 
-    .campaign-carousel-desc {
-      margin-top: 6px;
+    .campaign-single-desc {
+      margin-top: 8px;
       font-size: 15px;
       line-height: 1.6;
       color: #555555;
-      max-width: 90%;
-    }
-
-    /* ===== Bottom Controls ===== */
-    .campaign-carousel-bottom {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .carousel-btn {
-      background-color: #ffffff;
-      border: 1px solid #cccccc;
-      width: 40px;
-      height: 40px;
-      font-size: 22px;
-      cursor: pointer;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-btn:focus {
-      outline: none;
-      border-color: #86BC25;
-    }
-
-    .campaign-carousel-dots {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .campaign-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: 1px solid #86BC25;
-      background-color: transparent;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    .campaign-dot.is-active {
-      background-color: #86BC25;
     }
 
     /* ===== Mobile ===== */
@@ -260,12 +190,12 @@
         padding: 32px 24px;
       }
 
-      .campaign-carousel-item {
-        flex: 0 0 92%;
+      .campaign-single-image {
+        height: 220px;
       }
 
-      .campaign-carousel-image {
-        height: 220px;
+      .campaign-single-title {
+        font-size: 20px;
       }
     }
   </style>
@@ -289,133 +219,21 @@
         <a class="campaign-more-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E6%A0%A1%E5%9C%92%E6%96%B0%E9%AE%AE%E4%BA%BA%E6%8B%9B%E5%8B%9F/510750/">查看更多職缺資訊 →</a>
       </div>
 
-      <!-- Right -->
+      <!-- Right：單張可點擊卡片 -->
       <div class="campaign-right">
-
-        <div class="campaign-carousel">
-
-          <div class="campaign-carousel-viewport">
-            <div class="campaign-carousel-track">
-
-              <!-- Item 1 -->
-              <div class="campaign-carousel-item">
-                <div class="campaign-carousel-image">
-                  <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E5%8F%8A%E9%9B%BB%E8%85%A6%E5%AF%A9%E8%A8%88%E5%B0%88%E5%93%A1.jpg" alt="審計與確信及電腦審計專員">
-                </div>
-                <div class="campaign-carousel-eyebrow">AUDIT & ASSURANCE</div>
-                <div class="campaign-carousel-title">審計與確信及電腦審計校園徵才</div>
-                <div class="campaign-carousel-desc">
-                  歡迎對於審計及確信有興趣的新鮮人來投遞!!
-                </div>
-              </div>
-
-              <!-- Item 2 -->
-              <div class="campaign-carousel-item">
-                <div class="campaign-carousel-image">
-                  <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/%E5%BF%99%E5%AD%A3%E5%AF%A6%E7%BF%92%E7%94%9F.png" alt="審計忙季實習生">
-                </div>
-                <div class="campaign-carousel-eyebrow">AUDIT & ASSURANCE</div>
-                <div class="campaign-carousel-title">審計實習生(忙季/暑期)</div>
-                <div class="campaign-carousel-desc">
-                 透過協助實務專案，了解審計專業服務，增加實戰經驗!!
-                </div>
-              </div>
-
-              <!-- Item 3 -->
-              <div class="campaign-carousel-item">
-                <div class="campaign-carousel-image">
-                  <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/banner/mobile/2026_seeds_banner_mobile.jpg" alt="Deloitte Seeds Program">
-                </div>
-                <div class="campaign-carousel-eyebrow">CONSULTING BUSINESSES (T&amp;T, SR&amp;T)</div>
-                <div class="campaign-carousel-title">Deloitte Seeds Intern Program</div>
-                <div class="campaign-carousel-desc">
-                挑戰商業專業課題，透過世界級及多元的學習資源，培養解決問題能力累積實戰經驗，與Deloitte一起開啟顧問職涯!!
-                </div>
-              </div>
-
-            </div>
+        <a class="campaign-single-card" href="#">
+          <div class="campaign-single-image">
+            <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E5%8F%8A%E9%9B%BB%E8%85%A6%E5%AF%A9%E8%A8%88%E5%B0%88%E5%93%A1.jpg" alt="審計與確信服務校園徵才">
           </div>
-
-          <!-- Bottom controls -->
-          <div class="campaign-carousel-bottom">
-            <button class="carousel-btn prev" type="button" aria-label="Previous">‹</button>
-            <div class="campaign-carousel-dots"></div>
-            <button class="carousel-btn next" type="button" aria-label="Next">›</button>
-          </div>
-
-        </div>
-
+          <div class="campaign-single-eyebrow">AUDIT & ASSURANCE</div>
+          <h3 class="campaign-single-title">2026 審計與確信服務校園徵才</h3>
+          <p class="campaign-single-desc">
+            歡迎對於審計及確信有興趣的新鮮人來投遞!!
+          </p>
+        </a>
       </div>
 
     </div>
   </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const track = document.querySelector(".campaign-carousel-track");
-      const items = document.querySelectorAll(".campaign-carousel-item");
-      const prevBtn = document.querySelector(".carousel-btn.prev");
-      const nextBtn = document.querySelector(".carousel-btn.next");
-      const dotsWrap = document.querySelector(".campaign-carousel-dots");
-
-      let index = 0;
-      const gap = 24;
-      const total = items.length;
-
-      function getItemWidth() {
-        if (!items.length) return 0;
-        return items[0].offsetWidth + gap;
-      }
-
-      function buildDots() {
-        if (!dotsWrap) return;
-        dotsWrap.innerHTML = "";
-        for (let i = 0; i < total; i++) {
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "campaign-dot" + (i === 0 ? " is-active" : "");
-          btn.setAttribute("aria-label", `Go to slide ${i + 1}`);
-          btn.addEventListener("click", function () {
-            index = i;
-            updateCarousel();
-          });
-          dotsWrap.appendChild(btn);
-        }
-      }
-
-      function updateDots() {
-        const dots = dotsWrap ? dotsWrap.querySelectorAll(".campaign-dot") : [];
-        dots.forEach((d, i) => {
-          d.classList.toggle("is-active", i === index);
-        });
-      }
-
-      function updateCarousel() {
-        const itemWidth = getItemWidth();
-        track.style.transform = `translateX(-${index * itemWidth}px)`;
-        updateDots();
-      }
-
-      function next() {
-        index = (index + 1) % total;
-        updateCarousel();
-      }
-
-      function prev() {
-        index = (index - 1 + total) % total;
-        updateCarousel();
-      }
-
-      nextBtn.addEventListener("click", next);
-      prevBtn.addEventListener("click", prev);
-
-      buildDots();
-      updateCarousel();
-
-      window.addEventListener("resize", function () {
-        updateCarousel();
-      });
-    });
-  </script>
 
 </section>
