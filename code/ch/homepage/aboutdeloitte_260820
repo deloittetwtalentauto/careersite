@@ -1,0 +1,173 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — About Deloitte（沿用使用者提供版本 + 補上 eyebrow）
+  說明：
+  1. 這是以你提供的版本為基礎微調，結構與大部分樣式未更動：
+     左側影片、右側文字，白底，按鈕樣式保留原本的黑框白底設計。
+  2. 新增 .about-eyebrow：英文小標籤「ABOUT DELOITTE」，全大寫、
+     字距加寬、綠色，放在中文大標「關於 Deloitte」正上方。
+  3. 原本的 <h1>About Deloitte</h1> 改為 eyebrow + 中文大標兩層結構：
+     - eyebrow：英文小標，字級 12px
+     - h1：中文大標「關於 Deloitte」，黑色、26px（手機版 22px）
+  4. 因為此區塊部署在 SuccessFactors Career Site Builder 平台，
+     平台/主題本身的全站 CSS 對 h1、p 等基本標籤有預設樣式，
+     優先權可能高於 widget 內的自訂 CSS，導致調整字級/粗細沒有
+     實際生效。此版本已將標題與內文的關鍵樣式（font-size、
+     font-weight、color 等）加上 !important，並改用更明確的
+     巢狀選擇器（.text-section .text-section-content h1），
+     提高優先權以強制蓋過平台預設樣式。
+  5. 其餘樣式（影片版位、按鈕、RWD）保留原程式碼邏輯。
+-->
+
+<style>
+  :root {
+    --brand-green: #86BC25;
+    --black: #111;
+    --white: #fff;
+  }
+  .fullwidth-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+  }
+  .video-section,
+  .text-section {
+    flex: 1 1 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .text-section-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-eyebrow {
+    display: inline-block !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: var(--brand-green) !important;
+    margin-bottom: 10px !important;
+  }
+  .about-divider {
+    width: 48px !important;
+    height: 3px !important;
+    background-color: var(--brand-green) !important;
+    margin: 0 0 20px !important;
+  }
+  .text-section .text-section-content h1 {
+    font-size: 26px !important;
+    color: var(--black) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Segoe UI", "Heiti TC", sans-serif !important;
+  }
+  .text-section .text-section-content p {
+    font-size: 16px !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
+    margin-bottom: 28px !important;
+  }
+  .button-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+.button {
+  padding: 14px 32px;
+  background-color: #fff;       /* 白底 */
+  color: #000;                  /* 黑字 */
+  border: 2px solid #000 !important;       /* 黑框 */
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.button:hover,
+a.button:hover,
+.button:focus-visible,
+a.button:focus-visible {
+  background-color: #e0e0e0;       /* 灰底 */
+  color: #000 !important;          /* ← 這行記得加分號！ */
+  border-color: #333;              /* 深灰框 */
+  outline: none;
+}
+  @media (max-width: 768px) {
+    .fullwidth-container {
+      flex-direction: column;
+    }
+    .video-section,
+    .text-section {
+      flex: 1 1 100%;
+      padding: 16px;
+    }
+    .video-wrapper {
+      position: relative;
+      aspect-ratio: 16 / 9;
+    }
+    .video-wrapper iframe {
+      position: static;
+      border-radius: 12px;
+    }
+    .text-section .text-section-content h1 {
+      font-size: 22px !important;
+    }
+    .text-section .text-section-content p {
+      font-size: 15px !important;
+    }
+    .text-section-content {
+      max-width: 100%;
+    }
+  }
+</style>
+<div class="fullwidth-container">
+  <div class="video-section">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/WDO1nLEmnwc?autoplay=1&mute=1&loop=1&playlist=WDO1nLEmnwc&rel=0&modestbranding=1&playsinline=1"
+        title="Deloitte Video"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="text-section">
+    <div class="text-section-content">
+      <span class="about-eyebrow">About Deloitte</span>
+      <h1>關於 Deloitte</h1>
+      <div class="about-divider"></div>
+      <p>
+        Deloitte為全球領先之審計、管理顧問、財務顧問、風險諮詢、稅務及其他相關服務的專業服務機構。
+        憑藉175多年的努力和致力於豎立「因我不同，惟有更好」的卓越典範，我們的組織規模多樣並不斷增長。
+        Deloitte遍及全球逾150個國家的會員所，以世界級優質專業服務，為逾457,000人提供因應複雜商業挑戰中所需的卓越見解。
+        Fortune Global 500大中，超過90%的企業由Deloitte提供卓越的優質服務。
+      </p>
+      <div class="button-group">
+        <a href="https://www.deloitte.com/tw/tc.html" class="button">回到Deloitte Taiwan首頁</a>
+      </div>
+    </div>
+  </div>
+</div>
