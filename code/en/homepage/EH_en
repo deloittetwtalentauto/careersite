@@ -1,0 +1,215 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — 社會招募 section（英文版）
+  說明：
+  1. 整體左右兩欄架構與樣式（.professional-layout）維持不變。
+  2. 左欄（.bu-list-col）：6 個 BU 按鈕改為只顯示英文名稱（移除
+     中文），文字結構從「中文為主＋英文為輔」的兩行式
+     （.bu-list-btn-text > .bu-list-btn-zh / .bu-list-btn-en）
+     簡化為單行英文（.bu-list-btn-label），對應的 CSS 一併簡化。
+     底部「查看所有職缺」按鈕改為「View All Openings」，連結網址
+     維持不變。
+  3. 右欄（.hero-col）：
+     - eyebrow：PROFESSIONAL（維持不變，本身即為英文）
+     - 標題：一般招募 → Professional Hiring
+     - 說明文字：探索 Deloitte 各專業領域職缺機會。 →
+       Explore career opportunities across Deloitte's service lines.
+  4. CI 色票、hover 互動、RWD 斷點皆與中文版相同，未更動。
+-->
+
+<section class="professional-recruitment-section">
+
+  <style>
+    /* ===== Section ===== */
+    .professional-recruitment-section {
+      width: 100%;
+      padding: 80px 0;
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    .professional-recruitment-inner {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ===== 整體左右兩欄 ===== */
+    .professional-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    /* 左欄：BU 按鈕清單 */
+    .bu-list-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .bu-list-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background-color: #ffffff;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      color: #1a1a1a;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .bu-list-btn-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .bu-list-btn::after {
+      content: "→";
+      color: #86BC25;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .bu-list-btn:hover {
+      border-color: #86BC25;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transform: translateX(4px);
+    }
+
+    .bu-list-btn:hover::after {
+      transform: translateX(3px);
+    }
+
+    .bu-list-btn.all-jobs-btn {
+      background-color: #1a1a1a;
+      border-color: #1a1a1a;
+      margin-top: 8px;
+    }
+
+    .bu-list-btn.all-jobs-btn .bu-list-btn-label {
+      color: #ffffff !important;
+    }
+
+    .bu-list-btn.all-jobs-btn::after {
+      color: #ffffff;
+    }
+
+    .bu-list-btn.all-jobs-btn:hover {
+      background-color: #333333;
+      border-color: #333333;
+      transform: translateX(4px);
+    }
+
+    /* 右欄：深綠底標題框 */
+    .hero-col {
+      background-color: #26890D;
+      border-radius: 16px;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .professional-eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .professional-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff !important;
+      margin-bottom: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Segoe UI", "Heiti TC", sans-serif;
+    }
+
+    .professional-subtitle {
+      font-size: 16px;
+      color: #ffffff;
+      opacity: 0.9;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 900px) {
+      .professional-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-col {
+        order: 1;
+        padding: 36px 24px;
+      }
+
+      .bu-list-col {
+        order: 2;
+      }
+
+      .professional-title {
+        font-size: 26px;
+      }
+
+      .bu-list-btn {
+        padding: 14px 20px;
+      }
+
+      .bu-list-btn-label {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <div class="professional-recruitment-inner">
+
+    <div class="professional-layout">
+
+      <!-- 左欄：BU 按鈕清單 -->
+      <div class="bu-list-col">
+        <a class="bu-list-btn" href="#" data-target="audit">
+          <span class="bu-list-btn-label">Audit &amp; Assurance</span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="tax-legal">
+          <span class="bu-list-btn-label">Tax &amp; Legal</span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="strategy-risk">
+          <span class="bu-list-btn-label">Strategy, Risk &amp; Transactions</span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="technology">
+          <span class="bu-list-btn-label">Technology &amp; Transformation</span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="ldc">
+          <span class="bu-list-btn-label">Local Delivery Center</span>
+        </a>
+        <a class="bu-list-btn" href="#" data-target="jsg">
+          <span class="bu-list-btn-label">Japanese Services Group</span>
+        </a>
+        <a class="bu-list-btn all-jobs-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E4%B8%80%E8%88%AC%E6%8B%9B%E5%8B%9F/510650/" data-target="all-jobs">
+          <span class="bu-list-btn-label">View All Openings</span>
+        </a>
+      </div>
+
+      <!-- 右欄：深綠底標題框 -->
+      <div class="hero-col">
+        <div class="professional-eyebrow">PROFESSIONAL</div>
+        <h2 class="professional-title">Professional Hiring</h2>
+        <p class="professional-subtitle">
+          Explore career opportunities across Deloitte&rsquo;s service lines.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
