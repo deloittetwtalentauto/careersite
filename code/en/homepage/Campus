@@ -1,0 +1,238 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — 校園招募 section（英文版）
+  說明：
+  1. 結構、樣式與中文版完全一致（左側綠底標題框 + 下方等寬深色按鈕、
+     右側單張可點擊卡片），僅將所有顯示文字改為英文：
+     - eyebrow：GRADUATES/STUDENTS（維持不變，本身即為英文）
+     - 標題：校園招募 → Campus Recruitment
+     - 說明文字：探索最新實習及校園招募計畫! →
+       Explore our latest internship and campus recruitment programs!
+     - 按鈕：查看更多職缺資訊 → → Learn More →
+     - 右側卡片 eyebrow：AUDIT & ASSURANCE（維持不變）
+     - 右側卡片標題：2026 審計與確信服務校園徵才 →
+       2026 Audit & Assurance Campus Recruitment
+     - 右側卡片說明文字：維持原本的英文（Apply by 10/04...）
+  2. 連結網址、圖片路徑、CI 色票、hover 互動、RWD 斷點皆與中文版
+     完全相同，未更動。
+  3. 建議放置位置：Banner 之後、About Deloitte 之前。
+-->
+
+<section class="campus-event-recruitment-campaign-section">
+
+  <style>
+    /* ===== Section ===== */
+    .campus-event-recruitment-campaign-section {
+      width: 100%;
+      padding: 80px 0;
+      background-color: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    .campus-event-recruitment-campaign-inner {
+      width: 90%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ===== Header ===== */
+    .campus-event-recruitment-campaign-eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .campus-event-recruitment-campaign-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #ffffff !important;
+      margin-bottom: 16px;
+    }
+
+    .campus-event-recruitment-campaign-subtitle {
+      font-size: 16px;
+      color: #ffffff;
+      opacity: 0.9;
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0;
+    }
+
+    /* ===== Two Column Layout ===== */
+    .campus-event-recruitment-campaign-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+      margin-top: 40px;
+    }
+
+    /* ===== Left（外層容器：標題框 + 下方按鈕） ===== */
+    .campaign-left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+    }
+
+    .campaign-left {
+      text-align: left;
+      background-color: #86BC25;
+      border-radius: 16px;
+      padding: 40px 32px;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* 按鈕文字顏色：提高選擇器優先權 + 覆蓋所有連結狀態 */
+    .campaign-left-col a.campaign-more-btn,
+    .campaign-left-col a.campaign-more-btn:link,
+    .campaign-left-col a.campaign-more-btn:visited {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+      padding: 16px 28px;
+      border-radius: 12px;
+      border: 1px solid #1a1a1a;
+      background-color: #1a1a1a;
+      color: #ffffff !important;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .campaign-left-col a.campaign-more-btn:hover,
+    .campaign-left-col a.campaign-more-btn:active {
+      background-color: #333333;
+      border-color: #333333;
+      color: #ffffff !important;
+    }
+
+    /* ===== Right：單張可點擊卡片 ===== */
+    .campaign-right {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .campaign-single-card,
+    .campaign-single-card:link,
+    .campaign-single-card:visited {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: inherit;
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 16px;
+      box-sizing: border-box;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .campaign-single-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .campaign-single-image {
+      width: 100%;
+      height: 320px;
+      background-color: #eaeaea;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .campaign-single-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .campaign-single-eyebrow {
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: #86BC25;
+      text-transform: uppercase;
+    }
+
+    .campaign-single-title {
+      margin-top: 10px;
+      font-size: 22px;
+      font-weight: 700;
+      color: #000000 !important;
+    }
+
+    .campaign-single-desc {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      .campus-event-recruitment-campaign-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .campaign-left {
+        padding: 32px 24px;
+      }
+
+      .campaign-single-image {
+        height: 220px;
+      }
+
+      .campaign-single-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+
+  <div class="campus-event-recruitment-campaign-inner">
+    <div class="campus-event-recruitment-campaign-content">
+      <!-- Left：外層容器包住標題框 + 下方同寬按鈕 -->
+      <div class="campaign-left-col">
+        <div class="campaign-left">
+          <div class="campus-event-recruitment-campaign-eyebrow">
+            GRADUATES/STUDENTS
+          </div>
+
+          <h2 class="campus-event-recruitment-campaign-title">
+            Campus Recruitment
+          </h2>
+          <p class="campus-event-recruitment-campaign-subtitle">
+            Explore our latest internship and campus recruitment programs!
+          </p>
+        </div>
+        <a class="campaign-more-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E6%A0%A1%E5%9C%92%E6%96%B0%E9%AE%AE%E4%BA%BA%E6%8B%9B%E5%8B%9F/510750/">Learn More →</a>
+      </div>
+
+      <!-- Right：單張可點擊卡片 -->
+      <div class="campaign-right">
+        <a class="campaign-single-card" href="https://careers.apac.deloitte.com/Taiwan/content/2026-AA-Campus-Recruitment/?locale=zh_TW">
+          <div class="campaign-single-image">
+            <img src="https://raw.githubusercontent.com/joycehsudeloitte/careersite/main/images/%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E5%8F%8A%E9%9B%BB%E8%85%A6%E5%AF%A9%E8%A8%88%E5%B0%88%E5%93%A1.jpg" alt="2026 Audit & Assurance Campus Recruitment">
+          </div>
+          <div class="campaign-single-eyebrow">AUDIT & ASSURANCE</div>
+          <h3 class="campaign-single-title">2026 Audit &amp; Assurance Campus Recruitment</h3>
+          <p class="campaign-single-desc">
+            Apply by 10/04 to start your adventure and journey with us!
+          </p>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
