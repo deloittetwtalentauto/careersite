@@ -1,0 +1,183 @@
+<!--
+  Deloitte Taiwan Careers 首頁 — About Deloitte（英文內文版）
+  說明：
+  1. 這是以你提供的版本為基礎微調，結構與大部分樣式未更動：
+     左側影片、右側文字，白底，按鈕樣式保留原本的黑框白底設計。
+  2. .about-eyebrow：英文小標籤「ABOUT DELOITTE」，全大寫、
+     字距加寬、綠色，放在大標「About Deloitte」正上方。
+  3. 標題、內文、按鈕已全部改為英文：
+     - 標題：關於 Deloitte → About Deloitte
+     - 內文段落：換成使用者提供的英文版，說明 Deloitte 175 年來
+       與全球領導者合作、以實際成果驅動改變的品牌敘事
+     - 按鈕文字：回到Deloitte Taiwan首頁 → Visit Deloitte Taiwan
+  4. 因為此區塊部署在 SuccessFactors Career Site Builder 平台，
+     標題與內文的關鍵樣式（font-size、font-weight、color 等）
+     維持加上 !important，並使用巢狀選擇器
+     （.text-section .text-section-content h1/p）提高優先權，
+     以強制蓋過平台預設樣式。
+  5. 手機版（≤768px）順序調整：文字區塊（.text-section）用
+     order: 1 排到最上面，影片（.video-section）用 order: 2
+     排到最下面，桌機版順序（影片在左、文字在右）不受影響。
+  6. 其餘樣式（影片版位、按鈕）保留原程式碼邏輯。
+-->
+
+<style>
+  :root {
+    --brand-green: #86BC25;
+    --black: #111;
+    --white: #fff;
+  }
+  .fullwidth-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+  }
+  .video-section,
+  .text-section {
+    flex: 1 1 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+  }
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .text-section-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-eyebrow {
+    display: inline-block !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: var(--brand-green) !important;
+    margin-bottom: 10px !important;
+  }
+  .about-divider {
+    width: 48px !important;
+    height: 3px !important;
+    background-color: var(--brand-green) !important;
+    margin: 0 0 20px !important;
+  }
+  .text-section .text-section-content h1 {
+    font-size: 26px !important;
+    color: var(--black) !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Segoe UI", "Heiti TC", sans-serif !important;
+  }
+  .text-section .text-section-content p {
+    font-size: 16px !important;
+    line-height: 1.9 !important;
+    font-weight: 400 !important;
+    margin-bottom: 28px !important;
+  }
+  .button-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+.button {
+  padding: 14px 32px;
+  background-color: #fff;       /* 白底 */
+  color: #000;                  /* 黑字 */
+  border: 2px solid #000 !important;       /* 黑框 */
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.button:hover,
+a.button:hover,
+.button:focus-visible,
+a.button:focus-visible {
+  background-color: #e0e0e0;       /* 灰底 */
+  color: #000 !important;          /* ← 這行記得加分號！ */
+  border-color: #333;              /* 深灰框 */
+  outline: none;
+}
+  @media (max-width: 768px) {
+    .fullwidth-container {
+      flex-direction: column;
+    }
+    .video-section,
+    .text-section {
+      flex: 1 1 100%;
+      padding: 16px;
+    }
+    .text-section {
+      order: 1;
+    }
+    .video-section {
+      order: 2;
+      margin-top: 16px;
+    }
+    .video-wrapper {
+      position: relative;
+      aspect-ratio: 16 / 9;
+    }
+    .video-wrapper iframe {
+      position: static;
+      border-radius: 12px;
+    }
+    .text-section .text-section-content h1 {
+      font-size: 22px !important;
+    }
+    .text-section .text-section-content p {
+      font-size: 15px !important;
+    }
+    .text-section-content {
+      max-width: 100%;
+    }
+  }
+</style>
+<div class="fullwidth-container">
+  <div class="video-section">
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/WDO1nLEmnwc?autoplay=1&mute=1&loop=1&playlist=WDO1nLEmnwc&rel=0&modestbranding=1&playsinline=1"
+        title="Deloitte Video"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="text-section">
+    <div class="text-section-content">
+      <span class="about-eyebrow">OVERVIEW</span>
+      <h1>About Deloitte</h1>
+      <div class="about-divider"></div>
+      <p>
+        For over 175 years, we have worked with leaders around the world—from the Global 500&reg; to private businesses—to help them build better futures. To support their people. To succeed. All while caring for our communities.
+      </p>
+      <p>
+        With a workforce made up of the industry&rsquo;s greatest minds, we continue to shape the future by delivering real, measurable results. We go beyond talk&mdash;we act.
+      </p>
+      <div class="button-group">
+        <a href="https://www.deloitte.com/tw/tc.html" class="button">Visit Deloitte Taiwan</a>
+      </div>
+    </div>
+  </div>
+</div>
