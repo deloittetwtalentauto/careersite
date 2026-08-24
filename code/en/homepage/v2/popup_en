@@ -1,0 +1,91 @@
+<!-- ========================================== -->
+<!-- 1. 宣傳彈窗 HTML 結構 -->
+<!-- ========================================== -->
+<div id="autoPromoModal" class="modal-overlay">
+  <div class="modal-content" style="max-width: 600px !important; padding: 40px !important;">
+    <span onclick="closeModal('autoPromoModal')" style="position:absolute !important; right:20px !important; top:15px !important; font-size:35px !important; cursor:pointer !important; color:#ccc !important;">&times;</span>
+    
+    <div class="promo-content">
+      <!-- HR 可以把 src 換成當期招募海報的網址，若無海報也可把 img 整行刪除 -->
+      <!-- <img src="你的宣傳海報網址.jpg" alt="2026 D-League Internship"> -->
+      
+      <div class="promo-title">🚀 2026 Audit & Assurance Recruitment is Now Open!</div>
+      <div class="promo-desc">
+        Develop your professional skills and take on real-world challenges with Deloitte.
+      </div>
+      
+      <a href="https://careers.apac.deloitte.com/Taiwan/content/2026-AA-Campus-Recruitment/?locale=zh_TW&utm_campaign=2026AAcampus&utm_source=popup&utm_medium=link
+" class="promo-btn">Start Your Journey</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- 2. 宣傳彈窗專屬 CSS 樣式 -->
+<!-- ========================================== -->
+<style>
+  /* 遮罩背景 */
+  .modal-overlay {
+    position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important;
+    background: rgba(0,0,0,0.85) !important; display: none !important; 
+    justify-content: center !important; align-items: center !important; z-index: 9999 !important;
+    backdrop-filter: blur(8px) !important;
+  }
+  
+  /* 視窗白底區塊 */
+  .modal-content {
+    background: white !important; width: 90% !important;
+    border-radius: 4px !important; position: relative !important;
+    max-height: 90vh !important; overflow-y: auto !important;
+  }
+
+  /* 內容排版設計 */
+  .promo-content { text-align: center !important; }
+  .promo-content img { max-width: 100% !important; border-radius: 4px !important; margin-bottom: 20px !important; }
+  .promo-title { color: #86BC25 !important; font-size: 20px !important; font-weight: bold !important; margin-bottom: 15px !important; }
+  .promo-desc { color: #333 !important; font-size: 16px !important; line-height: 1.6 !important; margin-bottom: 30px !important; }
+  
+  /* 按鈕設計 */
+  .promo-btn {
+    display: inline-block !important; background-color: #86BC25 !important; color: #fff !important;
+    padding: 12px 40px !important; font-size: 18px !important; font-weight: bold !important;
+    border-radius: 30px !important; text-decoration: none !important; transition: background-color 0.3s !important;
+  }
+  .promo-btn:hover { background-color: #43B02A !important; }
+</style>
+
+<!-- ========================================== -->
+<!-- 3. 控制彈跳與防擾民機制的 JavaScript -->
+<!-- ========================================== -->
+<script>
+  // 開啟視窗與關閉視窗的共用函數
+  function openModal(id) {
+    document.getElementById(id).style.setProperty('display', 'flex', 'important');
+    document.body.style.overflow = 'hidden'; // 防止背景滾動
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.setProperty('display', 'none', 'important');
+    document.body.style.overflow = 'auto';   // 恢復背景滾動
+  }
+  
+  // 點擊視窗外圍（黑色半透明處）也能關閉視窗
+  window.onclick = function(e) {
+    if (e.target.classList.contains('modal-overlay')) {
+      e.target.style.setProperty('display', 'none', 'important');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // HR招募專用：自動彈出宣傳視窗邏輯
+  document.addEventListener("DOMContentLoaded", function() {
+    // 檢查是否已經在這個瀏覽器 Session 顯示過了
+    if (!sessionStorage.getItem("promoShown")) {
+      // 設定 0.8 秒後彈出，體驗較自然
+      setTimeout(function() {
+        openModal('autoPromoModal');
+        // 標記為已顯示，下次重整就不會再跳出來擾民了
+        sessionStorage.setItem("promoShown", "true");
+      }, 800); 
+    }
+  });
+</script>
