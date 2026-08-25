@@ -1,0 +1,25 @@
+<script type="text/javascript">
+(function () {
+    var style = document.createElement('style');
+    style.id = 'footerDisclaimerSpacingFix';
+    style.textContent = `
+        #footerRowBottom p {
+            line-height: 1.9 !important;
+            letter-spacing: 0.01em !important;
+            font-size: 13px !important;
+            margin: 0 !important;
+            padding: 20px 350px 20px 0 !important;
+            text-align: justify !important;
+        }
+
+        @media (max-width: 768px) {
+            #footerRowBottom p {
+                padding: 20px 20px !important;
+                text-align: justify !important;
+                font-size: 12px !important;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+})();
+</script>
