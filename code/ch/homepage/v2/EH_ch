@@ -193,37 +193,37 @@
 
       <!-- 左欄：BU 按鈕清單 -->
       <div class="bu-list-col">
-        <a class="bu-list-btn" href="#" data-target="audit">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E5%AF%A9%E8%A8%88%E8%88%87%E7%A2%BA%E4%BF%A1%E6%9C%8D%E5%8B%99/511550/" data-target="audit">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">審計與確信服務</span>
             <span class="bu-list-btn-en">Audit &amp; Assurance</span>
           </span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="tax-legal">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E7%A8%85%E5%8B%99%E8%88%87%E6%B3%95%E5%BE%8B%E6%9C%8D%E5%8B%99/511650/" data-target="tax-legal">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">稅務與法律服務</span>
             <span class="bu-list-btn-en">Tax &amp; Legal</span>
           </span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="strategy-risk">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E7%AD%96%E7%95%A5%E3%80%81%E9%A2%A8%E9%9A%AA%E8%88%87%E4%BA%A4%E6%98%93%E6%9C%8D%E5%8B%99/511750/" data-target="strategy-risk">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">策略、風險與交易服務</span>
             <span class="bu-list-btn-en">Strategy, Risk &amp; Transactions</span>
           </span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="technology">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E7%A7%91%E6%8A%80%E8%88%87%E8%BD%89%E5%9E%8B%E6%9C%8D%E5%8B%99/511850/" data-target="technology">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">科技與轉型服務</span>
             <span class="bu-list-btn-en">Technology &amp; Transformation</span>
           </span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="ldc">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/content/LDC/?locale=zh_TW" data-target="ldc">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">專案服務中心</span>
             <span class="bu-list-btn-en">Local Delivery Center</span>
           </span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="jsg">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E6%97%A5%E5%95%86%E6%9C%8D%E5%8B%99/511950/" data-target="jsg">
           <span class="bu-list-btn-text">
             <span class="bu-list-btn-zh">日商服務</span>
             <span class="bu-list-btn-en">Japanese Services Group</span>
