@@ -176,25 +176,25 @@
 
       <!-- 左欄：BU 按鈕清單 -->
       <div class="bu-list-col">
-        <a class="bu-list-btn" href="#" data-target="audit">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Aduit-&-Assurance/512050/" data-target="audit">
           <span class="bu-list-btn-label">Audit &amp; Assurance</span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="tax-legal">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Tax-&-Legal/512150/" data-target="tax-legal">
           <span class="bu-list-btn-label">Tax &amp; Legal</span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="strategy-risk">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Strategy%2C-Risk-&-Transactions/512250/" data-target="strategy-risk">
           <span class="bu-list-btn-label">Strategy, Risk &amp; Transactions</span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="technology">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Technology-&-Transformation/512450/" data-target="technology">
           <span class="bu-list-btn-label">Technology &amp; Transformation</span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="ldc">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/content/LDC/?locale=zh_TW" data-target="ldc">
           <span class="bu-list-btn-label">Local Delivery Center</span>
         </a>
-        <a class="bu-list-btn" href="#" data-target="jsg">
+        <a class="bu-list-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Japanese-Services-Group/512550/" data-target="jsg">
           <span class="bu-list-btn-label">Japanese Services Group</span>
         </a>
-        <a class="bu-list-btn all-jobs-btn" href="https://careers.apac.deloitte.com/Taiwan/go/%E4%B8%80%E8%88%AC%E6%8B%9B%E5%8B%9F/510650/" data-target="all-jobs">
+        <a class="bu-list-btn all-jobs-btn" href="https://careers.apac.deloitte.com/Taiwan/go/Professional/510550/" data-target="all-jobs">
           <span class="bu-list-btn-label">View All Openings</span>
         </a>
       </div>
